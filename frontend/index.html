@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EduSphere — School Academic & Student Management System</title>
+  <title>EduSphere — School Academic & Student Management Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #f9fafb;
+      --bg: #f8faf9;
       --card-bg: #ffffff;
-      --border: #e5e7eb;
+      --border: #e2e8e5;
       --border-focus: #059669;
-      --text: #111827;
-      --text-muted: #6b7280;
+      --text: #0f172a;
+      --text-muted: #64748b;
       --primary: #059669;
       --primary-hover: #047857;
+      --primary-light: #ecfdf5;
       --amber: #d97706;
-      --amber-light: #fef3c7;
-      --green-light: #d1fae5;
+      --amber-light: #fffbeb;
       --red: #dc2626;
-      --red-light: #fee2e2;
-      --radius: 6px;
+      --red-light: #fef2f2;
+      --radius: 8px;
     }
 
     * {
@@ -38,6 +38,8 @@
       line-height: 1.5;
       font-size: 14px;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
     }
 
     a {
@@ -48,16 +50,50 @@
     .container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
-    /* Clean, Standard Navigation */
+    /* ========================================================= */
+    /* 🎓 FLOATING EDUSPHERE KINETIC WATERMARK BACKGROUND        */
+    /* ========================================================= */
+    .edusphere-floating-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      opacity: 0.035;
+      user-select: none;
+    }
+    .edusphere-float-word {
+      position: absolute;
+      font-size: 110px;
+      font-weight: 900;
+      letter-spacing: -2px;
+      color: #0f172a;
+      white-space: nowrap;
+      animation: floatEduSphere 24s infinite ease-in-out alternate;
+    }
+    .w-1 { top: 8%; left: -4%; animation-duration: 26s; }
+    .w-2 { top: 48%; right: -6%; animation-duration: 30s; animation-delay: -8s; }
+    .w-3 { bottom: 6%; left: 15%; animation-duration: 22s; animation-delay: -14s; }
+
+    @keyframes floatEduSphere {
+      0% { transform: translateY(0) rotate(-4deg); }
+      50% { transform: translateY(-28px) rotate(-2deg); }
+      100% { transform: translateY(18px) rotate(-5deg); }
+    }
+
+    /* Navigation Bar */
     .navbar {
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      height: 60px;
+      height: 64px;
       display: flex;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 40;
     }
     .navbar-inner {
       display: flex;
@@ -66,23 +102,24 @@
       width: 100%;
     }
     .brand {
-      font-size: 17px;
-      font-weight: 700;
-      color: #111827;
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
       display: flex;
       align-items: center;
       gap: 8px;
+      letter-spacing: -0.5px;
     }
     .brand span {
       color: var(--primary);
     }
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
     }
     .nav-links a {
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted);
       transition: color 0.15s ease;
     }
@@ -90,13 +127,13 @@
       color: var(--text);
     }
 
-    /* Standard Buttons */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 8px 16px;
+      padding: 9px 18px;
       font-size: 13.5px;
       font-weight: 600;
       border-radius: var(--radius);
@@ -112,15 +149,15 @@
     .btn-outline {
       background: #ffffff;
       border-color: #d1d5db;
-      color: #374151;
+      color: #334155;
     }
     .btn-outline:hover {
-      background: #f3f4f6;
-      border-color: #9ca3af;
-      color: #111827;
+      background: #f1f5f9;
+      border-color: #94a3b8;
+      color: #0f172a;
     }
     .btn-sm {
-      padding: 5px 10px;
+      padding: 6px 12px;
       font-size: 12.5px;
     }
     .btn-amber {
@@ -138,10 +175,10 @@
       background: #b91c1c;
     }
 
-    /* Forms & Inputs */
+    /* Inputs */
     .input {
       width: 100%;
-      padding: 8px 12px;
+      padding: 9px 13px;
       font-size: 14px;
       border: 1px solid #d1d5db;
       border-radius: var(--radius);
@@ -154,29 +191,29 @@
       box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.15);
     }
     .form-group {
-      margin-bottom: 14px;
+      margin-bottom: 15px;
     }
     .form-group label {
       display: block;
       font-size: 13px;
       font-weight: 600;
-      color: #374151;
-      margin-bottom: 4px;
+      color: #334155;
+      margin-bottom: 5px;
     }
 
-    /* Clean Badges */
+    /* Badges */
     .badge {
       display: inline-flex;
       align-items: center;
-      padding: 2px 8px;
+      padding: 3px 9px;
       font-size: 11.5px;
       font-weight: 600;
       border-radius: 4px;
     }
-    .badge-green { background: #d1fae5; color: #065f46; }
-    .badge-amber { background: #fef3c7; color: #92400e; }
-    .badge-red { background: #fee2e2; color: #991b1b; }
-    .badge-gray { background: #f3f4f6; color: #374151; }
+    .badge-green { background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; }
+    .badge-amber { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+    .badge-red { background: #fef2f2; color: #991b1b; border: 1px solid #fecaca; }
+    .badge-gray { background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; }
 
     /* Tables */
     .table-container {
@@ -191,24 +228,24 @@
       font-size: 13.5px;
     }
     .data-table th, .data-table td {
-      padding: 10px 14px;
+      padding: 11px 16px;
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
     .data-table th {
-      background: #f9fafb;
+      background: #f8fafc;
       font-weight: 600;
-      color: #4b5563;
+      color: #475569;
       font-size: 12.5px;
     }
     .data-table tr:last-child td {
       border-bottom: none;
     }
     .data-table tr:hover td {
-      background: #f9fafb;
+      background: #f8fafc;
     }
 
-    /* Cards & Grids */
+    /* Cards */
     .card {
       background: #ffffff;
       border: 1px solid var(--border);
@@ -217,7 +254,7 @@
     }
     .stat-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 16px;
       margin-bottom: 20px;
     }
@@ -225,27 +262,29 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 16px;
+      padding: 18px;
     }
     .stat-card .label {
       font-size: 12.5px;
       color: var(--text-muted);
-      font-weight: 500;
+      font-weight: 600;
     }
     .stat-card .value {
-      font-size: 24px;
-      font-weight: 700;
-      color: #111827;
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
       margin-top: 4px;
     }
 
-    /* App Workspace Layout */
+    /* App Workspace */
     .app-layout {
       display: flex;
       min-height: 100vh;
+      position: relative;
+      z-index: 1;
     }
     .sidebar {
-      width: 240px;
+      width: 250px;
       background: #ffffff;
       border-right: 1px solid var(--border);
       display: flex;
@@ -253,34 +292,34 @@
       flex-shrink: 0;
     }
     .sidebar-header {
-      padding: 16px;
+      padding: 18px 20px;
       border-bottom: 1px solid var(--border);
     }
     .sidebar-menu {
-      padding: 12px 8px;
+      padding: 14px 10px;
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 3px;
       flex: 1;
     }
     .sidebar-menu a {
-      padding: 8px 12px;
+      padding: 9px 14px;
       font-size: 13.5px;
       font-weight: 500;
-      color: #4b5563;
-      border-radius: var(--radius);
+      color: #475569;
+      border-radius: 6px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .sidebar-menu a:hover {
-      background: #f3f4f6;
-      color: #111827;
+      background: #f1f5f9;
+      color: #0f172a;
     }
     .sidebar-menu a.active {
       background: #ecfdf5;
       color: #065f46;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .main-wrapper {
@@ -290,16 +329,16 @@
       background: var(--bg);
     }
     .topbar {
-      height: 56px;
+      height: 60px;
       background: #ffffff;
       border-bottom: 1px solid var(--border);
-      padding: 0 24px;
+      padding: 0 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .content-area {
-      padding: 24px;
+      padding: 28px;
       flex: 1;
     }
 
@@ -307,7 +346,7 @@
       padding: 12px 16px;
       border-radius: var(--radius);
       font-size: 13.5px;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       border: 1px solid transparent;
     }
     .alert-green { background: #ecfdf5; border-color: #a7f3d0; color: #065f46; }
@@ -316,7 +355,14 @@
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <!-- 🎓 Elegant Floating EduSphere Watermark -->
+  <div class="edusphere-floating-bg">
+    <div class="edusphere-float-word w-1">EduSphere</div>
+    <div class="edusphere-float-word w-2">EduSphere</div>
+    <div class="edusphere-float-word w-3">EduSphere</div>
+  </div>
+
+  <div id="root" style="position:relative; z-index:1;"></div>
 
   <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin></script>
