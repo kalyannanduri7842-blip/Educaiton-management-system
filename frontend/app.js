@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
       body: JSON.stringify({ email, password })
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Invalid credentials. Please verify password.');
+    if (!res.ok) throw new Error(data.error || 'Invalid credentials. Please check password.');
     setUser(data.user);
     setToken(data.token);
     localStorage.setItem('edusphere_user', JSON.stringify(data.user));
@@ -54,6 +54,44 @@ async function api(path, options = {}) {
   if (!res.ok) throw new Error(data.error || 'Request failed');
   return data;
 }
+
+// ----------------------------------------------------
+// HAND-CRAFTED PENCIL SKETCH ICONS (SVG)
+// ----------------------------------------------------
+const SketchIcons = {
+  Tower: () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <polygon points="12 2 20 8 4 8" strokeDasharray="1.5 1.5" />
+      <rect x="6" y="8" width="12" height="12" />
+      <line x1="12" y1="8" x2="12" y2="20" />
+      <circle cx="12" cy="14" r="2" />
+      <line x1="2" y1="20" x2="22" y2="20" strokeWidth="2" />
+    </svg>
+  ),
+  PencilBook: () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+      <line x1="10" y1="7" x2="16" y2="7" />
+      <line x1="10" y1="11" x2="14" y2="11" />
+    </svg>
+  ),
+  CompassClock: () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="9" strokeDasharray="2 1.5" />
+      <polyline points="12 6 12 12 16 14" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+    </svg>
+  ),
+  LedgerCard: () => (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="3" y="4" width="18" height="16" rx="2" />
+      <line x1="7" y1="8" x2="17" y2="8" strokeDasharray="1.5 1.5" />
+      <line x1="7" y1="12" x2="13" y2="12" />
+      <line x1="7" y1="16" x2="11" y2="16" />
+    </svg>
+  )
+};
 
 // ----------------------------------------------------
 // APP WORKSPACE SHELL
@@ -194,7 +232,7 @@ function AppShell({ children, role, title, navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 1. PUBLIC LANDING PAGE
+// 1. PUBLIC LANDING PAGE (WITH 3D SKETCH AESTHETIC)
 // ----------------------------------------------------
 function LandingPage({ navigate }) {
   const [about, setAbout] = useState(null);
@@ -224,13 +262,13 @@ function LandingPage({ navigate }) {
       <section style={{background:'#ffffff',borderBottom:'1px solid var(--border)',padding:'64px 0 54px'}}>
         <div className="container" style={{textAlign:'center'}}>
           <div style={{display:'inline-flex',alignItems:'center',gap:6,padding:'4px 14px',background:'#ecfdf5',color:'#065f46',borderRadius:999,fontSize:12.5,fontWeight:600,marginBottom:18,border:'1px solid #a7f3d0'}}>
-            🏫 Greenwood Global Academy · Academic Platform
+            🏛️ Greenwood Global Academy · Academic System
           </div>
-          <h1 style={{fontSize:40,fontWeight:800,color:'#0f172a',lineHeight:1.2,maxWidth:820,margin:'0 auto 16px',letterSpacing:'-0.5px'}}>
+          <h1 style={{fontSize:38,fontWeight:800,color:'#0f172a',lineHeight:1.2,maxWidth:820,margin:'0 auto 16px',letterSpacing:'-0.5px'}}>
             Academic Governance, Campus Check-In & Student Work Management
           </h1>
           <p style={{fontSize:15.5,color:'var(--text-muted)',maxWidth:680,margin:'0 auto 28px',lineHeight:1.6}}>
-            EduSphere is a simple, unified platform linking School Administration, Faculty, 50+ Students, and Parents for daily arrival check-ins, curriculum tasks, grading, and tuition accounting.
+            EduSphere is a clean, reliable system linking School Administration, Faculty, 50+ Students, and Parents for daily arrival check-ins, curriculum tasks, grading, and fee accounting.
           </p>
           <div style={{display:'flex',gap:12,justifyContent:'center',flexWrap:'wrap'}}>
             <button className="btn" style={{padding:'11px 24px',fontSize:14}} onClick={() => navigate('/login')}>
@@ -243,27 +281,27 @@ function LandingPage({ navigate }) {
         </div>
       </section>
 
-      {/* 4 Feature Highlights */}
+      {/* 4 Feature Highlights with Pencil Sketch Icons */}
       <section style={{padding:'44px 0'}}>
         <div className="container">
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))',gap:16}}>
             <div className="card">
-              <div style={{fontSize:22,marginBottom:8}}>🕒</div>
+              <div style={{color:'var(--primary)',marginBottom:10}}><SketchIcons.CompassClock /></div>
               <div style={{fontWeight:700,fontSize:15,marginBottom:4,color:'#0f172a'}}>Daily Arrival Check-In</div>
               <p style={{fontSize:13,color:'var(--text-muted)'}}>Students and teachers check in at campus entrance. On-time or late arrival status is automatically sent to parents and school administration.</p>
             </div>
             <div className="card">
-              <div style={{fontSize:22,marginBottom:8}}>📚</div>
+              <div style={{color:'var(--amber)',marginBottom:10}}><SketchIcons.PencilBook /></div>
               <div style={{fontWeight:700,fontSize:15,marginBottom:4,color:'#0f172a'}}>Day-by-Day Syllabus Tasks</div>
               <p style={{fontSize:13,color:'var(--text-muted)'}}>Structured Day 1 to Day 5 curriculum schedule with student submissions, teacher grading, and feedback notes.</p>
             </div>
             <div className="card">
-              <div style={{fontSize:22,marginBottom:8}}>📝</div>
+              <div style={{color:'var(--primary)',marginBottom:10}}><SketchIcons.Tower /></div>
               <div style={{fontWeight:700,fontSize:15,marginBottom:4,color:'#0f172a'}}>Examination Marksheets</div>
               <p style={{fontSize:13,color:'var(--text-muted)'}}>Score entry with automatic percentage division (Distinction, First Division), GPA calculation, and printable report cards.</p>
             </div>
             <div className="card">
-              <div style={{fontSize:22,marginBottom:8}}>💳</div>
+              <div style={{color:'var(--text-muted)',marginBottom:10}}><SketchIcons.LedgerCard /></div>
               <div style={{fontWeight:700,fontSize:15,marginBottom:4,color:'#0f172a'}}>Tuition Fees & Receipts</div>
               <p style={{fontSize:13,color:'var(--text-muted)'}}>Transparent fee ledger, online simulated payments, and instant digital receipts for parents.</p>
             </div>
@@ -605,7 +643,6 @@ function AdminPortal({ navigate, path }) {
   const [examData, setExamData] = useState({ exams: [], marks: [] });
   const [loading, setLoading] = useState(true);
 
-  // Admission state
   const [showAddStudent, setShowAddStudent] = useState(false);
   const [admStep, setAdmStep] = useState(1);
   const [newStudent, setNewStudent] = useState({
@@ -1279,7 +1316,6 @@ function StudentPortal({ navigate, path }) {
   const [selectedTask, setSelectedTask] = useState(null);
   const [taskAnswer, setTaskAnswer] = useState('');
 
-  // Self Study Project state
   const [showAddHwModal, setShowAddHwModal] = useState(false);
   const [selfHwTitle, setSelfHwTitle] = useState('');
   const [selfHwSubject, setSelfHwSubject] = useState('Computer Science');
