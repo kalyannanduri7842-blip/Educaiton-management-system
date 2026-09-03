@@ -2954,7 +2954,17 @@
       "title": "Day 4: Analytical Essay on The Merchant of Venice Act IV",
       "instructions": "Compose a 600-word critical evaluation on the themes of justice versus mercy.",
       "maxScore": 25,
-      "submissions": []
+      "submissions": [
+        {
+          "studentId": "STD-001",
+          "studentName": "Rahul Sharma",
+          "status": "submitted",
+          "submittedAt": "2026-09-03T07:16:38.185Z",
+          "content": "hbhbb n",
+          "score": 24,
+          "feedback": "Submitted on time. Excellent analytical work."
+        }
+      ]
     },
     {
       "id": "DAY-TASK-05",
@@ -7166,6 +7176,46 @@
   ],
   "notifications": [
     {
+      "id": "NOTIF-LV-DEC-PAR-1788420188538",
+      "recipientRole": "parent",
+      "recipientUserId": null,
+      "title": "Ward Leave Status APPROVED: Rahul Sharma",
+      "message": "Leave application for your ward Rahul Sharma (2026-09-08 to 2026-09-09) was APPROVED by Prof. Vikram Sen (Mathematics).",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:23:08.538Z"
+    },
+    {
+      "id": "NOTIF-LV-DEC-STD-1788420188538",
+      "recipientRole": "student",
+      "recipientUserId": null,
+      "title": "Leave Request APPROVED: Medical Leave",
+      "message": "Your leave request for 2026-09-08 to 2026-09-09 has been APPROVED by Prof. Vikram Sen (Mathematics). Note: Medical leave sanctioned. Rest well.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:23:08.538Z"
+    },
+    {
+      "id": "NOTIF-LEAVE-TCH-1788419811116",
+      "recipientRole": "teacher",
+      "recipientUserId": null,
+      "title": "Student Leave Request: Rahul Sharma",
+      "message": "Rahul Sharma submitted a leave application for 2026-09-08 to 2026-09-09.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:16:51.116Z"
+    },
+    {
+      "id": "NOTIF-LEAVE-ADM-1788419811116",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Student Leave Granted: Rahul Sharma",
+      "message": "Rahul Sharma (CLS-10-SEC-10A) applied for Medical Leave from 2026-09-08 to 2026-09-09. Reason: yguyguyg.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:16:51.116Z"
+    },
+    {
       "id": "NOTIF-LEAVE-TCH-1788419698555",
       "recipientRole": "teacher",
       "recipientUserId": null,
@@ -7368,6 +7418,15 @@
   ],
   "auditLogs": [
     {
+      "id": "AUDIT-LV-1788420188538",
+      "user": "Prof. Vikram Sen (Mathematics)",
+      "action": "LEAVE_APPROVED",
+      "module": "Attendance",
+      "recordId": "LEAVE-1788419811116-STD-001",
+      "details": "Prof. Vikram Sen (Mathematics) marked leave for Rahul Sharma as APPROVED. Remarks: Medical leave sanctioned. Rest well.",
+      "timestamp": "2026-09-03T07:23:08.538Z"
+    },
+    {
       "id": "AUDIT-CHK-1788418949669",
       "user": "Payal Das",
       "action": "STUDENT_CHECKIN_LOGGED",
@@ -7432,6 +7491,22 @@
     }
   ],
   "leaveApplications": [
+    {
+      "id": "LEAVE-1788419811116-STD-001",
+      "studentId": "STD-001",
+      "studentName": "Rahul Sharma",
+      "classId": "CLS-10",
+      "sectionId": "SEC-10A",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-09",
+      "leaveType": "Medical Leave",
+      "reason": "yguyguyg",
+      "status": "approved",
+      "appliedAt": "2026-09-03T07:16:51.116Z",
+      "decidedBy": "Prof. Vikram Sen (Mathematics)",
+      "decidedAt": "2026-09-03T07:23:08.538Z",
+      "remarks": "Medical leave sanctioned. Rest well."
+    },
     {
       "id": "LEAVE-1788419698555-STD-001",
       "studentId": "STD-001",

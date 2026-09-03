@@ -98,11 +98,17 @@ const SketchIcons = {
       <line x1="7" y1="12" x2="13" y2="12" />
       <line x1="7" y1="16" x2="11" y2="16" />
     </svg>
+  ),
+  Bell: () => (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+    </svg>
   )
 };
 
 // ----------------------------------------------------
-// APP WORKSPACE SHELL
+// APP WORKSPACE SHELL (WITH NOTIFICATION DRAWER)
 // ----------------------------------------------------
 function AppShell({ children, role, title, navigate, path }) {
   const { user, logout } = useAuth();
@@ -110,11 +116,39 @@ function AppShell({ children, role, title, navigate, path }) {
   const [searchResults, setSearchResults] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
 
+  // Real-time Notification State
+  const [notifications, setNotifications] = useState([]);
+  const [unreadCount, setUnreadCount] = useState(0);
+  const [showNotifDrawer, setShowNotifDrawer] = useState(false);
+
+  const fetchNotifs = async () => {
+    try {
+      const d = await api('/notifications');
+      setNotifications(d.notifications || []);
+      setUnreadCount(d.unreadCount || 0);
+    } catch (e) {}
+  };
+
+  useEffect(() => {
+    fetchNotifs();
+    const interval = setInterval(fetchNotifs, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const handleMarkAllRead = async () => {
+    try {
+      await api('/notifications/read-all', { method: 'POST' });
+      setUnreadCount(0);
+      fetchNotifs();
+    } catch (e) {}
+  };
+
   const navConfigs = {
     super_admin: [
       ['/super-admin', 'Global Overview'],
       ['/super-admin/works', 'Academic Works & Tasks'],
       ['/super-admin/attendance', 'Attendance & Headcount'],
+      ['/super-admin/leaves', 'Student Leaves Queue'],
       ['/super-admin/students', 'All 52 Students Master'],
       ['/super-admin/teachers', 'All Faculty Roster'],
       ['/super-admin/institutions', 'Institutions'],
@@ -124,6 +158,7 @@ function AppShell({ children, role, title, navigate, path }) {
       ['/admin', 'Dashboard'],
       ['/admin/students', 'Students & Admissions'],
       ['/admin/checkins', 'Daily Arrival Check-Ins'],
+      ['/admin/leaves', 'Student Leave Approvals'],
       ['/admin/teachers', 'Teachers & Faculty'],
       ['/admin/classes', 'Classes & Sections'],
       ['/admin/attendance', 'Attendance Sessions'],
@@ -133,10 +168,11 @@ function AppShell({ children, role, title, navigate, path }) {
     ],
     teacher: [
       ['/teacher', 'Overview & Check-In'],
+      ['/teacher/leaves', 'Student Leave Approvals'],
       ['/teacher/attendance', 'Period Attendance'],
       ['/teacher/daily-work', 'Day-by-Day Tasks'],
       ['/teacher/homework', 'Homework & Assignments'],
-      ['/teacher/exams', 'Schedule Examinations'],
+      ['/teacher/exams', 'Examinations & Questions'],
       ['/teacher/marks', 'Marksheet Grade Entry'],
       ['/teacher/classes', 'My Classes']
     ],
@@ -144,7 +180,7 @@ function AppShell({ children, role, title, navigate, path }) {
       ['/student', 'Overview & Check-In'],
       ['/student/daily-work', 'Day-by-Day Tasks'],
       ['/student/leave', 'Apply for Leave'],
-      ['/student/exams', 'Exam Schedule & Hall Tickets'],
+      ['/student/exams', 'Exam Schedule & Questions'],
       ['/student/homework', 'Homework & Projects'],
       ['/student/marks', 'Exam Results & GPA'],
       ['/student/attendance', 'Attendance Record']
@@ -207,7 +243,7 @@ function AppShell({ children, role, title, navigate, path }) {
         <header className="topbar">
           <div style={{display:'flex',alignItems:'center',gap:16,flex:1}}>
             <h1 style={{fontSize:16,fontWeight:700,color:'#0f172a'}}>{title}</h1>
-            <div style={{position:'relative',maxWidth:280,width:'100%'}}>
+            <div style={{position:'relative',maxWidth:260,width:'100%'}}>
               <input
                 className="input"
                 style={{padding:'6px 12px',fontSize:13}}
@@ -229,7 +265,50 @@ function AppShell({ children, role, title, navigate, path }) {
             </div>
           </div>
 
-          <div style={{display:'flex',alignItems:'center',gap:14}}>
+          <div style={{display:'flex',alignItems:'center',gap:12}}>
+            {/* Interactive Notification Bell */}
+            <div style={{position:'relative'}}>
+              <button
+                type="button"
+                className="btn btn-sm btn-outline"
+                style={{padding:'6px 10px',position:'relative'}}
+                onClick={() => setShowNotifDrawer(!showNotifDrawer)}
+                title="Notifications"
+              >
+                <SketchIcons.Bell />
+                {unreadCount > 0 && (
+                  <span style={{position:'absolute',top:-4,right:-4,background:'var(--red)',color:'#ffffff',fontSize:10,fontWeight:800,borderRadius:999,padding:'1px 5px'}}>
+                    {unreadCount}
+                  </span>
+                )}
+              </button>
+
+              {/* Notification Popup Dropdown */}
+              {showNotifDrawer && (
+                <div style={{position:'absolute',top:'120%',right:0,width:340,background:'#ffffff',border:'1px solid var(--border)',borderRadius:8,boxShadow:'0 8px 16px rgba(0,0,0,0.12)',zIndex:100,padding:12}}>
+                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',borderBottom:'1px solid var(--border)',paddingBottom:8,marginBottom:8}}>
+                    <strong style={{fontSize:13.5,color:'#0f172a'}}>Notifications ({notifications.length})</strong>
+                    <button type="button" style={{background:'none',border:'none',color:'var(--primary)',fontSize:11.5,fontWeight:600,cursor:'pointer'}} onClick={handleMarkAllRead}>
+                      Mark all read
+                    </button>
+                  </div>
+                  <div style={{maxHeight:300,overflowY:'auto',display:'grid',gap:6}}>
+                    {notifications.length === 0 ? (
+                      <div style={{fontSize:12.5,color:'var(--text-muted)',textAlign:'center',padding:16}}>No recent alerts</div>
+                    ) : (
+                      notifications.slice(0, 8).map(n => (
+                        <div key={n.id} style={{padding:8,borderRadius:6,background: n.read ? '#ffffff' : '#f8fafc',border:'1px solid var(--border)'}}>
+                          <div style={{fontWeight:700,fontSize:12.5,color:'#0f172a'}}>{n.title}</div>
+                          <div style={{fontSize:11.5,color:'var(--text-muted)',marginTop:2}}>{n.message}</div>
+                          <div style={{fontSize:10,color:'#94a3b8',marginTop:4}}>{n.createdAt ? n.createdAt.split('T')[0] : 'Today'}</div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+
             <div style={{textAlign:'right'}}>
               <div style={{fontWeight:600,fontSize:13}}>{user ? user.name : 'User'}</div>
               <div style={{fontSize:11,color:'var(--text-muted)'}}>{user ? user.email : ''}</div>
@@ -455,7 +534,7 @@ function LandingPage({ navigate }) {
 }
 
 // ----------------------------------------------------
-// 2. SECURE LOGIN PAGE (WITH LINKED STUDENT & PARENT DISPLAY)
+// 2. SECURE LOGIN PAGE
 // ----------------------------------------------------
 function LoginPage({ navigate }) {
   const { login, user } = useAuth();
@@ -728,6 +807,17 @@ function AdminPortal({ navigate, path }) {
 
   useEffect(() => { loadAll(); }, []);
 
+  const handleLeaveDecision = async (leaveId, decision) => {
+    try {
+      const res = await api('/leave/decide', {
+        method: 'POST',
+        body: JSON.stringify({ leaveId, decision })
+      });
+      alert(res.message);
+      loadAll();
+    } catch (e) { alert(e.message); }
+  };
+
   const handleCreateStudent = async (e) => {
     e.preventDefault();
     try {
@@ -747,6 +837,7 @@ function AdminPortal({ navigate, path }) {
     '/admin': 'School Operations Dashboard',
     '/admin/students': 'Student Admissions & Master Roster',
     '/admin/checkins': 'Daily Arrival Check-Ins (Gate Kiosk)',
+    '/admin/leaves': 'Student Leave Applications Queue',
     '/admin/teachers': 'Faculty & Department Allocation',
     '/admin/classes': 'Classes, Sections & Subject Curriculum',
     '/admin/attendance': 'Attendance Sessions & Rate Analytics',
@@ -754,6 +845,8 @@ function AdminPortal({ navigate, path }) {
     '/admin/fees': 'Tuition Fees & Payments Ledger',
     '/admin/reports': 'Institutional Summary Reports'
   };
+
+  const leaveList = (dashboardData && dashboardData.leaveApplications) || [];
 
   return (
     <AppShell role="admin" title={titles[path] || 'Operations Center'} navigate={navigate} path={path}>
@@ -810,7 +903,42 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 2. STUDENTS & ADMISSIONS */}
+      {/* 2. LEAVE APPROVALS */}
+      {(path === '/admin/leaves' || path === '/admin') && (
+        <div style={{marginTop: path === '/admin' ? 20 : 0, marginBottom: 20}}>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>🏖️ Student Leave Requests & Decision Portal</h2>
+          <div className="card">
+            {leaveList.length === 0 ? (
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>No active student leave applications.</p>
+            ) : (
+              <div style={{display:'grid',gap:10}}>
+                {leaveList.map(lv => (
+                  <div key={lv.id} style={{background:'#f8fafc',border:'1px solid var(--border)',padding:12,borderRadius:6,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:10}}>
+                    <div>
+                      <div style={{fontWeight:700,color:'#0f172a'}}>{lv.studentName} ({lv.classId}-{lv.sectionId})</div>
+                      <div style={{fontSize:13,color:'var(--primary)',fontWeight:600}}>{lv.leaveType}: {lv.startDate} to {lv.endDate}</div>
+                      <div style={{fontSize:12.5,color:'var(--text-muted)',marginTop:2}}>Reason: {lv.reason}</div>
+                    </div>
+                    <div style={{display:'flex',gap:6,alignItems:'center'}}>
+                      <span className={'badge ' + (lv.status === 'approved' ? 'badge-green' : lv.status === 'rejected' ? 'badge-red' : 'badge-amber')}>
+                        {lv.status.toUpperCase()}
+                      </span>
+                      {lv.status === 'pending_approval' && (
+                        <>
+                          <button className="btn btn-sm" onClick={() => handleLeaveDecision(lv.id, 'approved')}>✓ Approve</button>
+                          <button className="btn btn-sm btn-danger" onClick={() => handleLeaveDecision(lv.id, 'rejected')}>✕ Reject</button>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* 3. STUDENTS & ADMISSIONS */}
       {path === '/admin/students' && (
         <div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16}}>
@@ -900,7 +1028,7 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 3. CHECK-INS */}
+      {/* 4. CHECK-INS */}
       {path === '/admin/checkins' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Campus Arrival Check-Ins</h2>
@@ -927,7 +1055,7 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 4. TEACHERS */}
+      {/* 5. TEACHERS */}
       {path === '/admin/teachers' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Faculty Roster</h2>
@@ -952,7 +1080,7 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 5. CLASSES */}
+      {/* 6. CLASSES */}
       {path === '/admin/classes' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Classes, Sections & Subjects</h2>
@@ -979,7 +1107,7 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 6. ATTENDANCE */}
+      {/* 7. ATTENDANCE */}
       {path === '/admin/attendance' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Attendance Sessions</h2>
@@ -1005,7 +1133,7 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 7. EXAMS */}
+      {/* 8. EXAMS */}
       {path === '/admin/exams' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Examinations</h2>
@@ -1029,7 +1157,7 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 8. FEES */}
+      {/* 9. FEES */}
       {path === '/admin/fees' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Tuition Fee Ledger</h2>
@@ -1055,7 +1183,7 @@ function AdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 9. REPORTS */}
+      {/* 10. REPORTS */}
       {path === '/admin/reports' && (
         <div className="card">
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
@@ -1072,7 +1200,7 @@ function AdminPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 4. TEACHER PORTAL
+// 4. TEACHER PORTAL (WITH LEAVE APPROVAL & QUESTION BUILDER)
 // ----------------------------------------------------
 function TeacherPortal({ navigate, path }) {
   const [dash, setDash] = useState(null);
@@ -1097,6 +1225,17 @@ function TeacherPortal({ navigate, path }) {
   const [examStartDate, setExamStartDate] = useState('2026-10-05');
   const [examEndDate, setExamEndDate] = useState('2026-10-12');
   const [examSyllabus, setExamSyllabus] = useState('Chapters 1-6: Algebra, Geometry, Trigonometric Proofs & Analytical Statistics.');
+
+  // Question Builder Modal
+  const [showQuestionModal, setShowQuestionModal] = useState(false);
+  const [targetExamId, setTargetExamId] = useState('');
+  const [qText, setQText] = useState('');
+  const [optA, setOptA] = useState('');
+  const [optB, setOptB] = useState('');
+  const [optC, setOptC] = useState('');
+  const [optD, setOptD] = useState('');
+  const [correctOpt, setCorrectOpt] = useState('A');
+  const [qMarks, setQMarks] = useState(5);
 
   const load = async () => {
     try {
@@ -1125,6 +1264,17 @@ function TeacherPortal({ navigate, path }) {
       load();
     } catch (e) { alert(e.message); }
     finally { setCheckingIn(false); }
+  };
+
+  const handleLeaveDecision = async (leaveId, decision) => {
+    try {
+      const res = await api('/leave/decide', {
+        method: 'POST',
+        body: JSON.stringify({ leaveId, decision })
+      });
+      alert(res.message);
+      load();
+    } catch (e) { alert(e.message); }
   };
 
   const submitAttendance = async () => {
@@ -1199,7 +1349,32 @@ function TeacherPortal({ navigate, path }) {
     } catch (e) { alert(e.message); }
   };
 
+  const handleAddQuestion = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await api('/teacher/exams/question', {
+        method: 'POST',
+        body: JSON.stringify({
+          examId: targetExamId,
+          questionText: qText,
+          optionA: optA,
+          optionB: optB,
+          optionC: optC,
+          optionD: optD,
+          correctOption: correctOpt,
+          marks: qMarks
+        })
+      });
+      alert(res.message || 'Question added to exam paper!');
+      setShowQuestionModal(false);
+      setQText('');
+      setOptA(''); setOptB(''); setOptC(''); setOptD('');
+      load();
+    } catch (e) { alert(e.message); }
+  };
+
   const tchCheckin = dash && dash.checkinToday;
+  const leaveList = (dash && dash.leaveApplications) || [];
 
   return (
     <AppShell role="teacher" title="Teacher Classroom Hub" navigate={navigate} path={path}>
@@ -1229,18 +1404,55 @@ function TeacherPortal({ navigate, path }) {
               <div className="value" style={{color:'var(--primary)'}}>Mathematics</div>
             </div>
             <div className="stat-card">
-              <div className="label">Active Scheduled Exams</div>
-              <div className="value" style={{color:'var(--amber)'}}>{dash && dash.allExams ? dash.allExams.length : 2}</div>
+              <div className="label">Pending Leave Requests</div>
+              <div className="value" style={{color:'var(--amber)'}}>
+                {leaveList.filter(l => l.status === 'pending_approval').length} Requests
+              </div>
             </div>
             <div className="stat-card">
-              <div className="label">Day-by-Day Tasks</div>
-              <div className="value">{dash && dash.dailyTasks ? dash.dailyTasks.length : 5} Active</div>
+              <div className="label">Active Examinations</div>
+              <div className="value" style={{color:'var(--primary)'}}>{dash && dash.allExams ? dash.allExams.length : 2}</div>
             </div>
           </div>
         </div>
       )}
 
-      {/* 2. ATTENDANCE */}
+      {/* 2. LEAVE APPROVALS */}
+      {(path === '/teacher/leaves' || path === '/teacher') && (
+        <div style={{marginTop: path === '/teacher' ? 20 : 0, marginBottom: 20}}>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>🏖️ Student Leave Requests & Decision Portal</h2>
+          <div className="card">
+            {leaveList.length === 0 ? (
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>No active student leave applications.</p>
+            ) : (
+              <div style={{display:'grid',gap:10}}>
+                {leaveList.map(lv => (
+                  <div key={lv.id} style={{background:'#f8fafc',border:'1px solid var(--border)',padding:12,borderRadius:6,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:10}}>
+                    <div>
+                      <div style={{fontWeight:700,color:'#0f172a'}}>{lv.studentName} ({lv.classId}-{lv.sectionId})</div>
+                      <div style={{fontSize:13,color:'var(--primary)',fontWeight:600}}>{lv.leaveType}: {lv.startDate} to {lv.endDate}</div>
+                      <div style={{fontSize:12.5,color:'var(--text-muted)',marginTop:2}}>Reason: {lv.reason}</div>
+                    </div>
+                    <div style={{display:'flex',gap:6,alignItems:'center'}}>
+                      <span className={'badge ' + (lv.status === 'approved' ? 'badge-green' : lv.status === 'rejected' ? 'badge-red' : 'badge-amber')}>
+                        {lv.status.toUpperCase()}
+                      </span>
+                      {lv.status === 'pending_approval' && (
+                        <>
+                          <button className="btn btn-sm" onClick={() => handleLeaveDecision(lv.id, 'approved')}>✓ Approve</button>
+                          <button className="btn btn-sm btn-danger" onClick={() => handleLeaveDecision(lv.id, 'rejected')}>✕ Reject</button>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* 3. ATTENDANCE */}
       {(path === '/teacher/attendance' || path === '/teacher') && (
         <div style={{marginTop: path === '/teacher' ? 20 : 0}}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12,flexWrap:'wrap',gap:10}}>
@@ -1291,12 +1503,12 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 3. EXAM SCHEDULER SUB-VIEW */}
+      {/* 4. EXAM SCHEDULER & QUESTION BUILDER */}
       {path === '/teacher/exams' && (
         <div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
-            <h2 style={{fontSize:16,fontWeight:700}}>Academic Examination Management</h2>
-            <button className="btn btn-sm" onClick={() => setShowNewExamModal(true)}>+ Schedule New Examination</button>
+            <h2 style={{fontSize:16,fontWeight:700}}>Academic Examination & Question Papers</h2>
+            <button className="btn btn-sm" onClick={() => setShowNewExamModal(true)}>+ Schedule New Exam</button>
           </div>
 
           <div style={{display:'grid',gap:12}}>
@@ -1310,8 +1522,32 @@ function TeacherPortal({ navigate, path }) {
                   <span className="badge badge-amber">{ex.startDate} to {ex.endDate}</span>
                 </div>
                 <p style={{fontSize:13,color:'var(--text-muted)',marginBottom:8}}>{ex.syllabusNotes || 'Comprehensive semester examination coverage.'}</p>
-                <div style={{fontSize:12,color:'#059669',fontWeight:600}}>
-                  ✓ Published to Student & Parent Portals · Hall Tickets Enabled
+                
+                {/* Question Paper List */}
+                <div style={{background:'#f8fafc',padding:10,borderRadius:6,border:'1px solid var(--border)',marginTop:8}}>
+                  <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:6}}>
+                    <strong style={{fontSize:13,color:'#0f172a'}}>Questions in Paper ({(ex.questions || []).length}):</strong>
+                    <button
+                      className="btn btn-sm btn-outline"
+                      style={{padding:'3px 8px',fontSize:11.5}}
+                      onClick={() => { setTargetExamId(ex.id); setShowQuestionModal(true); }}
+                    >
+                      + Add Question
+                    </button>
+                  </div>
+                  {(ex.questions || []).map((q, qIdx) => (
+                    <div key={q.id || qIdx} style={{borderBottom:'1px dashed var(--border)',padding:'6px 0',fontSize:12.5}}>
+                      <div style={{fontWeight:600}}>Q{qIdx + 1}: {q.questionText} ({q.marks} Marks)</div>
+                      {q.options && (
+                        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:4,marginTop:2,fontSize:11.5,color:'var(--text-muted)'}}>
+                          <span>A: {q.options.A}</span>
+                          <span>B: {q.options.B}</span>
+                          <span>C: {q.options.C}</span>
+                          <span>D: {q.options.D}</span>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
@@ -1319,7 +1555,7 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 4. DAY-BY-DAY TASKS */}
+      {/* 5. DAY-BY-DAY TASKS */}
       {path === '/teacher/daily-work' && (
         <div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
@@ -1353,7 +1589,7 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 5. HOMEWORK */}
+      {/* 6. HOMEWORK */}
       {path === '/teacher/homework' && (
         <div className="card">
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:8}}>Homework & Assignments</h2>
@@ -1361,7 +1597,7 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 6. MARKS */}
+      {/* 7. MARKS */}
       {path === '/teacher/marks' && (
         <div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
@@ -1388,11 +1624,45 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 7. CLASSES */}
+      {/* 8. CLASSES */}
       {path === '/teacher/classes' && (
         <div className="card">
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:8}}>Assigned Classes</h2>
           <p style={{fontSize:13}}>Grade 10-A (20 Students, Room 301) · Grade 10-B (15 Students, Room 302)</p>
+        </div>
+      )}
+
+      {/* Question Builder Modal */}
+      {showQuestionModal && (
+        <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.4)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:100}}>
+          <div style={{background:'#ffffff',padding:26,borderRadius:8,width:480,border:'1px solid var(--border)',boxShadow:'0 4px 12px rgba(0,0,0,0.1)'}}>
+            <h3 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Add Question to Examination Paper</h3>
+            <form onSubmit={handleAddQuestion}>
+              <div className="form-group"><label>Question Text *</label><textarea className="input" rows={2} required value={qText} onChange={e => setQText(e.target.value)} placeholder="Type question description..." /></div>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
+                <div className="form-group"><label>Option A *</label><input className="input" required value={optA} onChange={e => setOptA(e.target.value)} /></div>
+                <div className="form-group"><label>Option B *</label><input className="input" required value={optB} onChange={e => setOptB(e.target.value)} /></div>
+                <div className="form-group"><label>Option C *</label><input className="input" required value={optC} onChange={e => setOptC(e.target.value)} /></div>
+                <div className="form-group"><label>Option D *</label><input className="input" required value={optD} onChange={e => setOptD(e.target.value)} /></div>
+              </div>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:8}}>
+                <div className="form-group">
+                  <label>Correct Option</label>
+                  <select className="input" value={correctOpt} onChange={e => setCorrectOpt(e.target.value)}>
+                    <option value="A">Option A</option>
+                    <option value="B">Option B</option>
+                    <option value="C">Option C</option>
+                    <option value="D">Option D</option>
+                  </select>
+                </div>
+                <div className="form-group"><label>Marks Weightage</label><input className="input" type="number" min={1} max={20} value={qMarks} onChange={e => setQMarks(e.target.value)} /></div>
+              </div>
+              <div style={{display:'flex',gap:8,marginTop:14}}>
+                <button type="submit" className="btn btn-sm" style={{flex:1}}>Add Question</button>
+                <button type="button" className="btn btn-sm btn-outline" onClick={() => setShowQuestionModal(false)}>Cancel</button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
 
@@ -1495,7 +1765,7 @@ function StudentPortal({ navigate, path }) {
           reason: leaveReason
         })
       });
-      alert(res.message || 'Leave application approved & notifications sent!');
+      alert(res.message || 'Leave application submitted for faculty review!');
       setShowLeaveModal(false);
       setLeaveReason('');
       load();
@@ -1548,7 +1818,7 @@ function StudentPortal({ navigate, path }) {
       <div className={'alert ' + (checkinInfo ? 'alert-green' : 'alert-amber')} style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:10}}>
         <div>
           <strong>{checkinInfo ? `Arrival Recorded (${checkinInfo.status === 'on_time' ? 'ON-TIME' : 'LATE'}) at ${checkinInfo.checkinTime}` : 'Daily Morning Arrival Check-In'}</strong>
-          <div style={{fontSize:12,marginTop:2}}>{checkinInfo ? `Location: ${checkinInfo.gateLocation}. Parent & Manager notified.` : 'Tap check-in upon arriving at the school gate.'}</div>
+          <div style={{fontSize:12,marginTop:2}}>{checkinInfo ? `Location: ${checkinInfo.gateLocation}. Parent & Manager notified in real-time.` : 'Tap check-in upon arriving at the school gate.'}</div>
         </div>
 
         <div style={{display:'flex',gap:8}}>
@@ -1591,7 +1861,7 @@ function StudentPortal({ navigate, path }) {
       {(path === '/student/leave' || path === '/student') && (
         <div style={{marginTop: path === '/student' ? 20 : 0, marginBottom: 20}}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
-            <h2 style={{fontSize:16,fontWeight:700}}>🏖️ Student Leave Applications</h2>
+            <h2 style={{fontSize:16,fontWeight:700}}>🏖️ Student Leave Applications & Status</h2>
             <button className="btn btn-sm" onClick={() => setShowLeaveModal(true)}>+ New Leave Request</button>
           </div>
 
@@ -1605,8 +1875,11 @@ function StudentPortal({ navigate, path }) {
                     <div>
                       <div style={{fontWeight:700,color:'#0f172a'}}>{lv.leaveType} ({lv.startDate} to {lv.endDate})</div>
                       <div style={{fontSize:12.5,color:'var(--text-muted)',marginTop:2}}>Reason: {lv.reason}</div>
+                      {lv.remarks && <div style={{fontSize:12,color:'var(--primary)',marginTop:2}}>Faculty Note: {lv.remarks}</div>}
                     </div>
-                    <span className="badge badge-green">Approved & Recorded</span>
+                    <span className={'badge ' + (lv.status === 'approved' ? 'badge-green' : lv.status === 'rejected' ? 'badge-red' : 'badge-amber')}>
+                      {lv.status.toUpperCase().replace('_', ' ')}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -1615,37 +1888,60 @@ function StudentPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 3. EXAM SCHEDULE & HALL TICKETS */}
+      {/* 3. EXAM SCHEDULE & QUESTIONS */}
       {(path === '/student/exams' || path === '/student') && (
         <div style={{marginTop: path === '/student' ? 20 : 0, marginBottom: 24}}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
-            <h2 style={{fontSize:16,fontWeight:700}}>📝 Scheduled Examinations & Hall Tickets</h2>
+            <h2 style={{fontSize:16,fontWeight:700}}>📝 Scheduled Examinations & Question Papers</h2>
             <span className="badge badge-green">Academic Year 2025-2026</span>
           </div>
 
           <div style={{display:'grid',gap:12}}>
             {(data.exams || []).map(ex => (
-              <div key={ex.id} className="card" style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12}}>
-                <div style={{flex:1}}>
-                  <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:4}}>
-                    <span className="badge badge-green">{ex.term || 'Semester Exam'}</span>
-                    <strong style={{color:'#0f172a',fontSize:14.5}}>{ex.title}</strong>
-                  </div>
-                  <div style={{fontSize:13,color:'var(--text-muted)'}}>
-                    <strong>Dates:</strong> {ex.startDate} to {ex.endDate} · <strong>Applicable Classes:</strong> {(ex.classes || ['Grade 10']).join(', ')}
-                  </div>
-                  {ex.syllabusNotes && (
-                    <div style={{fontSize:12.5,color:'#334155',marginTop:4,background:'#f8fafc',padding:8,borderRadius:4}}>
-                      📖 <strong>Syllabus Coverage:</strong> {ex.syllabusNotes}
+              <div key={ex.id} className="card">
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12,marginBottom:8}}>
+                  <div>
+                    <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:4}}>
+                      <span className="badge badge-green">{ex.term || 'Semester Exam'}</span>
+                      <strong style={{color:'#0f172a',fontSize:14.5}}>{ex.title}</strong>
                     </div>
-                  )}
-                </div>
+                    <div style={{fontSize:13,color:'var(--text-muted)'}}>
+                      <strong>Dates:</strong> {ex.startDate} to {ex.endDate} · <strong>Target Classes:</strong> {(ex.classes || ['Grade 10']).join(', ')}
+                    </div>
+                  </div>
 
-                <div>
                   <button className="btn btn-sm btn-outline" onClick={() => alert(`Hall Ticket Generated for ${data.student.name} (${data.student.admissionNumber}) for ${ex.title}. Room: Examination Hall A.`)}>
                     🖨️ Download Hall Ticket
                   </button>
                 </div>
+
+                {ex.syllabusNotes && (
+                  <div style={{fontSize:12.5,color:'#334155',background:'#f8fafc',padding:8,borderRadius:4,marginBottom:8}}>
+                    📖 <strong>Syllabus Coverage:</strong> {ex.syllabusNotes}
+                  </div>
+                )}
+
+                {/* Question Paper Preview */}
+                {(ex.questions && ex.questions.length > 0) && (
+                  <div style={{borderTop:'1px solid var(--border)',paddingTop:8}}>
+                    <strong style={{fontSize:12.5,color:'var(--primary)'}}>Sample / Assigned Question Paper ({ex.questions.length} Questions):</strong>
+                    <div style={{display:'grid',gap:6,marginTop:6}}>
+                      {ex.questions.map((q, qIdx) => (
+                        <div key={q.id || qIdx} style={{background:'#ffffff',border:'1px dashed var(--border)',padding:8,borderRadius:4,fontSize:12}}>
+                          <strong>Q{qIdx + 1}: {q.questionText}</strong> ({q.marks} Marks)
+                          {q.options && (
+                            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:4,marginTop:3,color:'var(--text-muted)'}}>
+                              <span>A) {q.options.A}</span>
+                              <span>B) {q.options.B}</span>
+                              <span>C) {q.options.C}</span>
+                              <span>D) {q.options.D}</span>
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -1825,7 +2121,7 @@ function StudentPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 6. PARENT PORTAL
+// 6. PARENT PORTAL (REAL-TIME ARRIVAL & PERFORMANCE)
 // ----------------------------------------------------
 function ParentPortal({ navigate, path }) {
   const [data, setData] = useState(null);
@@ -1859,13 +2155,21 @@ function ParentPortal({ navigate, path }) {
 
   return (
     <AppShell role="parent" title={`Parent Portal — Ward: ${data.activeChild.name}`} navigate={navigate} path={path}>
-      {/* Real-time Arrival Alert */}
-      <div className="alert alert-green" style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+      {/* Real-time Arrival Alert Banner */}
+      <div className={'alert ' + (checkin ? 'alert-green' : 'alert-amber')} style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:10}}>
         <div>
-          <strong>Arrival Notification: {data.activeChild.name}</strong>
-          <div style={{fontSize:12,marginTop:2}}>Checked in <strong>{checkin ? checkin.status.toUpperCase().replace('_', '-') : 'ON-TIME'}</strong> at {checkin ? checkin.checkinTime : '08:42 AM'} (Gate Kiosk 1).</div>
+          <strong>{checkin ? `Gate Kiosk Arrival: ${data.activeChild.name}` : `Arrival Status for ${data.activeChild.name}`}</strong>
+          <div style={{fontSize:12.5,marginTop:2}}>
+            {checkin ? (
+              <>Ward checked in <strong>{checkin.status === 'on_time' ? 'ON-TIME' : 'LATE'}</strong> at {checkin.checkinTime} via {checkin.gateLocation}.</>
+            ) : (
+              <>No arrival check-in logged yet for today at campus entrance.</>
+            )}
+          </div>
         </div>
-        <span className="badge badge-green">In-School</span>
+        <span className={'badge ' + (checkin ? 'badge-green' : 'badge-amber')}>
+          {checkin ? 'On Campus' : 'Awaiting Arrival'}
+        </span>
       </div>
 
       {/* 1. PARENT OVERVIEW */}
@@ -1877,8 +2181,12 @@ function ParentPortal({ navigate, path }) {
               <div className="value" style={{fontSize:20}}>{data.activeChild.name}</div>
             </div>
             <div className="stat-card">
-              <div className="label">Attendance</div>
+              <div className="label">Attendance Rate</div>
               <div className="value">{data.attendancePercentage}%</div>
+            </div>
+            <div className="stat-card">
+              <div className="label">Scheduled Examinations</div>
+              <div className="value" style={{color:'var(--primary)'}}>{data.exams ? data.exams.length : 2}</div>
             </div>
             <div className="stat-card">
               <div className="label">Fee Balance</div>
@@ -1943,7 +2251,7 @@ function ParentPortal({ navigate, path }) {
       {/* 4. RESULTS */}
       {path === '/parent/results' && (
         <div>
-          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Ward's Academic Performance</h2>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Ward's Academic Performance & Marksheet</h2>
           <div className="table-container">
             <table className="data-table">
               <thead>
@@ -1966,7 +2274,7 @@ function ParentPortal({ navigate, path }) {
       {/* 5. FEES */}
       {(path === '/parent/fees' || path === '/parent') && (
         <div className="card" style={{marginTop: path === '/parent' ? 20 : 0}}>
-          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Tuition Fees</h2>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Tuition Fees & Payments</h2>
           <div style={{background:'#f8fafc',padding:12,borderRadius:4,marginBottom:14,fontSize:13.5}}>
             <div style={{display:'flex',justifyContent:'space-between',marginBottom:4}}>
               <span>Annual Fee:</span>
@@ -1998,14 +2306,30 @@ function ParentPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 7. SUPER ADMIN PORTAL (WITH ALL DATA, WORKS & ATTENDANCE STATS)
+// 7. SUPER ADMIN PORTAL (FULL OVERSIGHT & CONTROL)
 // ----------------------------------------------------
 function SuperAdminPortal({ navigate, path }) {
   const [data, setData] = useState(null);
 
-  useEffect(() => {
-    api('/super-admin/dashboard').then(setData).catch(console.error);
-  }, []);
+  const load = async () => {
+    try {
+      const d = await api('/super-admin/dashboard');
+      setData(d);
+    } catch (e) { console.error(e); }
+  };
+
+  useEffect(() => { load(); }, []);
+
+  const handleLeaveDecision = async (leaveId, decision) => {
+    try {
+      const res = await api('/leave/decide', {
+        method: 'POST',
+        body: JSON.stringify({ leaveId, decision })
+      });
+      alert(res.message);
+      load();
+    } catch (e) { alert(e.message); }
+  };
 
   if (!data) return <AppShell role="super_admin" title="Super Admin Portal" navigate={navigate} path={path}><div style={{padding:32,textAlign:'center',color:'var(--text-muted)'}}>Loading platform data...</div></AppShell>;
 
@@ -2013,6 +2337,7 @@ function SuperAdminPortal({ navigate, path }) {
     '/super-admin': 'Global Governance & Live Telemetry',
     '/super-admin/works': 'School-Wide Academic Work & Task Submissions',
     '/super-admin/attendance': 'Live Attendance, Present & Absent Headcounts',
+    '/super-admin/leaves': 'Student Leave Approval & Decision Queue',
     '/super-admin/students': 'All 52 Students Master Roster',
     '/super-admin/teachers': 'All Faculty Roster & Check-Ins',
     '/super-admin/institutions': 'Registered Educational Institutions',
@@ -2063,23 +2388,49 @@ function SuperAdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 2. ACADEMIC WORKS & TASKS OVERSIGHT */}
-      {(path === '/super-admin/works' || path === '/super-admin') && (
+      {/* 2. LEAVE QUEUE */}
+      {(path === '/super-admin/leaves' || path === '/super-admin') && (
         <div style={{marginTop: path === '/super-admin' ? 20 : 0, marginBottom: 20}}>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>🏖️ Student Leave Approval & Oversight Queue</h2>
+          <div className="card">
+            {(!data.leaveApplications || data.leaveApplications.length === 0) ? (
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>No student leave applications on file.</p>
+            ) : (
+              <div style={{display:'grid',gap:10}}>
+                {data.leaveApplications.map(lv => (
+                  <div key={lv.id} style={{background:'#f8fafc',border:'1px solid var(--border)',padding:12,borderRadius:6,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:10}}>
+                    <div>
+                      <div style={{fontWeight:700,color:'#0f172a'}}>{lv.studentName} ({lv.classId}-{lv.sectionId})</div>
+                      <div style={{fontSize:13,color:'var(--primary)',fontWeight:600}}>{lv.leaveType}: {lv.startDate} to {lv.endDate}</div>
+                      <div style={{fontSize:12.5,color:'var(--text-muted)',marginTop:2}}>Reason: {lv.reason}</div>
+                    </div>
+                    <div style={{display:'flex',gap:6,alignItems:'center'}}>
+                      <span className={'badge ' + (lv.status === 'approved' ? 'badge-green' : lv.status === 'rejected' ? 'badge-red' : 'badge-amber')}>
+                        {lv.status.toUpperCase()}
+                      </span>
+                      {lv.status === 'pending_approval' && (
+                        <>
+                          <button className="btn btn-sm" onClick={() => handleLeaveDecision(lv.id, 'approved')}>✓ Approve</button>
+                          <button className="btn btn-sm btn-danger" onClick={() => handleLeaveDecision(lv.id, 'rejected')}>✕ Reject</button>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* 3. ACADEMIC WORKS & TASKS OVERSIGHT */}
+      {path === '/super-admin/works' && (
+        <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>📚 School-Wide Work & Task Submissions</h2>
           <div className="stat-grid" style={{marginBottom:14}}>
-            <div className="stat-card">
-              <div className="label">Active Day Tasks</div>
-              <div className="value">{wm.totalTasks} Tasks</div>
-            </div>
-            <div className="stat-card">
-              <div className="label">Works Completed (Done)</div>
-              <div className="value" style={{color:'var(--primary)'}}>{wm.totalSubmittedWorks}</div>
-            </div>
-            <div className="stat-card">
-              <div className="label">Works Pending</div>
-              <div className="value" style={{color:'var(--amber)'}}>{wm.totalPendingWorks}</div>
-            </div>
+            <div className="stat-card"><div className="label">Active Day Tasks</div><div className="value">{wm.totalTasks} Tasks</div></div>
+            <div className="stat-card"><div className="label">Works Completed (Done)</div><div className="value" style={{color:'var(--primary)'}}>{wm.totalSubmittedWorks}</div></div>
+            <div className="stat-card"><div className="label">Works Pending</div><div className="value" style={{color:'var(--amber)'}}>{wm.totalPendingWorks}</div></div>
           </div>
 
           <div className="table-container">
@@ -2103,7 +2454,7 @@ function SuperAdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 3. ATTENDANCE & HEADCOUNT */}
+      {/* 4. ATTENDANCE & HEADCOUNT */}
       {path === '/super-admin/attendance' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>📊 Attendance & Headcount Analytics</h2>
@@ -2135,7 +2486,7 @@ function SuperAdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 4. ALL 52 STUDENTS MASTER */}
+      {/* 5. ALL 52 STUDENTS MASTER */}
       {path === '/super-admin/students' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>🎓 All 52 Enrolled Students Master Roster</h2>
@@ -2161,7 +2512,7 @@ function SuperAdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 5. ALL TEACHERS */}
+      {/* 6. ALL TEACHERS */}
       {path === '/super-admin/teachers' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>👨‍🏫 All Faculty Members & Check-Ins</h2>
@@ -2189,7 +2540,7 @@ function SuperAdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 6. INSTITUTIONS */}
+      {/* 7. INSTITUTIONS */}
       {path === '/super-admin/institutions' && (
         <div className="card">
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Institutions Registry</h2>
@@ -2201,9 +2552,9 @@ function SuperAdminPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 7. AUDIT */}
-      {(path === '/super-admin/audit' || path === '/super-admin') && (
-        <div style={{marginTop: path === '/super-admin' ? 20 : 0}}>
+      {/* 8. AUDIT */}
+      {path === '/super-admin/audit' && (
+        <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Security & Action Audit Trail</h2>
           <div className="table-container">
             <table className="data-table">

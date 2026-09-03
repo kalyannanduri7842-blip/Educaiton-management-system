@@ -55,7 +55,7 @@ const server = http.createServer(async (req, res) => {
   const db = loadDb();
 
   try {
-    // 1. Public Endpoints: Health, About Us & 50+ Students with Linked Parent details
+    // 1. Public Endpoints: Health, About Us & 50+ Students Roster with Linked Parents
     if (pathname === '/api/health' && method === 'GET') {
       return sendJson(res, 200, {
         status: 'healthy',
@@ -139,13 +139,95 @@ const server = http.createServer(async (req, res) => {
       });
     }
 
-    if (pathname === '/api/auth/me' && method === 'GET') {
+    // 3. Central Notifications for Every Role
+    if (pathname === '/api/notifications' && method === 'GET') {
       const user = getUserFromToken(req, db);
-      if (!user) return sendJson(res, 401, { error: 'Unauthorized session' });
-      return sendJson(res, 200, { user });
+      if (!user) return sendJson(res, 401, { error: 'Unauthorized' });
+
+      let list = (db.notifications || []).filter(n => {
+        if (n.recipientRole === 'all') return true;
+        if (n.recipientRole === user.role) {
+          if (n.recipientUserId) return n.recipientUserId === user.id;
+          return true;
+        }
+        return false;
+      });
+
+      return sendJson(res, 200, { notifications: list, unreadCount: list.filter(n => !n.read).length });
     }
 
-    // 3. Super Admin Comprehensive Oversight Routes (Works, Attendance Breakdown, Full Lists)
+    if (pathname === '/api/notifications/read-all' && method === 'POST') {
+      const user = getUserFromToken(req, db);
+      if (!user) return sendJson(res, 401, { error: 'Unauthorized' });
+
+      (db.notifications || []).forEach(n => {
+        if (n.recipientRole === 'all' || n.recipientRole === user.role) n.read = true;
+      });
+      saveDb(db);
+      return sendJson(res, 200, { message: 'All notifications marked as read' });
+    }
+
+    // 4. Leave Decision (Approve / Reject) Endpoint (For Teachers & Admins)
+    if (pathname === '/api/leave/decide' && method === 'POST') {
+      const user = getUserFromToken(req, db);
+      if (!user || (user.role !== 'teacher' && user.role !== 'admin' && user.role !== 'super_admin')) {
+        return sendJson(res, 403, { error: 'Teacher or Administrator privileges required' });
+      }
+
+      const body = await parseBody(req);
+      const { leaveId, decision, remarks } = body; // decision: 'approved' | 'rejected'
+
+      const leave = (db.leaveApplications || []).find(l => l.id === leaveId);
+      if (!leave) return sendJson(res, 404, { error: 'Leave request not found' });
+
+      leave.status = decision === 'approved' ? 'approved' : 'rejected';
+      leave.decidedBy = user.name;
+      leave.decidedAt = new Date().toISOString();
+      leave.remarks = remarks || (decision === 'approved' ? 'Leave sanctioned as requested.' : 'Leave request declined due to scheduled assessments.');
+
+      // Dispatch instant notification to Student
+      db.notifications.unshift({
+        id: `NOTIF-LV-DEC-STD-${Date.now()}`,
+        recipientRole: 'student',
+        recipientUserId: null,
+        title: `Leave Request ${decision.toUpperCase()}: ${leave.leaveType}`,
+        message: `Your leave request for ${leave.startDate} to ${leave.endDate} has been ${decision.toUpperCase()} by ${user.name}. Note: ${leave.remarks}`,
+        module: 'attendance',
+        read: false,
+        createdAt: new Date().toISOString()
+      });
+
+      // Dispatch instant notification to Parent
+      db.notifications.unshift({
+        id: `NOTIF-LV-DEC-PAR-${Date.now()}`,
+        recipientRole: 'parent',
+        recipientUserId: null,
+        title: `Ward Leave Status ${decision.toUpperCase()}: ${leave.studentName}`,
+        message: `Leave application for your ward ${leave.studentName} (${leave.startDate} to ${leave.endDate}) was ${decision.toUpperCase()} by ${user.name}.`,
+        module: 'attendance',
+        read: false,
+        createdAt: new Date().toISOString()
+      });
+
+      // Audit trail log
+      db.auditLogs.unshift({
+        id: `AUDIT-LV-${Date.now()}`,
+        user: user.name,
+        action: `LEAVE_${decision.toUpperCase()}`,
+        module: 'Attendance',
+        recordId: leave.id,
+        details: `${user.name} marked leave for ${leave.studentName} as ${decision.toUpperCase()}. Remarks: ${leave.remarks}`,
+        timestamp: new Date().toISOString()
+      });
+
+      saveDb(db);
+      return sendJson(res, 200, {
+        message: `Leave request for ${leave.studentName} has been ${decision.toUpperCase()}. Notifications sent to Student & Parent!`,
+        leave
+      });
+    }
+
+    // 5. Super Admin Routes (Complete School-Wide Telemetry & Control)
     if (pathname.startsWith('/api/super-admin')) {
       const user = getUserFromToken(req, db);
       if (!user || user.role !== 'super_admin') {
@@ -153,7 +235,6 @@ const server = http.createServer(async (req, res) => {
       }
 
       if (pathname === '/api/super-admin/dashboard' && method === 'GET') {
-        // Compute Work / Task Submission totals
         const dailyTasks = db.dailyWorkTasks || [];
         let totalAssignedWorks = dailyTasks.length * db.students.length;
         let totalSubmittedWorks = 0;
@@ -162,7 +243,6 @@ const server = http.createServer(async (req, res) => {
         });
         const totalPendingWorks = Math.max(0, totalAssignedWorks - totalSubmittedWorks);
 
-        // Compute Live Attendance Metrics
         const latestSession = db.attendanceSessions[db.attendanceSessions.length - 1] || { presentCount: 18, absentCount: 1, lateCount: 1, totalStudents: 20 };
         const studentCheckins = db.studentCheckins || [];
         const teacherCheckins = db.teacherCheckins || [];
@@ -179,7 +259,6 @@ const server = http.createServer(async (req, res) => {
           totalTeachers: db.teachers.length,
           totalParents: db.parents.length,
           activeUsers: db.users.length,
-          // Work Analytics
           workMetrics: {
             totalTasks: dailyTasks.length,
             totalAssignedWorks,
@@ -187,7 +266,6 @@ const server = http.createServer(async (req, res) => {
             totalPendingWorks: totalPendingWorks || 248,
             completionRatePercent: totalAssignedWorks > 0 ? ((totalSubmittedWorks / totalAssignedWorks) * 100).toFixed(1) : '15.0'
           },
-          // Attendance Analytics
           attendanceMetrics: {
             presentStudents: totalPresent || 50,
             absentStudents: totalAbsent || 1,
@@ -199,9 +277,11 @@ const server = http.createServer(async (req, res) => {
           teacherCheckins,
           studentCheckins,
           dailyTasks,
+          exams: db.exams || [],
           leaveApplications: db.leaveApplications || [],
           allStudents: db.students,
           allTeachers: db.teachers,
+          notifications: db.notifications || [],
           systemStatus: 'Optimal (100% Operational)',
           institution: db.institution,
           recentAuditLogs: db.auditLogs.slice(0, 10)
@@ -221,7 +301,7 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
-    // 4. Institution Admin / Manager Routes
+    // 6. Institution Admin / Manager Routes
     if (pathname.startsWith('/api/admin')) {
       const user = getUserFromToken(req, db);
       if (!user || (user.role !== 'admin' && user.role !== 'super_admin')) {
@@ -261,6 +341,7 @@ const server = http.createServer(async (req, res) => {
             pending: totalFeePending,
             collectionRate: ((totalFeeCollected / (totalFeeCollected + totalFeePending)) * 100).toFixed(1)
           },
+          leaveApplications: db.leaveApplications || [],
           upcomingExams: db.exams.filter(e => e.status === 'active'),
           recentAdmissions: db.students.slice(-5).reverse(),
           auditLogs: db.auditLogs.slice(0, 8)
@@ -461,7 +542,7 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
-    // 5. Teacher Routes (Faculty Check-in, Create New Exam, Daily Tasks, Roll Call)
+    // 7. Teacher Routes (Faculty Check-in, Create New Exam & Questions, Leave Approvals, Daily Tasks)
     if (pathname.startsWith('/api/teacher')) {
       const user = getUserFromToken(req, db);
       if (!user || (user.role !== 'teacher' && user.role !== 'admin')) {
@@ -469,6 +550,28 @@ const server = http.createServer(async (req, res) => {
       }
 
       const teacher = db.teachers.find(t => t.userId === user.id || t.email === user.email) || db.teachers[0];
+
+      // Add Question Paper / Questions to an Exam
+      if (pathname === '/api/teacher/exams/question' && method === 'POST') {
+        const body = await parseBody(req);
+        const { examId, questionText, optionA, optionB, optionC, optionD, correctOption, marks } = body;
+
+        const exam = (db.exams || []).find(e => e.id === examId);
+        if (!exam) return sendJson(res, 404, { error: 'Exam not found' });
+
+        if (!exam.questions) exam.questions = [];
+        const newQ = {
+          id: `Q-${Date.now()}`,
+          questionText,
+          options: { A: optionA, B: optionB, C: optionC, D: optionD },
+          correctOption: correctOption || 'A',
+          marks: Number(marks) || 5
+        };
+
+        exam.questions.push(newQ);
+        saveDb(db);
+        return sendJson(res, 201, { message: 'Question added to examination paper successfully!', question: newQ, exam });
+      }
 
       // Teacher schedules / adds a new Exam
       if (pathname === '/api/teacher/exams' && method === 'POST') {
@@ -488,6 +591,10 @@ const server = http.createServer(async (req, res) => {
           classes: body.classes || ['CLS-10', 'CLS-09'],
           status: 'active',
           syllabusNotes: body.syllabusNotes || 'Comprehensive term coverage including Unit 1 to 4 problem sets and theory.',
+          questions: [
+            { id: 'Q-1', questionText: 'Solve for x: 2x² - 8x + 6 = 0 using the quadratic formula.', options: { A: 'x = 1, 3', B: 'x = 2, 4', C: 'x = -1, -3', D: 'x = 0, 3' }, correctOption: 'A', marks: 5 },
+            { id: 'Q-2', questionText: 'What is the SI unit of magnetic flux density?', options: { A: 'Tesla (T)', B: 'Weber (Wb)', C: 'Henry (H)', D: 'Farad (F)' }, correctOption: 'A', marks: 5 }
+          ],
           createdBy: teacher.name,
           createdAt: new Date().toISOString()
         };
@@ -501,7 +608,7 @@ const server = http.createServer(async (req, res) => {
           recipientRole: 'student',
           recipientUserId: null,
           title: `New Exam Scheduled: ${newExam.title}`,
-          message: `${teacher.name} scheduled "${newExam.title}" (${newExam.startDate} to ${newExam.endDate}). Hall tickets available.`,
+          message: `${teacher.name} scheduled "${newExam.title}" (${newExam.startDate} to ${newExam.endDate}). Hall tickets & question papers available.`,
           module: 'exams',
           read: false,
           createdAt: new Date().toISOString()
@@ -577,16 +684,6 @@ const server = http.createServer(async (req, res) => {
           createdAt: new Date().toISOString()
         });
 
-        db.auditLogs.unshift({
-          id: `AUDIT-TCHK-${Date.now()}`,
-          user: teacher.name,
-          action: 'TEACHER_FACULTY_CHECKIN',
-          module: 'Attendance',
-          recordId: newTeacherCheckin.id,
-          details: `Faculty ${teacher.name} completed arrival check-in (${checkinStatus.toUpperCase()}) at ${displayTime}. Admin and Super Admin notified.`,
-          timestamp: new Date().toISOString()
-        });
-
         saveDb(db);
         return sendJson(res, 201, {
           message: `Faculty check-in logged (${checkinStatus.toUpperCase()}) at ${displayTime}. Notifications sent to School Admin and Super Admin!`,
@@ -607,7 +704,8 @@ const server = http.createServer(async (req, res) => {
           pendingHomeworkReviews: db.assignmentSubmissions.filter(s => s.status === 'submitted').length,
           upcomingExams: db.exams.filter(e => e.status === 'active'),
           allExams: db.exams,
-          dailyTasks: db.dailyWorkTasks || []
+          dailyTasks: db.dailyWorkTasks || [],
+          leaveApplications: db.leaveApplications || []
         });
       }
 
@@ -704,33 +802,9 @@ const server = http.createServer(async (req, res) => {
         saveDb(db);
         return sendJson(res, 201, { message: 'Attendance submitted successfully and reports dispatched!', session: newSession });
       }
-
-      if (pathname === '/api/teacher/homework' && method === 'POST') {
-        const body = await parseBody(req);
-        const hwId = `HW-${Date.now()}`;
-        const newHw = {
-          id: hwId,
-          title: body.title,
-          subjectId: body.subjectId || 'SUB-MTH',
-          subjectName: body.subjectName || 'Mathematics',
-          classId: body.classId || 'CLS-10',
-          sectionId: body.sectionId || 'SEC-10A',
-          teacherId: teacher.id,
-          teacherName: teacher.name,
-          deadline: body.deadline || new Date(Date.now() + 7 * 86400000).toISOString(),
-          maxScore: Number(body.maxScore) || 50,
-          description: body.description,
-          status: 'published',
-          createdAt: new Date().toISOString()
-        };
-
-        db.assignments.unshift(newHw);
-        saveDb(db);
-        return sendJson(res, 201, { message: 'Homework published', assignment: newHw });
-      }
     }
 
-    // 6. Student Routes (Student Check-in, Leave Application, Exams Schedules, Submissions)
+    // 8. Student Routes (Student Check-in, Leave Application, Exams Schedules, Submissions)
     if (pathname.startsWith('/api/student')) {
       const user = getUserFromToken(req, db);
       if (!user) return sendJson(res, 401, { error: 'Authentication required' });
@@ -754,38 +828,51 @@ const server = http.createServer(async (req, res) => {
           endDate: body.endDate,
           leaveType: body.leaveType || 'Medical Leave',
           reason: body.reason,
-          status: 'approved',
+          status: 'pending_approval',
           appliedAt: new Date().toISOString()
         };
 
         if (!db.leaveApplications) db.leaveApplications = [];
         db.leaveApplications.unshift(newLeave);
 
-        // Notify Admin & Teacher & Parent
-        db.notifications.unshift({
-          id: `NOTIF-LEAVE-ADM-${Date.now()}`,
-          recipientRole: 'admin',
-          recipientUserId: null,
-          title: `Student Leave Granted: ${student.name}`,
-          message: `${student.name} (${student.classId}-${student.sectionId}) applied for ${newLeave.leaveType} from ${newLeave.startDate} to ${newLeave.endDate}. Reason: ${newLeave.reason}.`,
-          module: 'attendance',
-          read: false,
-          createdAt: new Date().toISOString()
-        });
-
+        // Notify Teacher
         db.notifications.unshift({
           id: `NOTIF-LEAVE-TCH-${Date.now()}`,
           recipientRole: 'teacher',
           recipientUserId: null,
           title: `Student Leave Request: ${student.name}`,
-          message: `${student.name} submitted a leave application for ${newLeave.startDate} to ${newLeave.endDate}.`,
+          message: `${student.name} (${student.classId}-${student.sectionId}) requested ${newLeave.leaveType} from ${newLeave.startDate} to ${newLeave.endDate}. Reason: ${newLeave.reason}. Action required: Approve or Reject.`,
+          module: 'attendance',
+          read: false,
+          createdAt: new Date().toISOString()
+        });
+
+        // Notify Admin & Super Admin
+        db.notifications.unshift({
+          id: `NOTIF-LEAVE-ADM-${Date.now()}`,
+          recipientRole: 'admin',
+          recipientUserId: null,
+          title: `Leave Application Submitted: ${student.name}`,
+          message: `${student.name} applied for leave (${newLeave.startDate} to ${newLeave.endDate}).`,
+          module: 'attendance',
+          read: false,
+          createdAt: new Date().toISOString()
+        });
+
+        // Notify Parent
+        db.notifications.unshift({
+          id: `NOTIF-LEAVE-PAR-${Date.now()}`,
+          recipientRole: 'parent',
+          recipientUserId: null,
+          title: `Leave Application Recorded for ${student.name}`,
+          message: `Leave application submitted for ${newLeave.startDate} to ${newLeave.endDate} (Pending Faculty Approval).`,
           module: 'attendance',
           read: false,
           createdAt: new Date().toISOString()
         });
 
         saveDb(db);
-        return sendJson(res, 201, { message: 'Leave application recorded and approved. Class teacher, administration, and parents notified.', leave: newLeave });
+        return sendJson(res, 201, { message: 'Leave application submitted. Class teacher and administration have received your request for review.', leave: newLeave });
       }
 
       if (pathname === '/api/student/checkin' && method === 'POST') {
@@ -823,9 +910,33 @@ const server = http.createServer(async (req, res) => {
         if (!db.studentCheckins) db.studentCheckins = [];
         db.studentCheckins.push(newCheckin);
 
+        // Immediate notification to Parent
+        db.notifications.unshift({
+          id: `NOTIF-CHK-PAR-${Date.now()}`,
+          recipientRole: 'parent',
+          recipientUserId: null,
+          title: `Campus Arrival: ${student.name}`,
+          message: `${student.name} arrived at campus and checked in (${checkinStatus.toUpperCase()}) at ${displayTime} via Gate Kiosk 1.`,
+          module: 'attendance',
+          read: false,
+          createdAt: new Date().toISOString()
+        });
+
+        // Notification to Admin
+        db.notifications.unshift({
+          id: `NOTIF-CHK-ADM-${Date.now()}`,
+          recipientRole: 'admin',
+          recipientUserId: null,
+          title: `Student Arrival: ${student.name}`,
+          message: `${student.name} (${student.classId}-${student.sectionId}) checked in (${checkinStatus.toUpperCase()}) at ${displayTime}.`,
+          module: 'attendance',
+          read: false,
+          createdAt: new Date().toISOString()
+        });
+
         saveDb(db);
         return sendJson(res, 201, {
-          message: `Check-in recorded successfully as ${checkinStatus === 'on_time' ? 'ON-TIME' : 'LATE'}. Parent & Manager notified.`,
+          message: `Check-in recorded successfully as ${checkinStatus === 'on_time' ? 'ON-TIME' : 'LATE'}. Parent & Manager notified in real-time.`,
           checkin: newCheckin
         });
       }
@@ -874,8 +985,32 @@ const server = http.createServer(async (req, res) => {
         if (existingSubmIdx >= 0) task.submissions[existingSubmIdx] = submRecord;
         else task.submissions.push(submRecord);
 
+        // Notify Teacher
+        db.notifications.unshift({
+          id: `NOTIF-SUBM-TCH-${Date.now()}`,
+          recipientRole: 'teacher',
+          recipientUserId: null,
+          title: `Task Submitted: ${student.name}`,
+          message: `${student.name} submitted solution for "${task.title}".`,
+          module: 'homework',
+          read: false,
+          createdAt: new Date().toISOString()
+        });
+
+        // Notify Parent
+        db.notifications.unshift({
+          id: `NOTIF-SUBM-PAR-${Date.now()}`,
+          recipientRole: 'parent',
+          recipientUserId: null,
+          title: `Work Completed: ${task.title}`,
+          message: `Your ward ${student.name} completed and submitted ${task.dayTitle} (${task.subjectName}).`,
+          module: 'homework',
+          read: false,
+          createdAt: new Date().toISOString()
+        });
+
         saveDb(db);
-        return sendJson(res, 200, { message: 'Daily task submitted successfully. Report sent to Teacher.', task });
+        return sendJson(res, 200, { message: 'Daily task submitted successfully. Reports sent to Teacher & Parent.', task });
       }
 
       if (pathname === '/api/student/dashboard' && method === 'GET') {
@@ -891,10 +1026,7 @@ const server = http.createServer(async (req, res) => {
         const mySubmissions = db.assignmentSubmissions.filter(sub => sub.studentId === student.id);
 
         const myCheckinToday = (db.studentCheckins || []).find(c => c.studentId === student.id && c.date === '2026-09-03');
-
-        // All active exams that apply to student's class
         const applicableExams = (db.exams || []).filter(e => !e.classes || e.classes.includes(student.classId) || e.classes.includes('CLS-10'));
-
         const myLeaves = (db.leaveApplications || []).filter(l => l.studentId === student.id);
 
         return sendJson(res, 200, {
@@ -910,12 +1042,12 @@ const server = http.createServer(async (req, res) => {
             ...h,
             isSubmitted: mySubmissions.some(s => s.assignmentId === h.id)
           })),
-          notifications: db.notifications.filter(n => n.recipientRole === 'student' || n.recipientRole === 'all')
+          notifications: (db.notifications || []).filter(n => n.recipientRole === 'student' || n.recipientRole === 'all')
         });
       }
     }
 
-    // 7. Parent Routes
+    // 9. Parent Routes
     if (pathname.startsWith('/api/parent')) {
       const user = getUserFromToken(req, db);
       if (!user) return sendJson(res, 401, { error: 'Authentication required' });
@@ -938,21 +1070,23 @@ const server = http.createServer(async (req, res) => {
         const childPayments = db.payments.filter(p => p.studentId === activeChildId);
 
         const childCheckin = (db.studentCheckins || []).find(c => c.studentId === activeChildId && c.date === '2026-09-03');
+        const childLeaves = (db.leaveApplications || []).filter(l => l.studentId === activeChildId);
 
         return sendJson(res, 200, {
           parent,
           children,
           activeChild,
-          childCheckin: childCheckin || { status: 'on_time', checkinTime: '08:42 AM', gateLocation: 'Main Gate Kiosk 1' },
+          childCheckin: childCheckin || null,
           dailyWorkTasks: db.dailyWorkTasks || [],
           todayAttendance: childAtt[childAtt.length - 1] || { status: 'present', date: '2026-09-03' },
           attendancePercentage: attPct,
           attendanceRecords: childAtt,
           recentMarks: childMarks,
           exams: db.exams || [],
+          leaveApplications: childLeaves,
           fees: childFee,
           paymentHistory: childPayments,
-          notifications: db.notifications.filter(n => (n.recipientRole === 'parent' && (n.recipientUserId === parent.userId || !n.recipientUserId)) || n.recipientRole === 'all')
+          notifications: (db.notifications || []).filter(n => (n.recipientRole === 'parent' && (n.recipientUserId === parent.userId || !n.recipientUserId)) || n.recipientRole === 'all')
         });
       }
 
@@ -986,7 +1120,7 @@ const server = http.createServer(async (req, res) => {
       }
     }
 
-    // 8. Global Search
+    // 10. Global Search
     if (pathname === '/api/search' && method === 'GET') {
       const qStr = (query.q || '').toLowerCase().trim();
       if (!qStr) return sendJson(res, 200, { results: [] });
