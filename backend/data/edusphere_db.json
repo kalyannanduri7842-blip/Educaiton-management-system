@@ -2789,6 +2789,48 @@
       "managerNotified": true,
       "parentNotified": true,
       "notifiedAt": "2026-09-03T09:14:22.000Z"
+    },
+    {
+      "id": "CHK-1788417928663-STD-007",
+      "studentId": "STD-007",
+      "studentName": "Aditya Nair",
+      "classId": "CLS-10",
+      "sectionId": "SEC-10A",
+      "date": "2026-09-03",
+      "checkinTime": "12:15 PM",
+      "status": "late",
+      "gateLocation": "Academic Main Entrance Kiosk 1",
+      "managerNotified": true,
+      "parentNotified": true,
+      "notifiedAt": "2026-09-03T06:45:28.663Z"
+    },
+    {
+      "id": "CHK-1788418356887-STD-040",
+      "studentId": "STD-040",
+      "studentName": "Shweta Kulkarni",
+      "classId": "CLS-09",
+      "sectionId": "SEC-09A",
+      "date": "2026-09-03",
+      "checkinTime": "12:22 PM",
+      "status": "late",
+      "gateLocation": "Academic Main Entrance Kiosk 1",
+      "managerNotified": true,
+      "parentNotified": true,
+      "notifiedAt": "2026-09-03T06:52:36.887Z"
+    },
+    {
+      "id": "CHK-1788418949668-STD-046",
+      "studentId": "STD-046",
+      "studentName": "Payal Das",
+      "classId": "CLS-09",
+      "sectionId": "SEC-09A",
+      "date": "2026-09-03",
+      "checkinTime": "12:32 PM",
+      "status": "late",
+      "gateLocation": "Academic Main Entrance Kiosk 1",
+      "managerNotified": true,
+      "parentNotified": true,
+      "notifiedAt": "2026-09-03T07:02:29.668Z"
     }
   ],
   "dailyWorkTasks": [
@@ -2823,6 +2865,24 @@
           "submittedAt": null,
           "score": null,
           "feedback": null
+        },
+        {
+          "studentId": "STD-007",
+          "studentName": "Aditya Nair",
+          "status": "submitted",
+          "submittedAt": "2026-09-03T06:45:41.378Z",
+          "content": "jbjbnjknkjninink",
+          "score": 24,
+          "feedback": "Submitted on time. Excellent analytical work."
+        },
+        {
+          "studentId": "STD-004",
+          "studentName": "Anjali Rao",
+          "status": "submitted",
+          "submittedAt": "2026-09-03T06:46:21.057Z",
+          "content": "bvhbjb n ",
+          "score": 24,
+          "feedback": "Submitted on time. Excellent analytical work."
         }
       ]
     },
@@ -2867,7 +2927,17 @@
       "title": "Day 3: Binary Search Tree Insertion & Traversal In Pseudo-code",
       "instructions": "Write preorder, inorder, and postorder traversal functions for a balanced BST with 10 nodes.",
       "maxScore": 25,
-      "submissions": []
+      "submissions": [
+        {
+          "studentId": "STD-001",
+          "studentName": "Rahul Sharma",
+          "status": "submitted",
+          "submittedAt": "2026-09-03T06:46:03.306Z",
+          "content": "jhjbjbn",
+          "score": 24,
+          "feedback": "Submitted on time. Excellent analytical work."
+        }
+      ]
     },
     {
       "id": "DAY-TASK-04",
@@ -2946,6 +3016,20 @@
       "presentCount": 18,
       "absentCount": 1,
       "lateCount": 1
+    },
+    {
+      "id": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "classId": "CLS-10",
+      "sectionId": "SEC-10A",
+      "subjectId": "SUB-MTH",
+      "period": "Period 1 (09:00 - 09:50)",
+      "teacherId": "TCH-01",
+      "recordedAt": "2026-09-03T06:46:45.202Z",
+      "totalStudents": 20,
+      "presentCount": 20,
+      "absentCount": 0,
+      "lateCount": 0
     }
   ],
   "attendanceRecords": [
@@ -3548,6 +3632,206 @@
       "rollNumber": "20",
       "status": "present",
       "remarks": "On-time"
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-001",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-001",
+      "studentName": "Rahul Sharma",
+      "rollNumber": "01",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-002",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-002",
+      "studentName": "Arjun Kumar",
+      "rollNumber": "02",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-003",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-003",
+      "studentName": "Priya Reddy",
+      "rollNumber": "03",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-004",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-004",
+      "studentName": "Anjali Rao",
+      "rollNumber": "04",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-005",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-005",
+      "studentName": "Rohan Verma",
+      "rollNumber": "05",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-006",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-006",
+      "studentName": "Sneha Patel",
+      "rollNumber": "06",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-007",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-007",
+      "studentName": "Aditya Nair",
+      "rollNumber": "07",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-008",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-008",
+      "studentName": "Pooja Iyer",
+      "rollNumber": "08",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-009",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-009",
+      "studentName": "Karthik Menon",
+      "rollNumber": "09",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-010",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-010",
+      "studentName": "Divya Gupta",
+      "rollNumber": "10",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-011",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-011",
+      "studentName": "Manish Singh",
+      "rollNumber": "11",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-012",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-012",
+      "studentName": "Neha Deshmukh",
+      "rollNumber": "12",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-013",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-013",
+      "studentName": "Varun Chopra",
+      "rollNumber": "13",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-014",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-014",
+      "studentName": "Shreya Joshi",
+      "rollNumber": "14",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-015",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-015",
+      "studentName": "Gaurav Bhat",
+      "rollNumber": "15",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-016",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-016",
+      "studentName": "Tanvi Kulkarni",
+      "rollNumber": "16",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-017",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-017",
+      "studentName": "Abhishek Mehta",
+      "rollNumber": "17",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-018",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-018",
+      "studentName": "Kavya Shetty",
+      "rollNumber": "18",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-019",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-019",
+      "studentName": "Siddharth Pillai",
+      "rollNumber": "19",
+      "status": "present",
+      "remarks": ""
+    },
+    {
+      "id": "ATT-REC-1788418005202-STD-020",
+      "sessionId": "ATT-SESS-1788418005202",
+      "date": "2026-09-03",
+      "studentId": "STD-020",
+      "studentName": "Nisha Saxena",
+      "rollNumber": "20",
+      "status": "present",
+      "remarks": ""
     }
   ],
   "assignments": [
@@ -3596,6 +3880,22 @@
     }
   ],
   "exams": [
+    {
+      "id": "EXAM-1788419345107",
+      "title": "STEM & Mathematics Term 2 Comprehensive Examination",
+      "term": "Term 2 Summative",
+      "academicYear": "2025-2026",
+      "startDate": "2026-10-15",
+      "endDate": "2026-10-22",
+      "classes": [
+        "CLS-10",
+        "CLS-09"
+      ],
+      "status": "active",
+      "syllabusNotes": "Units 1-8: Real Numbers, Coordinate Geometry, Trigonometry, and Probability.",
+      "createdBy": "Prof. Vikram Sen",
+      "createdAt": "2026-09-03T07:09:05.107Z"
+    },
     {
       "id": "EXAM-MID-2026",
       "title": "Mid-Term Academic Examination 2026",
@@ -6866,6 +7166,176 @@
   ],
   "notifications": [
     {
+      "id": "NOTIF-LEAVE-TCH-1788419698555",
+      "recipientRole": "teacher",
+      "recipientUserId": null,
+      "title": "Student Leave Request: Rahul Sharma",
+      "message": "Rahul Sharma submitted a leave application for 2026-09-10 to 2026-09-12.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:14:58.555Z"
+    },
+    {
+      "id": "NOTIF-LEAVE-ADM-1788419698555",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Student Leave Granted: Rahul Sharma",
+      "message": "Rahul Sharma (CLS-10-SEC-10A) applied for Medical Leave from 2026-09-10 to 2026-09-12. Reason: High fever and doctor-prescribed rest..",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:14:58.555Z"
+    },
+    {
+      "id": "NOTIF-EXM-PAR-1788419345107",
+      "recipientRole": "parent",
+      "recipientUserId": null,
+      "title": "Exam Notification: STEM & Mathematics Term 2 Comprehensive Examination",
+      "message": "Academic examination \"STEM & Mathematics Term 2 Comprehensive Examination\" is scheduled from 2026-10-15 to 2026-10-22.",
+      "module": "exams",
+      "read": false,
+      "createdAt": "2026-09-03T07:09:05.107Z"
+    },
+    {
+      "id": "NOTIF-EXM-1788419345107",
+      "recipientRole": "student",
+      "recipientUserId": null,
+      "title": "New Exam Scheduled: STEM & Mathematics Term 2 Comprehensive Examination",
+      "message": "Prof. Vikram Sen scheduled \"STEM & Mathematics Term 2 Comprehensive Examination\" (2026-10-15 to 2026-10-22). Hall tickets available.",
+      "module": "exams",
+      "read": false,
+      "createdAt": "2026-09-03T07:09:05.107Z"
+    },
+    {
+      "id": "NOTIF-CHK-MGR-1788418949669",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Student Check-In: Payal Das",
+      "message": "Payal Das (CLS-09-SEC-09A) checked in LATE at 12:32 PM.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:02:29.669Z"
+    },
+    {
+      "id": "NOTIF-CHK-PAR-1788418949668",
+      "recipientRole": "parent",
+      "recipientUserId": "USR-PAR-23",
+      "title": "Arrival Notification: Payal Das",
+      "message": "Payal Das checked in LATE at 12:32 PM on 2026-09-03 (Gate Kiosk 1).",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:02:29.669Z"
+    },
+    {
+      "id": "NOTIF-CHK-MGR-1788418356887",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Student Check-In: Shweta Kulkarni",
+      "message": "Shweta Kulkarni (CLS-09-SEC-09A) checked in LATE at 12:22 PM.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T06:52:36.887Z"
+    },
+    {
+      "id": "NOTIF-CHK-PAR-1788418356887",
+      "recipientRole": "parent",
+      "recipientUserId": "USR-PAR-20",
+      "title": "Arrival Notification: Shweta Kulkarni",
+      "message": "Shweta Kulkarni checked in LATE at 12:22 PM on 2026-09-03 (Gate Kiosk 1).",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T06:52:36.887Z"
+    },
+    {
+      "id": "NOTIF-MGR-ATT-1788418005202",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Daily Attendance Summary: Section SEC-10A",
+      "message": "Prof. Vikram Sen completed attendance for Section SEC-10A on 2026-09-03 (20 Present, 0 Absent, 0 Late).",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T06:46:45.202Z"
+    },
+    {
+      "id": "NOTIF-WRK-TCH-1788417981057",
+      "recipientRole": "teacher",
+      "recipientUserId": "USR-TCH-01",
+      "title": "Submission Received: Anjali Rao",
+      "message": "Anjali Rao has submitted Day 1 — Foundation & Analytical Problem Set (Mathematics) for your review.",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T06:46:21.057Z"
+    },
+    {
+      "id": "NOTIF-WRK-PAR-1788417981057",
+      "recipientRole": "parent",
+      "recipientUserId": "USR-PAR-02",
+      "title": "Task Submitted: Day 1 — Foundation & Analytical Problem Set",
+      "message": "Anjali Rao successfully submitted \"Day 1: Quadratic Equations & Parabolic Roots Analysis\" for Mathematics on time.",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T06:46:21.057Z"
+    },
+    {
+      "id": "NOTIF-WRK-TCH-1788417963306",
+      "recipientRole": "teacher",
+      "recipientUserId": "USR-TCH-07",
+      "title": "Submission Received: Rahul Sharma",
+      "message": "Rahul Sharma has submitted Day 3 — Computational Logic & Algorithm Design (Computer Science) for your review.",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T06:46:03.306Z"
+    },
+    {
+      "id": "NOTIF-WRK-PAR-1788417963306",
+      "recipientRole": "parent",
+      "recipientUserId": "USR-PAR-01",
+      "title": "Task Submitted: Day 3 — Computational Logic & Algorithm Design",
+      "message": "Rahul Sharma successfully submitted \"Day 3: Binary Search Tree Insertion & Traversal In Pseudo-code\" for Computer Science on time.",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T06:46:03.306Z"
+    },
+    {
+      "id": "NOTIF-WRK-TCH-1788417941378",
+      "recipientRole": "teacher",
+      "recipientUserId": "USR-TCH-01",
+      "title": "Submission Received: Aditya Nair",
+      "message": "Aditya Nair has submitted Day 1 — Foundation & Analytical Problem Set (Mathematics) for your review.",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T06:45:41.378Z"
+    },
+    {
+      "id": "NOTIF-WRK-PAR-1788417941378",
+      "recipientRole": "parent",
+      "recipientUserId": "USR-PAR-04",
+      "title": "Task Submitted: Day 1 — Foundation & Analytical Problem Set",
+      "message": "Aditya Nair successfully submitted \"Day 1: Quadratic Equations & Parabolic Roots Analysis\" for Mathematics on time.",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T06:45:41.378Z"
+    },
+    {
+      "id": "NOTIF-CHK-MGR-1788417928663",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Student Check-In: Aditya Nair",
+      "message": "Aditya Nair (CLS-10-SEC-10A) checked in LATE at 12:15 PM.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T06:45:28.663Z"
+    },
+    {
+      "id": "NOTIF-CHK-PAR-1788417928663",
+      "recipientRole": "parent",
+      "recipientUserId": "USR-PAR-04",
+      "title": "Arrival Notification: Aditya Nair",
+      "message": "Aditya Nair checked in LATE at 12:15 PM on 2026-09-03 (Gate Kiosk 1).",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T06:45:28.663Z"
+    },
+    {
       "id": "NOTIF-01",
       "recipientRole": "parent",
       "recipientUserId": "USR-PAR-01",
@@ -6898,6 +7368,42 @@
   ],
   "auditLogs": [
     {
+      "id": "AUDIT-CHK-1788418949669",
+      "user": "Payal Das",
+      "action": "STUDENT_CHECKIN_LOGGED",
+      "module": "Attendance",
+      "recordId": "CHK-1788418949668-STD-046",
+      "details": "Payal Das completed daily arrival check-in (LATE) at 12:32 PM. Parent & Manager notified.",
+      "timestamp": "2026-09-03T07:02:29.669Z"
+    },
+    {
+      "id": "AUDIT-CHK-1788418356887",
+      "user": "Shweta Kulkarni",
+      "action": "STUDENT_CHECKIN_LOGGED",
+      "module": "Attendance",
+      "recordId": "CHK-1788418356887-STD-040",
+      "details": "Shweta Kulkarni completed daily arrival check-in (LATE) at 12:22 PM. Parent & Manager notified.",
+      "timestamp": "2026-09-03T06:52:36.887Z"
+    },
+    {
+      "id": "AUDIT-1788418005202",
+      "user": "Prof. Vikram Sen",
+      "action": "ATTENDANCE_SUBMITTED",
+      "module": "Attendance",
+      "recordId": "ATT-SESS-1788418005202",
+      "details": "Marked attendance for Section SEC-10A on 2026-09-03 (20 Present, 0 Absent, 0 Late)",
+      "timestamp": "2026-09-03T06:46:45.202Z"
+    },
+    {
+      "id": "AUDIT-CHK-1788417928663",
+      "user": "Aditya Nair",
+      "action": "STUDENT_CHECKIN_LOGGED",
+      "module": "Attendance",
+      "recordId": "CHK-1788417928663-STD-007",
+      "details": "Aditya Nair completed daily arrival check-in (LATE) at 12:15 PM. Parent & Manager notified.",
+      "timestamp": "2026-09-03T06:45:28.663Z"
+    },
+    {
       "id": "AUDIT-001",
       "user": "Principal Sunita Deshmukh",
       "action": "ACADEMIC_YEAR_INITIALIZED",
@@ -6923,6 +7429,21 @@
       "recordId": "STD-001",
       "details": "Registered student Rahul Sharma to Grade 10-A with parent Ravi Sharma",
       "timestamp": "2026-06-05T11:30:00.000Z"
+    }
+  ],
+  "leaveApplications": [
+    {
+      "id": "LEAVE-1788419698555-STD-001",
+      "studentId": "STD-001",
+      "studentName": "Rahul Sharma",
+      "classId": "CLS-10",
+      "sectionId": "SEC-10A",
+      "startDate": "2026-09-10",
+      "endDate": "2026-09-12",
+      "leaveType": "Medical Leave",
+      "reason": "High fever and doctor-prescribed rest.",
+      "status": "approved",
+      "appliedAt": "2026-09-03T07:14:58.555Z"
     }
   ]
 }

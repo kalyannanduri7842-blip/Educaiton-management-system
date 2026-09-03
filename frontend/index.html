@@ -54,57 +54,89 @@
     }
 
     /* ========================================================= */
-    /* 🏛️ 3D FLOATING PENCIL DRAWING & WIREFRAME AMBIENT CANVAS  */
+    /* 🏛️ ENHANCED 3D FLOATING DRAFTING CANVAS & ROTATING SHAPES */
     /* ========================================================= */
     .pencil-3d-scene {
       position: fixed;
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      perspective: 1200px;
+      perspective: 1400px;
       overflow: hidden;
     }
 
+    /* 3D Perspective Plane */
     .pencil-grid-plane {
       position: absolute;
-      width: 200vw;
-      height: 200vh;
-      top: -50vh;
-      left: -50vw;
+      width: 240vw;
+      height: 240vh;
+      top: -70vh;
+      left: -70vw;
       background-image: 
-        linear-gradient(to right, rgba(15, 23, 42, 0.028) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(15, 23, 42, 0.028) 1px, transparent 1px);
-      background-size: 40px 40px;
-      transform: rotateX(60deg) rotateZ(-15deg);
+        linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      transform: rotateX(62deg) rotateZ(-18deg);
       transform-style: preserve-3d;
-      animation: planeDrift 40s linear infinite;
+      animation: planeDrift 45s linear infinite;
     }
     @keyframes planeDrift {
-      0% { transform: rotateX(60deg) rotateZ(-15deg) translateY(0); }
-      100% { transform: rotateX(60deg) rotateZ(-15deg) translateY(40px); }
+      0% { transform: rotateX(62deg) rotateZ(-18deg) translateY(0); }
+      100% { transform: rotateX(62deg) rotateZ(-18deg) translateY(44px); }
     }
 
+    /* 3D Floating Isometric Cube */
+    .iso-cube-container {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      transform-style: preserve-3d;
+      animation: spinCube3D 24s infinite linear;
+    }
+    .cube-pos-1 { top: 18%; right: 8%; }
+    .cube-pos-2 { bottom: 18%; left: 6%; animation-duration: 32s; animation-direction: reverse; }
+
+    @keyframes spinCube3D {
+      0% { transform: rotateX(25deg) rotateY(0deg) rotateZ(10deg); }
+      100% { transform: rotateX(25deg) rotateY(360deg) rotateZ(10deg); }
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      border: 1px dashed rgba(5, 150, 105, 0.28);
+      background: rgba(236, 253, 245, 0.08);
+    }
+    .face-front  { transform: translateZ(30px); }
+    .face-back   { transform: rotateY(180deg) translateZ(30px); }
+    .face-right  { transform: rotateY(90deg) translateZ(30px); }
+    .face-left   { transform: rotateY(-90deg) translateZ(30px); }
+    .face-top    { transform: rotateX(90deg) translateZ(30px); }
+    .face-bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+    /* Handcrafted 3D Pencil Sketch Figures */
     .floating-3d-sketch {
       position: absolute;
       transform-style: preserve-3d;
-      opacity: 0.75;
+      opacity: 0.72;
       animation: float3DSketch 18s ease-in-out infinite alternate;
     }
 
-    .sketch-1 { top: 12%; left: 4%; animation-duration: 20s; }
-    .sketch-2 { top: 38%; right: 5%; animation-duration: 24s; animation-delay: -6s; }
-    .sketch-3 { bottom: 15%; left: 8%; animation-duration: 22s; animation-delay: -10s; }
-    .sketch-4 { bottom: 25%; right: 12%; animation-duration: 26s; animation-delay: -14s; }
+    .sketch-1 { top: 10%; left: 3%; animation-duration: 20s; }
+    .sketch-2 { top: 40%; right: 4%; animation-duration: 26s; animation-delay: -6s; }
+    .sketch-3 { bottom: 14%; left: 10%; animation-duration: 22s; animation-delay: -10s; }
+    .sketch-4 { bottom: 22%; right: 14%; animation-duration: 28s; animation-delay: -14s; }
 
     @keyframes float3DSketch {
-      0% { transform: translate3d(0, 0, 0) rotateX(10deg) rotateY(-10deg) rotateZ(0deg); }
-      50% { transform: translate3d(20px, -24px, 40px) rotateX(-8deg) rotateY(12deg) rotateZ(4deg); }
-      100% { transform: translate3d(-15px, 20px, -20px) rotateX(12deg) rotateY(-8deg) rotateZ(-3deg); }
+      0% { transform: translate3d(0, 0, 0) rotateX(12deg) rotateY(-14deg) rotateZ(0deg); }
+      50% { transform: translate3d(24px, -30px, 45px) rotateX(-10deg) rotateY(16deg) rotateZ(5deg); }
+      100% { transform: translate3d(-18px, 24px, -25px) rotateX(14deg) rotateY(-10deg) rotateZ(-4deg); }
     }
 
     .edusphere-watermark-3d {
       position: absolute;
-      top: 22%;
+      top: 25%;
       left: 50%;
       transform: translate(-50%, -50%) rotateX(25deg) rotateY(-10deg);
       font-size: 130px;
@@ -114,14 +146,6 @@
       white-space: nowrap;
       user-select: none;
       pointer-events: none;
-    }
-
-    /* Handcrafted Pencil Sketch Border & Box Utility */
-    .sketch-box {
-      border: 1px dashed #cbd5e1;
-      background: #ffffff;
-      border-radius: var(--radius);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
     }
 
     /* Navigation Bar */
@@ -399,6 +423,25 @@
   <div class="pencil-3d-scene">
     <div class="pencil-grid-plane"></div>
     <div class="edusphere-watermark-3d">EduSphere</div>
+
+    <!-- 3D Rotating Isometric Wireframe Cubes -->
+    <div class="iso-cube-container cube-pos-1">
+      <div class="cube-face face-front"></div>
+      <div class="cube-face face-back"></div>
+      <div class="cube-face face-right"></div>
+      <div class="cube-face face-left"></div>
+      <div class="cube-face face-top"></div>
+      <div class="cube-face face-bottom"></div>
+    </div>
+
+    <div class="iso-cube-container cube-pos-2">
+      <div class="cube-face face-front"></div>
+      <div class="cube-face face-back"></div>
+      <div class="cube-face face-right"></div>
+      <div class="cube-face face-left"></div>
+      <div class="cube-face face-top"></div>
+      <div class="cube-face face-bottom"></div>
+    </div>
 
     <!-- Hand-drawn Pencil Drawing 1: Architectural Academy Tower -->
     <div class="floating-3d-sketch sketch-1">
