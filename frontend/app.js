@@ -93,13 +93,13 @@ function AppShell({ children, role, title, navigate, path }) {
     student: [
       ['/student', '🎓 Student Portal'],
       ['/student/daily-work', '📚 Day-by-Day Tasks'],
-      ['/student/homework', '📝 Homework Submissions'],
+      ['/student/homework', '📝 Homework & Projects'],
       ['/student/marks', '📊 Exam Results & GPA'],
       ['/student/attendance', '📅 Attendance Tracker']
     ],
     parent: [
       ['/parent', '👨‍👩‍👧 Child Overview & Alerts'],
-      ['/parent/daily-work', '📚 Daily Work & Submission Reports'],
+      ['/parent/daily-work', '📚 Daily Work & Reports'],
       ['/parent/attendance', '📅 Arrival & Attendance History'],
       ['/parent/results', '📊 Academic Performance'],
       ['/parent/fees', '💳 Fee Dues & Receipts']
@@ -142,7 +142,7 @@ function AppShell({ children, role, title, navigate, path }) {
             onClick={e => { e.preventDefault(); navigate('/'); }}
             style={{marginTop:24,borderTop:'1px solid var(--border)',paddingTop:16,color:'var(--text-muted)'}}
           >
-            ← Public Landing & About Us
+            ← Public Landing & Features
           </a>
         </nav>
       </aside>
@@ -150,11 +150,11 @@ function AppShell({ children, role, title, navigate, path }) {
       <div className="app-main">
         <header className="app-header">
           <div style={{display:'flex',alignItems:'center',gap:16,flex:1}}>
-            <h2 style={{fontSize:18,fontWeight:800,color:'#0f172a'}}>{title}</h2>
+            <h2 style={{fontSize:18,fontWeight:900,color:'#0f172a'}}>{title}</h2>
             <div style={{position:'relative',maxWidth:340,width:'100%'}}>
               <input
                 className="input"
-                style={{padding:'6px 14px',fontSize:13,background:'#f8fafc'}}
+                style={{padding:'7px 15px',fontSize:13,background:'#f8fafc'}}
                 placeholder="🔍 Global academic search..."
                 value={searchQuery}
                 onChange={e => handleSearch(e.target.value)}
@@ -175,7 +175,7 @@ function AppShell({ children, role, title, navigate, path }) {
 
           <div style={{display:'flex',alignItems:'center',gap:14}}>
             <div style={{textAlign:'right'}}>
-              <div style={{fontWeight:700,fontSize:13,color:'#0f172a'}}>{user ? user.name : 'Demo User'}</div>
+              <div style={{fontWeight:800,fontSize:13,color:'#0f172a'}}>{user ? user.name : 'Demo User'}</div>
               <div style={{fontSize:11,color:'var(--text-muted)'}}>{user ? user.email : ''}</div>
             </div>
             <button className="btn btn-sm btn-outline" onClick={() => { logout(); navigate('/login'); }}>
@@ -191,7 +191,7 @@ function AppShell({ children, role, title, navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 1. PUBLIC LANDING PAGE & ABOUT US
+// 1. PUBLIC LANDING PAGE (WITH WORKING ANCHOR SECTIONS)
 // ----------------------------------------------------
 function LandingPage({ navigate }) {
   const [about, setAbout] = useState(null);
@@ -220,58 +220,34 @@ function LandingPage({ navigate }) {
       </header>
 
       {/* Hero Section */}
-      <div className="container" style={{padding:'70px 28px 60px',textAlign:'center'}}>
-        <div style={{display:'inline-flex',alignItems:'center',gap:8,padding:'6px 16px',borderRadius:999,background:'#ecfdf5',border:'1px solid #a7f3d0',color:'#059669',fontSize:13,fontWeight:700,marginBottom:20}}>
-          ✨ Production-Grade Enterprise Education CRM & Academic Platform
+      <div className="container" style={{padding:'70px 32px 60px',textAlign:'center'}}>
+        <div style={{display:'inline-flex',alignItems:'center',gap:8,padding:'6px 18px',borderRadius:999,background:'#ecfdf5',border:'1px solid #a7f3d0',color:'#059669',fontSize:13,fontWeight:800,marginBottom:20}}>
+          ✨ Production-Grade Enterprise Education CRM & Academic Management Platform
         </div>
         
-        <h1 style={{fontSize:46,fontWeight:800,letterSpacing:'-1px',marginBottom:18,maxWidth:900,margin:'0 auto 18px',lineHeight:1.2,color:'#0f172a'}}>
-          Complete Student Lifecycle, Real-Time Arrival Check-In & Day-by-Day Academic Governance
+        <h1 style={{fontSize:48,fontWeight:900,letterSpacing:'-1px',marginBottom:18,maxWidth:920,margin:'0 auto 18px',lineHeight:1.18,color:'#0f172a'}}>
+          Complete Student Lifecycle, Faculty Check-In & Day-by-Day Academic Governance
         </h1>
 
-        <p style={{fontSize:16.5,color:'var(--text-muted)',maxWidth:780,margin:'0 auto 32px',lineHeight:1.6}}>
-          A unified, interconnected platform linking Super Admins, School Principals, Teachers, Students, and Parents with automated on-time arrival notifications, daily syllabus tasks, examination gradebooks, and instant tuition fee clearance.
+        <p style={{fontSize:17,color:'var(--text-muted)',maxWidth:800,margin:'0 auto 34px',lineHeight:1.6}}>
+          A unified, interconnected platform connecting Super Admins, School Principals, Teachers, 50+ Students, and Parents with automated on-time arrival notifications, daily syllabus tasks, examination gradebooks, and instant tuition fee clearance.
         </p>
 
-        <div style={{display:'flex',gap:14,justifyContent:'center',flexWrap:'wrap',marginBottom:56}}>
-          <button className="btn" style={{padding:'14px 28px',fontSize:15}} onClick={() => navigate('/login')}>
+        <div style={{display:'flex',gap:16,justifyContent:'center',flexWrap:'wrap',marginBottom:64}}>
+          <button className="btn" style={{padding:'14px 30px',fontSize:15}} onClick={() => navigate('/login')}>
             🚀 Open Role Portals (5 Dedicated Logins)
           </button>
-          <button className="btn btn-outline" style={{padding:'14px 28px',fontSize:15}} onClick={() => navigate('/admin')}>
+          <button className="btn btn-outline" style={{padding:'14px 30px',fontSize:15}} onClick={() => navigate('/admin')}>
             📊 View School Operations Center
           </button>
         </div>
 
-        {/* 4 Highlights Bar */}
-        <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(240px, 1fr))',gap:20,textAlign:'left',marginBottom:60}}>
-          <div className="stat-card">
-            <div style={{fontSize:24,marginBottom:6}}>🕒</div>
-            <div style={{fontWeight:800,fontSize:15,marginBottom:4,color:'#0f172a'}}>Student Arrival Check-In</div>
-            <p style={{fontSize:13,color:'var(--text-muted)'}}>On-time and late detection with instant automated notifications dispatched to Parents & School Managers.</p>
-          </div>
-          <div className="stat-card">
-            <div style={{fontSize:24,marginBottom:6}}>📚</div>
-            <div style={{fontWeight:800,fontSize:15,marginBottom:4,color:'#0f172a'}}>Day-by-Day Tasks & Submissions</div>
-            <p style={{fontSize:13,color:'var(--text-muted)'}}>Structured curriculum schedules from Day 1 to Day 5 with submission tracking, grading, and teacher reports.</p>
-          </div>
-          <div className="stat-card">
-            <div style={{fontSize:24,marginBottom:6}}>📝</div>
-            <div style={{fontWeight:800,fontSize:15,marginBottom:4,color:'#0f172a'}}>Automated Grade Calculation</div>
-            <p style={{fontSize:13,color:'var(--text-muted)'}}>0-100 score validation, division ranking (Distinction, First Division), and printable report cards.</p>
-          </div>
-          <div className="stat-card">
-            <div style={{fontSize:24,marginBottom:6}}>💳</div>
-            <div style={{fontWeight:800,fontSize:15,marginBottom:4,color:'#0f172a'}}>Tuition Fee Clearance</div>
-            <p style={{fontSize:13,color:'var(--text-muted)'}}>Transparent tuition breakdown, online fee payments simulation, and instant digital receipt generator.</p>
-          </div>
-        </div>
-
-        {/* ABOUT US SECTION */}
-        <div id="about-us" style={{background:'#ffffff',border:'1px solid var(--border)',borderRadius:16,padding:36,textAlign:'left',boxShadow:'var(--shadow-sm)',marginBottom:60}}>
+        {/* 1. ABOUT US & LEADERSHIP SECTION (#about-us) */}
+        <div id="about-us" style={{background:'#ffffff',border:'1px solid var(--border)',borderRadius:18,padding:40,textAlign:'left',boxShadow:'var(--shadow-sm)',marginBottom:64,scrollMarginTop:90}}>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:20,flexWrap:'wrap',gap:12}}>
             <div>
-              <span className="badge badge-green" style={{marginBottom:8}}>🏛️ Institutional Overview & Governance</span>
-              <h2 style={{fontSize:24,fontWeight:800,color:'#0f172a',marginTop:4}}>About Greenwood Global Academy</h2>
+              <span className="badge badge-green" style={{marginBottom:8}}>🏛️ Institutional Governance & Heritage</span>
+              <h2 style={{fontSize:26,fontWeight:900,color:'#0f172a',marginTop:4}}>About Greenwood Global Academy</h2>
             </div>
             <div style={{display:'flex',gap:8}}>
               <span className="badge badge-orange">CBSE Affiliated</span>
@@ -280,21 +256,113 @@ function LandingPage({ navigate }) {
             </div>
           </div>
 
-          <p style={{fontSize:14.5,color:'#334155',lineHeight:1.7,marginBottom:24}}>
+          <p style={{fontSize:15,color:'#334155',lineHeight:1.75,marginBottom:28}}>
             {about && about.aboutUs ? about.aboutUs.overview : 'Greenwood Global Academy is an internationally accredited premier K-12 institution delivering holistic academic excellence, cutting-edge STEM laboratories, interdisciplinary arts, and comprehensive digital student lifecycle governance.'}
           </p>
 
-          <h3 style={{fontSize:16,fontWeight:800,color:'#0f172a',marginBottom:16}}>Board of Academic Leadership & Administration</h3>
+          <h3 style={{fontSize:17,fontWeight:800,color:'#0f172a',marginBottom:16}}>Board of Academic Leadership & Administration</h3>
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(260px, 1fr))',gap:16}}>
             {(about && about.aboutUs && about.aboutUs.leadership ? about.aboutUs.leadership : [
               { name: 'Dr. Sunita Deshmukh', role: 'Principal & Head of School', qualification: 'Ph.D. in Education Leadership (Oxford)' },
               { name: 'Dr. Rajesh Varma', role: 'Academic Dean & Registrar', qualification: 'Ph.D. in Curriculum Architecture (IIT)' },
               { name: 'Prof. Vikram Sen', role: 'Head of Mathematics & STEM', qualification: 'M.Sc., B.Ed., 18 Years Faculty Experience' }
             ]).map((ldr, idx) => (
-              <div key={idx} style={{background:'#f8fafc',border:'1px solid var(--border)',borderRadius:12,padding:16}}>
+              <div key={idx} style={{background:'#f8fafc',border:'1px solid var(--border)',borderRadius:14,padding:18}}>
                 <div style={{fontWeight:800,fontSize:15,color:'#0f172a'}}>{ldr.name}</div>
-                <div style={{fontSize:12.5,color:'#059669',fontWeight:700,marginTop:2}}>{ldr.role}</div>
-                <div style={{fontSize:11.5,color:'var(--text-muted)',marginTop:4}}>{ldr.qualification}</div>
+                <div style={{fontSize:13,color:'#059669',fontWeight:800,marginTop:2}}>{ldr.role}</div>
+                <div style={{fontSize:12,color:'var(--text-muted)',marginTop:4}}>{ldr.qualification}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 2. PLATFORM FEATURES SECTION (#features) */}
+        <div id="features" style={{marginBottom:64,textAlign:'left',scrollMarginTop:90}}>
+          <div style={{textAlign:'center',marginBottom:32}}>
+            <span className="badge badge-green">⚡ Core Enterprise Modules</span>
+            <h2 style={{fontSize:26,fontWeight:900,color:'#0f172a',marginTop:6}}>Complete Student Lifecycle Management</h2>
+          </div>
+          <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(280px, 1fr))',gap:20}}>
+            <div className="stat-card">
+              <div style={{fontSize:26,marginBottom:6}}>🎓</div>
+              <div style={{fontWeight:800,fontSize:16,marginBottom:4,color:'#0f172a'}}>5-Step Admission Wizard</div>
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>Personal details, class/section assignment, roll number generation, and parent linkage.</p>
+            </div>
+            <div className="stat-card">
+              <div style={{fontSize:26,marginBottom:6}}>🕒</div>
+              <div style={{fontWeight:800,fontSize:16,marginBottom:4,color:'#0f172a'}}>Arrival Check-in Telemetry</div>
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>On-time & late detection with instant notifications dispatched to Parents & School Managers.</p>
+            </div>
+            <div className="stat-card">
+              <div style={{fontSize:26,marginBottom:6}}>📚</div>
+              <div style={{fontWeight:800,fontSize:16,marginBottom:4,color:'#0f172a'}}>Day-by-Day Syllabus Tasks</div>
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>Structured 5-day curriculum with student submission portal and faculty evaluation reports.</p>
+            </div>
+            <div className="stat-card">
+              <div style={{fontSize:26,marginBottom:6}}>📝</div>
+              <div style={{fontWeight:800,fontSize:16,marginBottom:4,color:'#0f172a'}}>0-100 Marksheet Grading</div>
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>Automated division rankings, GPA calculations, and printable official student report cards.</p>
+            </div>
+            <div className="stat-card">
+              <div style={{fontSize:26,marginBottom:6}}>💳</div>
+              <div style={{fontWeight:800,fontSize:16,marginBottom:4,color:'#0f172a'}}>Tuition Fee Accounting</div>
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>Fee structures, outstanding balance tracking, and simulated instant UPI payments.</p>
+            </div>
+            <div className="stat-card">
+              <div style={{fontSize:26,marginBottom:6}}>👨‍👩‍👧</div>
+              <div style={{fontWeight:800,fontSize:16,marginBottom:4,color:'#0f172a'}}>Parent Transparency Portal</div>
+              <p style={{fontSize:13,color:'var(--text-muted)'}}>Live morning attendance alerts, homework status tracking, and printable receipts.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. ARRIVAL CHECK-IN FLOW SECTION (#checkin-flow) */}
+        <div id="checkin-flow" style={{background:'#ffffff',border:'1px solid var(--border)',borderRadius:18,padding:40,textAlign:'left',boxShadow:'var(--shadow-sm)',marginBottom:64,scrollMarginTop:90}}>
+          <span className="badge badge-orange" style={{marginBottom:8}}>🕒 Real-Time Campus Gate Automation</span>
+          <h2 style={{fontSize:26,fontWeight:900,color:'#0f172a',marginTop:4,marginBottom:12}}>Student & Faculty Arrival Check-in Flow</h2>
+          <p style={{fontSize:14.5,color:'var(--text-muted)',marginBottom:24}}>
+            Upon arrival at campus kiosks, students and teachers log their arrival with 1-click tap. The platform computes punctuality and broadcasts live notifications across stakeholder channels.
+          </p>
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20}}>
+            <div style={{background:'#f8fafc',border:'1px solid var(--border)',borderRadius:12,padding:18}}>
+              <div style={{fontWeight:800,fontSize:14,color:'#059669',marginBottom:6}}>🎓 Student Check-In Event</div>
+              <p style={{fontSize:13,color:'#334155'}}><strong>Rahul Sharma (Grade 10-A)</strong> checked in <strong>ON-TIME</strong> at 08:42 AM.</p>
+              <div style={{marginTop:8,fontSize:12,color:'var(--text-muted)'}}>✓ Notification dispatched to Father Ravi Sharma & Principal Sunita Deshmukh</div>
+            </div>
+            <div style={{background:'#f8fafc',border:'1px solid var(--border)',borderRadius:12,padding:18}}>
+              <div style={{fontWeight:800,fontSize:14,color:'#d97706',marginBottom:6}}>👨‍🏫 Faculty Check-In Event</div>
+              <p style={{fontSize:13,color:'#334155'}}><strong>Prof. Vikram Sen (Mathematics)</strong> checked in <strong>ON-TIME</strong> at 08:15 AM.</p>
+              <div style={{marginTop:8,fontSize:12,color:'var(--text-muted)'}}>✓ Notification dispatched to School Manager & Super Admin Platform Telemetry</div>
+            </div>
+          </div>
+        </div>
+
+        {/* 4. DAY-BY-DAY TASKS SECTION (#daily-work) */}
+        <div id="daily-work" style={{marginBottom:64,textAlign:'left',scrollMarginTop:90}}>
+          <div style={{textAlign:'center',marginBottom:32}}>
+            <span className="badge badge-green">📚 Day-by-Day Syllabus Curriculum</span>
+            <h2 style={{fontSize:26,fontWeight:900,color:'#0f172a',marginTop:6}}>Structured Academic Progress & Submissions</h2>
+          </div>
+          <div style={{display:'grid',gap:16}}>
+            {[
+              { day: 'Day 1', sub: 'Mathematics', title: 'Quadratic Equations & Parabolic Roots Analysis', desc: 'Solve exercises 1.1 to 1.4. Derive discriminant roots and plot parabola vertices on graph sheets.' },
+              { day: 'Day 2', sub: 'Physics', title: 'Faraday Magnetic Flux & EMF Calculation Worksheet', desc: 'Analyze the 5 electromagnetic induction problem sets and submit step-by-step vector flux calculations.' },
+              { day: 'Day 3', sub: 'Computer Science', title: 'Binary Search Tree Insertion & Traversal In Pseudo-code', desc: 'Write preorder, inorder, and postorder traversal functions for a balanced BST with 10 nodes.' },
+              { day: 'Day 4', sub: 'English Literature', title: 'Analytical Essay on The Merchant of Venice Act IV', desc: 'Compose a 600-word critical evaluation on the themes of justice versus mercy.' },
+              { day: 'Day 5', sub: 'Chemistry', title: 'Acid-Base Titration Curves & pH Buffer Solutions', desc: 'Plot titration pH inflection curves and calculate dissociation constant Ka.' }
+            ].map((t, idx) => (
+              <div key={idx} style={{background:'#ffffff',border:'1px solid var(--border)',borderRadius:14,padding:20,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12,boxShadow:'var(--shadow-sm)'}}>
+                <div>
+                  <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:4}}>
+                    <span className="badge badge-green">{t.day}</span>
+                    <strong style={{color:'#059669',fontSize:13}}>{t.sub}</strong>
+                  </div>
+                  <div style={{fontWeight:800,fontSize:15,color:'#0f172a'}}>{t.title}</div>
+                  <div style={{fontSize:13,color:'var(--text-muted)',marginTop:2}}>{t.desc}</div>
+                </div>
+                <button className="btn btn-sm btn-outline" onClick={() => navigate('/login')}>
+                  View / Submit Task →
+                </button>
               </div>
             ))}
           </div>
@@ -302,14 +370,14 @@ function LandingPage({ navigate }) {
 
         {/* 5 User Gateways */}
         <div style={{textAlign:'center'}}>
-          <h2 style={{fontSize:24,fontWeight:800,color:'#0f172a',marginBottom:8}}>Dedicated Enterprise Role Portals</h2>
-          <p style={{fontSize:14,color:'var(--text-muted)',marginBottom:24}}>Each role has a distinct, tailored workspace with specific privileges and real-time data flows.</p>
+          <h2 style={{fontSize:26,fontWeight:900,color:'#0f172a',marginBottom:8}}>Dedicated Enterprise Role Portals</h2>
+          <p style={{fontSize:14.5,color:'var(--text-muted)',marginBottom:28}}>Select any of the 5 roles to access their dedicated workspace.</p>
           
           <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit, minmax(200px, 1fr))',gap:16}}>
             <button className="btn btn-outline" style={{padding:20,flexDirection:'column',gap:8,textAlign:'center'}} onClick={() => navigate('/login')}>
               <span style={{fontSize:28}}>🌐</span>
               <strong style={{color:'#0f172a'}}>Super Admin</strong>
-              <span style={{fontSize:12,color:'var(--text-muted)'}}>Platform Governance</span>
+              <span style={{fontSize:12,color:'var(--text-muted)'}}>Platform Telemetry</span>
             </button>
             <button className="btn btn-outline" style={{padding:20,flexDirection:'column',gap:8,textAlign:'center'}} onClick={() => navigate('/login')}>
               <span style={{fontSize:28}}>🏫</span>
@@ -319,11 +387,11 @@ function LandingPage({ navigate }) {
             <button className="btn btn-outline" style={{padding:20,flexDirection:'column',gap:8,textAlign:'center'}} onClick={() => navigate('/login')}>
               <span style={{fontSize:28}}>👨‍🏫</span>
               <strong style={{color:'#0f172a'}}>Teacher / Faculty</strong>
-              <span style={{fontSize:12,color:'var(--text-muted)'}}>Attendance & Grading</span>
+              <span style={{fontSize:12,color:'var(--text-muted)'}}>Tasks & Marks</span>
             </button>
             <button className="btn btn-outline" style={{padding:20,flexDirection:'column',gap:8,textAlign:'center'}} onClick={() => navigate('/login')}>
               <span style={{fontSize:28}}>🎓</span>
-              <strong style={{color:'#0f172a'}}>Student Portal</strong>
+              <strong style={{color:'#0f172a'}}>Student Portal (50+ Students)</strong>
               <span style={{fontSize:12,color:'var(--text-muted)'}}>Check-in & Tasks</span>
             </button>
             <button className="btn btn-outline" style={{padding:20,flexDirection:'column',gap:8,textAlign:'center'}} onClick={() => navigate('/login')}>
@@ -339,7 +407,7 @@ function LandingPage({ navigate }) {
 }
 
 // ----------------------------------------------------
-// 2. LOGIN PAGE
+// 2. LOGIN PAGE (WITH 50+ STUDENT QUICK SELECTOR)
 // ----------------------------------------------------
 function LoginPage({ navigate }) {
   const { login, user } = useAuth();
@@ -347,6 +415,18 @@ function LoginPage({ navigate }) {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [publicStudents, setPublicStudents] = useState([]);
+  const [selectedStudentEmail, setSelectedStudentEmail] = useState('');
+
+  useEffect(() => {
+    fetch(`${API_BASE}/public/students-list`)
+      .then(r => r.json())
+      .then(d => {
+        setPublicStudents(d.students || []);
+        if (d.students && d.students.length > 0) setSelectedStudentEmail(d.students[0].email);
+      })
+      .catch(console.error);
+  }, []);
 
   useEffect(() => {
     if (user) {
@@ -381,23 +461,24 @@ function LoginPage({ navigate }) {
   };
 
   return (
-    <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',padding:20,position:'relative',zIndex:1}}>
-      <div style={{maxWidth:520,width:'100%',background:'#ffffff',padding:36,borderRadius:16,border:'1px solid var(--border)',boxShadow:'var(--shadow-lg)'}}>
+    <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',padding:24,position:'relative',zIndex:1}}>
+      <div style={{maxWidth:560,width:'100%',background:'#ffffff',padding:36,borderRadius:18,border:'1px solid var(--border)',boxShadow:'var(--shadow-lg)'}}>
         <div style={{textAlign:'center',marginBottom:24}}>
           <div className="logo" style={{justifyContent:'center',fontSize:26,marginBottom:6}}><span>🎓</span> EduSphere</div>
-          <h2 style={{fontSize:20,fontWeight:800,color:'#0f172a'}}>Academic Single Sign-On Portal</h2>
-          <p style={{fontSize:13,color:'var(--text-muted)'}}>Select your role for 1-click instant login or enter credentials</p>
+          <h2 style={{fontSize:22,fontWeight:900,color:'#0f172a'}}>Academic Single Sign-On Portal</h2>
+          <p style={{fontSize:13.5,color:'var(--text-muted)'}}>1-Click Instant Demo Login or Select Any Student from Roster</p>
         </div>
 
-        <div style={{background:'#f8fafc',border:'1px solid var(--border)',borderRadius:12,padding:16,marginBottom:24}}>
-          <div style={{fontSize:11,fontWeight:800,color:'#059669',textTransform:'uppercase',letterSpacing:0.5,marginBottom:12,textAlign:'center'}}>
-            ⚡ 1-Click Fast Role Demonstrations
+        {/* 1-CLICK INSTANT DEMO ROLES */}
+        <div style={{background:'#f8fafc',border:'1px solid var(--border)',borderRadius:14,padding:18,marginBottom:24}}>
+          <div style={{fontSize:11.5,fontWeight:800,color:'#059669',textTransform:'uppercase',letterSpacing:0.5,marginBottom:12,textAlign:'center'}}>
+            ⚡ 1-Click Fast Role Sign-In
           </div>
           <div style={{display:'grid',gap:8}}>
             <button
               type="button"
               className="btn btn-sm"
-              style={{justifyContent:'space-between',padding:'10px 14px'}}
+              style={{justifyContent:'space-between',padding:'10px 16px'}}
               onClick={() => handleFastLogin('admin@edusphere.local', 'DemoOnly-Admin-2026!')}
             >
               <span>🏫 <strong>Institution Admin / Manager</strong> (Full Control)</span>
@@ -407,42 +488,59 @@ function LoginPage({ navigate }) {
             <button
               type="button"
               className="btn btn-sm btn-gold"
-              style={{justifyContent:'space-between',padding:'10px 14px'}}
+              style={{justifyContent:'space-between',padding:'10px 16px'}}
               onClick={() => handleFastLogin('teacher@edusphere.local', 'DemoOnly-Teacher-2026!')}
             >
-              <span>👨‍🏫 <strong>Teacher / Faculty</strong> (Tasks & Marks)</span>
+              <span>👨‍🏫 <strong>Teacher / Faculty (Prof. Vikram Sen)</strong></span>
               <span style={{fontSize:11,opacity:0.9}}>teacher@edusphere.local →</span>
             </button>
 
             <button
               type="button"
               className="btn btn-sm btn-outline"
-              style={{justifyContent:'space-between',padding:'10px 14px',borderColor:'#a7f3d0',color:'#059669'}}
-              onClick={() => handleFastLogin('student@edusphere.local', 'DemoOnly-Student-2026!')}
-            >
-              <span>🎓 <strong>Student (Rahul Sharma)</strong> (Check-in & Work)</span>
-              <span style={{fontSize:11,opacity:0.9}}>student@edusphere.local →</span>
-            </button>
-
-            <button
-              type="button"
-              className="btn btn-sm btn-outline"
-              style={{justifyContent:'space-between',padding:'10px 14px',borderColor:'#fde68a',color:'#d97706'}}
+              style={{justifyContent:'space-between',padding:'10px 16px',borderColor:'#fde68a',color:'#d97706'}}
               onClick={() => handleFastLogin('parent@edusphere.local', 'DemoOnly-Parent-2026!')}
             >
-              <span>👨‍👩‍👧 <strong>Parent (Ravi Sharma)</strong> (Child Tracking & Fees)</span>
+              <span>👨‍👩‍👧 <strong>Parent (Ravi Sharma)</strong> (Ward Tracking & Fees)</span>
               <span style={{fontSize:11,opacity:0.9}}>parent@edusphere.local →</span>
             </button>
 
             <button
               type="button"
               className="btn btn-sm btn-outline"
-              style={{justifyContent:'space-between',padding:'10px 14px'}}
+              style={{justifyContent:'space-between',padding:'10px 16px'}}
               onClick={() => handleFastLogin('superadmin@edusphere.local', 'DemoOnly-SuperAdmin-2026!')}
             >
-              <span>🌐 <strong>Super Admin</strong> (Platform Governance)</span>
+              <span>🌐 <strong>Super Admin</strong> (Platform Telemetry)</span>
               <span style={{fontSize:11,opacity:0.9}}>superadmin@edusphere.local →</span>
             </button>
+          </div>
+
+          {/* 30+ STUDENT SELECTOR */}
+          <div style={{marginTop:16,borderTop:'1px solid var(--border)',paddingTop:14}}>
+            <label style={{fontSize:12,fontWeight:800,color:'#059669',marginBottom:6}}>🎓 Login as ANY Student (52 Roster Students):</label>
+            <div style={{display:'flex',gap:8}}>
+              <select
+                className="input"
+                style={{fontSize:13,padding:'8px 12px'}}
+                value={selectedStudentEmail}
+                onChange={e => setSelectedStudentEmail(e.target.value)}
+              >
+                {publicStudents.map(st => (
+                  <option key={st.id} value={st.email}>
+                    {st.rollNumber}. {st.name} ({st.admissionNumber} — {st.classId}-{st.sectionId})
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                className="btn btn-sm"
+                style={{whiteSpace:'nowrap'}}
+                onClick={() => handleFastLogin(selectedStudentEmail, 'DemoOnly-Student-2026!')}
+              >
+                Sign In Student →
+              </button>
+            </div>
           </div>
         </div>
 
@@ -480,7 +578,6 @@ function AdminPortal({ navigate, path }) {
   const [examData, setExamData] = useState({ exams: [], marks: [] });
   const [loading, setLoading] = useState(true);
 
-  // Admission wizard
   const [showAddStudent, setShowAddStudent] = useState(false);
   const [admStep, setAdmStep] = useState(1);
   const [newStudent, setNewStudent] = useState({
@@ -506,7 +603,7 @@ function AdminPortal({ navigate, path }) {
       setStudents(dStud.students || []);
       setTeachers(dTch.teachers || []);
       setClassesData(dCls);
-      setCheckins(dChk.checkins || []);
+      setCheckins(dChk.studentCheckins || []);
       setAttendanceData(dAtt);
       setFeeData(dFee);
       setExamData(dExm);
@@ -534,7 +631,6 @@ function AdminPortal({ navigate, path }) {
 
   if (loading) return <AppShell role="admin" title="Operations Center" navigate={navigate} path={path}><div className="loading">Loading Institution Operations...</div></AppShell>;
 
-  // Sub-view title map
   const titles = {
     '/admin': 'Institution Operations Dashboard',
     '/admin/students': 'Student Admissions & Master Roster',
@@ -558,7 +654,7 @@ function AdminPortal({ navigate, path }) {
               <div className="value">{dashboardData ? dashboardData.totalStudents : 52}</div>
             </div>
             <div className="stat-card">
-              <div className="label">Today's Check-ins (On-time)</div>
+              <div className="label">Student Check-Ins (On-time)</div>
               <div className="value" style={{color:'#059669'}}>
                 {dashboardData && dashboardData.todayCheckins ? `${dashboardData.todayCheckins.onTime} / ${dashboardData.todayCheckins.total}` : '1 / 2'}
               </div>
@@ -722,7 +818,7 @@ function AdminPortal({ navigate, path }) {
       {/* 4. TEACHERS SUB-VIEW */}
       {path === '/admin/teachers' && (
         <div>
-          <h3 className="section-title">👨‍🏫 Faculty & Department Roster</h3>
+          <h3 className="section-title">👨‍🏫 Faculty & Department Allocation</h3>
           <table className="data-table">
             <thead>
               <tr><th>Employee ID</th><th>Faculty Name</th><th>Department</th><th>Assigned Sections</th><th>Qualification</th><th>Status</th></tr>
@@ -861,7 +957,7 @@ function AdminPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 4. TEACHER PORTAL (SUB-VIEWS WITH TASK CREATOR)
+// 4. TEACHER PORTAL (FACULTY CHECK-IN & TASKS MANAGER)
 // ----------------------------------------------------
 function TeacherPortal({ navigate, path }) {
   const [dash, setDash] = useState(null);
@@ -870,6 +966,7 @@ function TeacherPortal({ navigate, path }) {
   const [attDate, setAttDate] = useState('2026-09-03');
   const [attendanceSheet, setAttendanceSheet] = useState({});
   const [submitting, setSubmitting] = useState(false);
+  const [checkingIn, setCheckingIn] = useState(false);
 
   // New Day-by-Day Task Creator
   const [showNewTaskModal, setShowNewTaskModal] = useState(false);
@@ -910,6 +1007,16 @@ function TeacherPortal({ navigate, path }) {
   };
 
   useEffect(() => { load(); }, [selectedSection]);
+
+  const handleTeacherCheckin = async () => {
+    setCheckingIn(true);
+    try {
+      const res = await api('/teacher/checkin', { method: 'POST' });
+      alert(res.message);
+      load();
+    } catch (e) { alert(e.message); }
+    finally { setCheckingIn(false); }
+  };
 
   const submitAttendance = async () => {
     setSubmitting(true);
@@ -1005,8 +1112,27 @@ function TeacherPortal({ navigate, path }) {
     } catch (e) { alert(e.message); }
   };
 
+  const tchCheckin = dash && dash.checkinToday;
+
   return (
     <AppShell role="teacher" title="Teacher Classroom & Academic Hub" navigate={navigate} path={path}>
+      {/* Faculty Arrival Check-In Banner */}
+      <div style={{background: tchCheckin ? '#ecfdf5' : '#fffbeb',border:`1px solid ${tchCheckin ? '#a7f3d0' : '#fde68a'}`,borderRadius:14,padding:18,marginBottom:24,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12}}>
+        <div>
+          <div style={{fontWeight:800,fontSize:15,color: tchCheckin ? '#059669' : '#d97706'}}>
+            {tchCheckin ? `✅ Faculty Check-In Recorded (${tchCheckin.status.toUpperCase()}) at ${tchCheckin.checkinTime}` : '🕒 Daily Faculty Campus Arrival Check-In'}
+          </div>
+          <div style={{fontSize:12.5,color:'var(--text-muted)',marginTop:2}}>
+            {tchCheckin ? `Location: ${tchCheckin.gateLocation}. Notifications sent to School Principal & Super Admin.` : 'Record your morning campus arrival. Dispatches status to Admin & Super Admin.'}
+          </div>
+        </div>
+        {!tchCheckin && (
+          <button className="btn btn-sm btn-gold" onClick={handleTeacherCheckin} disabled={checkingIn}>
+            {checkingIn ? 'Logging Check-in...' : '🎯 Tap Faculty Campus Check-In'}
+          </button>
+        )}
+      </div>
+
       {/* 1. TEACHER OVERVIEW */}
       {path === '/teacher' && (
         <div>
@@ -1024,14 +1150,9 @@ function TeacherPortal({ navigate, path }) {
               <div className="value" style={{color:'#d97706'}}>{dash && dash.dailyTasks ? dash.dailyTasks.length : 5} Days</div>
             </div>
             <div className="stat-card">
-              <div className="label">Pending Homework Reviews</div>
+              <div className="label">Pending Reviews</div>
               <div className="value">{dash ? dash.pendingHomeworkReviews : 1}</div>
             </div>
-          </div>
-
-          <div style={{background:'#ffffff',padding:20,borderRadius:14,border:'1px solid var(--border)',marginBottom:24}}>
-            <h4 style={{fontSize:16,fontWeight:800,marginBottom:12,color:'#0f172a'}}>📅 Today's Teaching Schedule</h4>
-            <p style={{fontSize:13,color:'var(--text-muted)'}}>Period 1 (09:00 - 09:50): Grade 10-A Mathematics · Period 3 (11:00 - 11:50): Grade 10-B Mathematics</p>
           </div>
         </div>
       )}
@@ -1245,13 +1366,19 @@ function TeacherPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 5. STUDENT PORTAL (SUB-VIEWS)
+// 5. STUDENT PORTAL (CHECK-IN, DAY TASKS & ADD WORK)
 // ----------------------------------------------------
 function StudentPortal({ navigate, path }) {
   const [data, setData] = useState(null);
   const [checkingIn, setCheckingIn] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
   const [taskAnswer, setTaskAnswer] = useState('');
+
+  // Student Adds Own Homework / Project
+  const [showAddHwModal, setShowAddHwModal] = useState(false);
+  const [selfHwTitle, setSelfHwTitle] = useState('');
+  const [selfHwSubject, setSelfHwSubject] = useState('Computer Science');
+  const [selfHwContent, setSelfHwContent] = useState('');
 
   const load = async () => {
     try {
@@ -1285,32 +1412,52 @@ function StudentPortal({ navigate, path }) {
     } catch (e) { alert(e.message); }
   };
 
+  const handleCreateSelfHomework = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await api('/student/homework/create', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: selfHwTitle,
+          subjectName: selfHwSubject,
+          content: selfHwContent
+        })
+      });
+      alert(res.message);
+      setShowAddHwModal(false);
+      setSelfHwTitle('');
+      setSelfHwContent('');
+      load();
+    } catch (e) { alert(e.message); }
+  };
+
   if (!data) return <AppShell role="student" title="Student Portal" navigate={navigate} path={path}><div className="loading">Loading student profile...</div></AppShell>;
 
   const checkinInfo = data.checkinToday;
 
   return (
-    <AppShell role="student" title={`Student Portal — ${data.student.name} (${data.student.classId})`} navigate={navigate} path={path}>
+    <AppShell role="student" title={`Student Portal — ${data.student.name} (${data.student.admissionNumber})`} navigate={navigate} path={path}>
+      {/* Daily Arrival Check-in Banner */}
+      <div style={{background: checkinInfo ? '#ecfdf5' : '#fffbeb',border:`1px solid ${checkinInfo ? '#a7f3d0' : '#fde68a'}`,borderRadius:14,padding:18,marginBottom:24,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12}}>
+        <div>
+          <div style={{fontWeight:800,fontSize:15,color: checkinInfo ? '#059669' : '#d97706'}}>
+            {checkinInfo ? `✅ Checked In Today (${checkinInfo.status === 'on_time' ? 'ON-TIME' : 'LATE'}) at ${checkinInfo.checkinTime}` : '🕒 Daily School Arrival Check-in'}
+          </div>
+          <div style={{fontSize:12.5,color:'var(--text-muted)',marginTop:2}}>
+            {checkinInfo ? `Gate: ${checkinInfo.gateLocation}. Notifications sent to Parent & Manager.` : 'Tap the button upon entering the school campus gate.'}
+          </div>
+        </div>
+
+        {!checkinInfo && (
+          <button className="btn" onClick={handleStudentCheckin} disabled={checkingIn}>
+            {checkingIn ? 'Recording...' : '🎯 Tap Here to Check-In Now'}
+          </button>
+        )}
+      </div>
+
       {/* 1. STUDENT DASHBOARD OVERVIEW */}
       {path === '/student' && (
         <div>
-          <div style={{background: checkinInfo ? '#ecfdf5' : '#fffbeb',border:`1px solid ${checkinInfo ? '#a7f3d0' : '#fde68a'}`,borderRadius:14,padding:20,marginBottom:24,display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:14}}>
-            <div>
-              <div style={{fontWeight:800,fontSize:16,color: checkinInfo ? '#059669' : '#d97706'}}>
-                {checkinInfo ? `✅ Checked In for Today (${checkinInfo.status === 'on_time' ? 'ON-TIME' : 'LATE'})` : '🕒 Daily School Arrival Check-in'}
-              </div>
-              <div style={{fontSize:13,color:'var(--text-muted)',marginTop:2}}>
-                {checkinInfo ? `Recorded at ${checkinInfo.checkinTime} via ${checkinInfo.gateLocation}. Parent & Manager notified.` : 'Tap the check-in button upon arriving at the school campus kiosk.'}
-              </div>
-            </div>
-
-            {!checkinInfo && (
-              <button className="btn" onClick={handleStudentCheckin} disabled={checkingIn}>
-                {checkingIn ? 'Recording...' : '🎯 Tap Here to Check-In Now'}
-              </button>
-            )}
-          </div>
-
           <div className="stat-grid">
             <div className="stat-card">
               <div className="label">Overall Attendance</div>
@@ -1369,10 +1516,13 @@ function StudentPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 3. HOMEWORK SUB-VIEW */}
+      {/* 3. HOMEWORK & STUDENT PROJECT CREATOR SUB-VIEW */}
       {path === '/student/homework' && (
         <div style={{background:'#ffffff',padding:24,borderRadius:14,border:'1px solid var(--border)'}}>
-          <h3 className="section-title">📝 Assigned Homework & Projects</h3>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:16}}>
+            <h3 className="section-title" style={{margin:0}}>📝 Assigned Homework & Study Projects</h3>
+            <button className="btn btn-sm" onClick={() => setShowAddHwModal(true)}>+ Add Self-Study Project / Homework</button>
+          </div>
           {data.homework.map(h => (
             <div key={h.id} style={{background:'#f8fafc',padding:14,borderRadius:8,marginBottom:12,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
               <div>
@@ -1430,7 +1580,25 @@ function StudentPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* Task Submission Modal */}
+      {/* Student Add Homework Modal */}
+      {showAddHwModal && (
+        <div style={{position:'fixed',inset:0,background:'rgba(15, 23, 42, 0.45)',backdropFilter:'blur(4px)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:100}}>
+          <div style={{background:'#ffffff',padding:28,borderRadius:14,width:480,border:'1px solid var(--border)',boxShadow:'var(--shadow-lg)'}}>
+            <h3 className="section-title">Add Self-Study Homework / STEM Project</h3>
+            <form onSubmit={handleCreateSelfHomework}>
+              <div className="form-group"><label>Project / Task Title *</label><input className="input" required value={selfHwTitle} onChange={e => setSelfHwTitle(e.target.value)} placeholder="e.g. Binary Search Tree Visualizer Demo" /></div>
+              <div className="form-group"><label>Subject *</label><input className="input" required value={selfHwSubject} onChange={e => setSelfHwSubject(e.target.value)} /></div>
+              <div className="form-group"><label>Solution Text / Repository Link *</label><textarea className="input" rows={4} required value={selfHwContent} onChange={e => setSelfHwContent(e.target.value)} placeholder="Provide documentation, derivations or links..." /></div>
+              <div style={{display:'flex',gap:10,marginTop:20}}>
+                <button type="submit" className="btn" style={{flex:1}}>Submit Project to Faculty</button>
+                <button type="button" className="btn btn-outline" onClick={() => setShowAddHwModal(false)}>Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Daily Task Submission Modal */}
       {selectedTask && (
         <div style={{position:'fixed',inset:0,background:'rgba(15, 23, 42, 0.45)',backdropFilter:'blur(4px)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:100}}>
           <div style={{background:'#ffffff',padding:28,borderRadius:14,width:480,border:'1px solid var(--border)',boxShadow:'var(--shadow-lg)'}}>
@@ -1652,8 +1820,8 @@ function SuperAdminPortal({ navigate, path }) {
           <div className="value">{data.totalStudents}</div>
         </div>
         <div className="stat-card">
-          <div className="label">Active Faculty Members</div>
-          <div className="value">{data.totalTeachers}</div>
+          <div className="label">Faculty Check-Ins Today</div>
+          <div className="value" style={{color:'#059669'}}>{data.teacherCheckins ? data.teacherCheckins.length : 2}</div>
         </div>
         <div className="stat-card">
           <div className="label">System Telemetry</div>

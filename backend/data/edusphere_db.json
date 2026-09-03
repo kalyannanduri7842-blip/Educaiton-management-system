@@ -2733,6 +2733,34 @@
       "relationship": "Child"
     }
   ],
+  "teacherCheckins": [
+    {
+      "id": "TCHK-20260903-TCH-01",
+      "teacherId": "TCH-01",
+      "teacherName": "Prof. Vikram Sen",
+      "department": "Mathematics",
+      "date": "2026-09-03",
+      "checkinTime": "08:15:30",
+      "status": "on_time",
+      "gateLocation": "Faculty Administrative Gate 1",
+      "adminNotified": true,
+      "superAdminNotified": true,
+      "notifiedAt": "2026-09-03T08:15:31.000Z"
+    },
+    {
+      "id": "TCHK-20260903-TCH-02",
+      "teacherId": "TCH-02",
+      "teacherName": "Dr. Meera Nambiar",
+      "department": "Science",
+      "date": "2026-09-03",
+      "checkinTime": "08:22:10",
+      "status": "on_time",
+      "gateLocation": "Science Wing Faculty Entry",
+      "adminNotified": true,
+      "superAdminNotified": true,
+      "notifiedAt": "2026-09-03T08:22:12.000Z"
+    }
+  ],
   "studentCheckins": [
     {
       "id": "CHK-20260903-STD-001",
@@ -6422,7 +6450,7 @@
       "studentName": "Rahul Sharma",
       "amount": 57000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1788417039937",
+      "transactionRef": "TXN-EDU-1788417881183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1000",
       "status": "completed"
@@ -6434,7 +6462,7 @@
       "studentName": "Arjun Kumar",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1788330639937",
+      "transactionRef": "TXN-EDU-1788331481183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1001",
       "status": "completed"
@@ -6446,7 +6474,7 @@
       "studentName": "Priya Reddy",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1788244239937",
+      "transactionRef": "TXN-EDU-1788245081183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1002",
       "status": "completed"
@@ -6458,7 +6486,7 @@
       "studentName": "Anjali Rao",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1788157839937",
+      "transactionRef": "TXN-EDU-1788158681183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1003",
       "status": "completed"
@@ -6470,7 +6498,7 @@
       "studentName": "Rohan Verma",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1788071439937",
+      "transactionRef": "TXN-EDU-1788072281183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1004",
       "status": "completed"
@@ -6482,7 +6510,7 @@
       "studentName": "Sneha Patel",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787985039937",
+      "transactionRef": "TXN-EDU-1787985881183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1005",
       "status": "completed"
@@ -6494,7 +6522,7 @@
       "studentName": "Aditya Nair",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787898639937",
+      "transactionRef": "TXN-EDU-1787899481183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1006",
       "status": "completed"
@@ -6506,7 +6534,7 @@
       "studentName": "Pooja Iyer",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787812239937",
+      "transactionRef": "TXN-EDU-1787813081183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1007",
       "status": "completed"
@@ -6518,7 +6546,7 @@
       "studentName": "Karthik Menon",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787725839937",
+      "transactionRef": "TXN-EDU-1787726681183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1008",
       "status": "completed"
@@ -6530,7 +6558,7 @@
       "studentName": "Divya Gupta",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787639439937",
+      "transactionRef": "TXN-EDU-1787640281183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1009",
       "status": "completed"
@@ -6542,7 +6570,7 @@
       "studentName": "Manish Singh",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787553039938",
+      "transactionRef": "TXN-EDU-1787553881183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1010",
       "status": "completed"
@@ -6554,7 +6582,7 @@
       "studentName": "Neha Deshmukh",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787466639938",
+      "transactionRef": "TXN-EDU-1787467481183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1011",
       "status": "completed"
@@ -6566,7 +6594,7 @@
       "studentName": "Varun Chopra",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787380239938",
+      "transactionRef": "TXN-EDU-1787381081183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1012",
       "status": "completed"
@@ -6578,7 +6606,7 @@
       "studentName": "Shreya Joshi",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787293839938",
+      "transactionRef": "TXN-EDU-1787294681183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1013",
       "status": "completed"
@@ -6590,7 +6618,7 @@
       "studentName": "Gaurav Bhat",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787207439938",
+      "transactionRef": "TXN-EDU-1787208281183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1014",
       "status": "completed"
@@ -6602,7 +6630,7 @@
       "studentName": "Tanvi Kulkarni",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787121039938",
+      "transactionRef": "TXN-EDU-1787121881183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1015",
       "status": "completed"
@@ -6614,7 +6642,7 @@
       "studentName": "Abhishek Mehta",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1787034639938",
+      "transactionRef": "TXN-EDU-1787035481183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1016",
       "status": "completed"
@@ -6626,7 +6654,7 @@
       "studentName": "Kavya Shetty",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786948239938",
+      "transactionRef": "TXN-EDU-1786949081183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1017",
       "status": "completed"
@@ -6638,7 +6666,7 @@
       "studentName": "Siddharth Pillai",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786861839938",
+      "transactionRef": "TXN-EDU-1786862681183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1018",
       "status": "completed"
@@ -6650,7 +6678,7 @@
       "studentName": "Nisha Saxena",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786775439938",
+      "transactionRef": "TXN-EDU-1786776281183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1019",
       "status": "completed"
@@ -6662,7 +6690,7 @@
       "studentName": "Aakash Kapoor",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786689039938",
+      "transactionRef": "TXN-EDU-1786689881183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1020",
       "status": "completed"
@@ -6674,7 +6702,7 @@
       "studentName": "Rhea Das",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786602639938",
+      "transactionRef": "TXN-EDU-1786603481183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1021",
       "status": "completed"
@@ -6686,7 +6714,7 @@
       "studentName": "Naveen Sen",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786516239938",
+      "transactionRef": "TXN-EDU-1786517081183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1022",
       "status": "completed"
@@ -6698,7 +6726,7 @@
       "studentName": "Simran Dutta",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786429839938",
+      "transactionRef": "TXN-EDU-1786430681183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1023",
       "status": "completed"
@@ -6710,7 +6738,7 @@
       "studentName": "Kiran Sharma",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786343439938",
+      "transactionRef": "TXN-EDU-1786344281183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1024",
       "status": "completed"
@@ -6722,7 +6750,7 @@
       "studentName": "Deepika Kumar",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786257039938",
+      "transactionRef": "TXN-EDU-1786257881183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1025",
       "status": "completed"
@@ -6734,7 +6762,7 @@
       "studentName": "Akshay Reddy",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786170639938",
+      "transactionRef": "TXN-EDU-1786171481183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1026",
       "status": "completed"
@@ -6746,7 +6774,7 @@
       "studentName": "Megha Rao",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1786084239938",
+      "transactionRef": "TXN-EDU-1786085081183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1027",
       "status": "completed"
@@ -6758,7 +6786,7 @@
       "studentName": "Vivek Verma",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1785997839938",
+      "transactionRef": "TXN-EDU-1785998681183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1028",
       "status": "completed"
@@ -6770,7 +6798,7 @@
       "studentName": "Shruti Patel",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1785911439938",
+      "transactionRef": "TXN-EDU-1785912281183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1029",
       "status": "completed"
@@ -6782,7 +6810,7 @@
       "studentName": "Harsh Nair",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1785825039938",
+      "transactionRef": "TXN-EDU-1785825881183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1030",
       "status": "completed"
@@ -6794,7 +6822,7 @@
       "studentName": "Isha Iyer",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1785738639938",
+      "transactionRef": "TXN-EDU-1785739481183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1031",
       "status": "completed"
@@ -6806,7 +6834,7 @@
       "studentName": "Tushar Menon",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1785652239938",
+      "transactionRef": "TXN-EDU-1785653081183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1032",
       "status": "completed"
@@ -6818,7 +6846,7 @@
       "studentName": "Rupal Gupta",
       "amount": 65000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1785565839938",
+      "transactionRef": "TXN-EDU-1785566681183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1033",
       "status": "completed"
@@ -6830,7 +6858,7 @@
       "studentName": "Mohit Singh",
       "amount": 35000,
       "paymentMethod": "Simulated Online Banking / UPI Transfer",
-      "transactionRef": "TXN-EDU-1785479439938",
+      "transactionRef": "TXN-EDU-1785480281183",
       "paidAt": "2026-08-05T11:20:00.000Z",
       "receiptNumber": "RCP-2026-1034",
       "status": "completed"

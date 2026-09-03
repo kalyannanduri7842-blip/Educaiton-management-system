@@ -253,7 +253,37 @@ function seedDatabase() {
     });
   }
 
-  // Student Daily Check-ins (Real-time student arrival logging)
+  // Teacher Faculty Daily Check-ins
+  const teacherCheckins = [
+    {
+      id: 'TCHK-20260903-TCH-01',
+      teacherId: 'TCH-01',
+      teacherName: 'Prof. Vikram Sen',
+      department: 'Mathematics',
+      date: '2026-09-03',
+      checkinTime: '08:15:30',
+      status: 'on_time', // on_time (< 08:30 AM)
+      gateLocation: 'Faculty Administrative Gate 1',
+      adminNotified: true,
+      superAdminNotified: true,
+      notifiedAt: '2026-09-03T08:15:31.000Z'
+    },
+    {
+      id: 'TCHK-20260903-TCH-02',
+      teacherId: 'TCH-02',
+      teacherName: 'Dr. Meera Nambiar',
+      department: 'Science',
+      date: '2026-09-03',
+      checkinTime: '08:22:10',
+      status: 'on_time',
+      gateLocation: 'Science Wing Faculty Entry',
+      adminNotified: true,
+      superAdminNotified: true,
+      notifiedAt: '2026-09-03T08:22:12.000Z'
+    }
+  ];
+
+  // Student Daily Check-ins
   const studentCheckins = [
     {
       id: 'CHK-20260903-STD-001',
@@ -263,7 +293,7 @@ function seedDatabase() {
       sectionId: 'SEC-10A',
       date: '2026-09-03',
       checkinTime: '08:42:15',
-      status: 'on_time', // on_time (< 09:00 AM) or late (>= 09:00 AM)
+      status: 'on_time',
       gateLocation: 'Main Academic Gate Kiosk 1',
       managerNotified: true,
       parentNotified: true,
@@ -681,6 +711,7 @@ function seedDatabase() {
     students,
     parents,
     parentStudents,
+    teacherCheckins,
     studentCheckins,
     dailyWorkTasks,
     attendanceSessions,
@@ -706,6 +737,7 @@ function loadDb() {
   try {
     const raw = fs.readFileSync(DB_PATH, 'utf8');
     const parsed = JSON.parse(raw);
+    if (!parsed.teacherCheckins) parsed.teacherCheckins = [];
     if (!parsed.studentCheckins) parsed.studentCheckins = [];
     if (!parsed.dailyWorkTasks) parsed.dailyWorkTasks = [];
     return parsed;
