@@ -15,6 +15,17 @@ function seedDatabase() {
     email: 'contact@greenwood-academy.org',
     status: 'active',
     subscriptionPlan: 'Enterprise Academic Pro',
+    aboutUs: {
+      establishedYear: '2004',
+      motto: 'Empowering Inquiring Minds, Inspiring Lifelong Leadership',
+      overview: 'Greenwood Global Academy is an internationally accredited premier K-12 institution delivering holistic academic excellence, cutting-edge STEM laboratories, interdisciplinary arts, and comprehensive digital student lifecycle governance.',
+      leadership: [
+        { name: 'Dr. Sunita Deshmukh', role: 'Principal & Head of School', qualification: 'Ph.D. in Education Leadership (Oxford)' },
+        { name: 'Dr. Rajesh Varma', role: 'Academic Dean & Registrar', qualification: 'Ph.D. in Curriculum Architecture (IIT)' },
+        { name: 'Prof. Vikram Sen', role: 'Head of Mathematics & STEM', qualification: 'M.Sc., B.Ed., 18 Years Faculty Experience' }
+      ],
+      accreditations: ['Cambridge Assessment International Education', 'Central Board of Secondary Education (CBSE)', 'National Accreditation Board for Education (NABET)']
+    },
     createdAt: '2026-01-10T00:00:00.000Z'
   };
 
@@ -149,7 +160,7 @@ function seedDatabase() {
   const parents = [];
   const parentStudents = [];
 
-  // Seed Primary Demo Parent
+  // Primary Demo Parent
   parents.push({
     id: 'PAR-01',
     userId: 'USR-PAR-01',
@@ -202,7 +213,6 @@ function seedDatabase() {
       });
     }
 
-    // Parent association
     let parId;
     if (s === 1) {
       parId = 'PAR-01';
@@ -243,6 +253,153 @@ function seedDatabase() {
     });
   }
 
+  // Student Daily Check-ins (Real-time student arrival logging)
+  const studentCheckins = [
+    {
+      id: 'CHK-20260903-STD-001',
+      studentId: 'STD-001',
+      studentName: 'Rahul Sharma',
+      classId: 'CLS-10',
+      sectionId: 'SEC-10A',
+      date: '2026-09-03',
+      checkinTime: '08:42:15',
+      status: 'on_time', // on_time (< 09:00 AM) or late (>= 09:00 AM)
+      gateLocation: 'Main Academic Gate Kiosk 1',
+      managerNotified: true,
+      parentNotified: true,
+      notifiedAt: '2026-09-03T08:42:16.000Z'
+    },
+    {
+      id: 'CHK-20260903-STD-004',
+      studentId: 'STD-004',
+      studentName: 'Anjali Rao',
+      classId: 'CLS-10',
+      sectionId: 'SEC-10A',
+      date: '2026-09-03',
+      checkinTime: '09:14:20',
+      status: 'late',
+      gateLocation: 'South Gate Kiosk 2',
+      managerNotified: true,
+      parentNotified: true,
+      notifiedAt: '2026-09-03T09:14:22.000Z'
+    }
+  ];
+
+  // Day-by-Day Default Work / Curriculum Schedule
+  const dailyWorkTasks = [
+    {
+      id: 'DAY-TASK-01',
+      dayNumber: 1,
+      dayTitle: 'Day 1 — Foundation & Analytical Problem Set',
+      dateAssigned: '2026-09-01',
+      dueDate: '2026-09-02',
+      subjectId: 'SUB-MTH',
+      subjectName: 'Mathematics',
+      classId: 'CLS-10',
+      sectionId: 'SEC-10A',
+      teacherId: 'TCH-01',
+      teacherName: 'Prof. Vikram Sen',
+      title: 'Day 1: Quadratic Equations & Parabolic Roots Analysis',
+      instructions: 'Complete Problem Set 1.1 to 1.4. Derive discriminant roots and plot parabola vertices on graph sheets.',
+      maxScore: 25,
+      submissions: [
+        {
+          studentId: 'STD-001',
+          studentName: 'Rahul Sharma',
+          status: 'submitted',
+          submittedAt: '2026-09-01T17:30:00.000Z',
+          score: 24,
+          feedback: 'Excellent derivations and clean vertex plots.'
+        },
+        {
+          studentId: 'STD-002',
+          studentName: 'Arjun Kumar',
+          status: 'overdue',
+          submittedAt: null,
+          score: null,
+          feedback: null
+        }
+      ]
+    },
+    {
+      id: 'DAY-TASK-02',
+      dayNumber: 2,
+      dayTitle: 'Day 2 — Experimental Science & Laboratory Deduction',
+      dateAssigned: '2026-09-02',
+      dueDate: '2026-09-03',
+      subjectId: 'SUB-PHY',
+      subjectName: 'Physics',
+      classId: 'CLS-10',
+      sectionId: 'SEC-10A',
+      teacherId: 'TCH-02',
+      teacherName: 'Dr. Meera Nambiar',
+      title: 'Day 2: Faraday Magnetic Flux & EMF Calculation Worksheet',
+      instructions: 'Analyze the 5 electromagnetic induction problem sets and submit step-by-step vector flux calculations.',
+      maxScore: 25,
+      submissions: [
+        {
+          studentId: 'STD-001',
+          studentName: 'Rahul Sharma',
+          status: 'submitted',
+          submittedAt: '2026-09-02T18:15:00.000Z',
+          score: 25,
+          feedback: 'Outstanding electromagnetic flux derivations.'
+        }
+      ]
+    },
+    {
+      id: 'DAY-TASK-03',
+      dayNumber: 3,
+      dayTitle: 'Day 3 — Computational Logic & Algorithm Design',
+      dateAssigned: '2026-09-03',
+      dueDate: '2026-09-04',
+      subjectId: 'SUB-CSC',
+      subjectName: 'Computer Science',
+      classId: 'CLS-10',
+      sectionId: 'SEC-10A',
+      teacherId: 'TCH-07',
+      teacherName: 'Mr. David Chen',
+      title: 'Day 3: Binary Search Tree Insertion & Traversal In Pseudo-code',
+      instructions: 'Write preorder, inorder, and postorder traversal functions for a balanced BST with 10 nodes.',
+      maxScore: 25,
+      submissions: []
+    },
+    {
+      id: 'DAY-TASK-04',
+      dayNumber: 4,
+      dayTitle: 'Day 4 — Literary Analysis & Critical Synthesis',
+      dateAssigned: '2026-09-04',
+      dueDate: '2026-09-05',
+      subjectId: 'SUB-ENG',
+      subjectName: 'English Literature',
+      classId: 'CLS-10',
+      sectionId: 'SEC-10A',
+      teacherId: 'TCH-04',
+      teacherName: 'Ms. Ananya Roy',
+      title: 'Day 4: Analytical Essay on The Merchant of Venice Act IV',
+      instructions: 'Compose a 600-word critical evaluation on the themes of justice versus mercy.',
+      maxScore: 25,
+      submissions: []
+    },
+    {
+      id: 'DAY-TASK-05',
+      dayNumber: 5,
+      dayTitle: 'Day 5 — Chemical Bonding & Reaction Kinetics',
+      dateAssigned: '2026-09-05',
+      dueDate: '2026-09-06',
+      subjectId: 'SUB-CHM',
+      subjectName: 'Chemistry',
+      classId: 'CLS-10',
+      sectionId: 'SEC-10A',
+      teacherId: 'TCH-03',
+      teacherName: 'Mr. Robert Fernandes',
+      title: 'Day 5: Acid-Base Titration Curves & pH Buffer Solutions',
+      instructions: 'Plot titration pH inflection curves and calculate dissociation constant Ka.',
+      maxScore: 25,
+      submissions: []
+    }
+  ];
+
   // Attendance Sessions & Records
   const attendanceSessions = [];
   const attendanceRecords = [];
@@ -268,8 +425,8 @@ function seedDatabase() {
     const grade10AStudents = students.filter(st => st.sectionId === 'SEC-10A');
     grade10AStudents.forEach((st, idx) => {
       let status = 'present';
-      if (idx === 1 && dIdx === 2) status = 'absent'; // Arjun Kumar absent today
-      else if (idx === 3 && dIdx === 2) status = 'late'; // Anjali late
+      if (idx === 1 && dIdx === 2) status = 'absent';
+      else if (idx === 3 && dIdx === 2) status = 'late';
       else if (idx === 7 && dIdx === 0) status = 'absent';
 
       attendanceRecords.push({
@@ -360,7 +517,6 @@ function seedDatabase() {
   const marks = [];
   const g10Students = students.filter(st => st.classId === 'CLS-10');
   
-  // Seed Unit Test 1 Marks for all Grade 10 students
   g10Students.forEach((st, idx) => {
     const mathScore = Math.min(100, Math.max(55, 88 - (idx % 15) + (idx % 3) * 4));
     const phyScore = Math.min(100, Math.max(52, 84 - (idx % 12) + (idx % 4) * 3));
@@ -374,7 +530,7 @@ function seedDatabase() {
       { subjectId: 'SUB-ENG', subjectName: 'English Literature', score: engScore, max: 100 }
     ];
 
-    scores.forEach((sc, scIdx) => {
+    scores.forEach((sc) => {
       const gradeInfo = calculateGradeFromPercentage(sc.score);
       marks.push({
         id: `MRK-${st.id}-${sc.subjectId}-UNIT1`,
@@ -525,6 +681,8 @@ function seedDatabase() {
     students,
     parents,
     parentStudents,
+    studentCheckins,
+    dailyWorkTasks,
     attendanceSessions,
     attendanceRecords,
     assignments,
@@ -547,7 +705,10 @@ function loadDb() {
   }
   try {
     const raw = fs.readFileSync(DB_PATH, 'utf8');
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (!parsed.studentCheckins) parsed.studentCheckins = [];
+    if (!parsed.dailyWorkTasks) parsed.dailyWorkTasks = [];
+    return parsed;
   } catch (err) {
     const seeded = seedDatabase();
     saveDb(seeded);
