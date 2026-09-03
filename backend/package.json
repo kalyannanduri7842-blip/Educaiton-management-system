@@ -1,0 +1,11 @@
+{
+  "name": "edusphere-backend",
+  "version": "1.0.0",
+  "description": "EduSphere Core REST API Engine",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "seed": "node scripts/seed.js"
+  },
+  "private": true
+}

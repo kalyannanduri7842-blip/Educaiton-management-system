@@ -1,0 +1,23 @@
+# EduSphere — Relational Database Architecture
+
+## Relational Entities & Tables
+1. `institutions` (id, name, code, affiliation, status)
+2. `users` (id, name, email, password, role, institutionId)
+3. `classes` (id, name, code, academicYear)
+4. `sections` (id, classId, name, roomNumber, classTeacherId)
+5. `subjects` (id, code, name, credits, department)
+6. `teachers` (id, userId, name, email, employeeId, department, assignedSubjects, assignedSections)
+7. `students` (id, userId, admissionNumber, rollNumber, name, classId, sectionId, dateOfBirth, gender)
+8. `parents` (id, userId, name, relationship, phone, email, address, occupation)
+9. `parent_students` (id, parentId, studentId, relationship)
+10. `attendance_sessions` (id, date, classId, sectionId, subjectId, period, teacherId, recordedAt)
+11. `attendance_records` (id, sessionId, date, studentId, studentName, rollNumber, status, remarks)
+12. `assignments` (id, title, subjectId, classId, sectionId, teacherId, deadline, maxScore)
+13. `assignment_submissions` (id, assignmentId, studentId, submittedAt, content, score, feedback, status)
+14. `exams` (id, title, term, academicYear, startDate, endDate, status)
+15. `marks` (id, examId, studentId, subjectId, obtainedScore, maxScore, percentage, grade, status)
+16. `fee_structures` (id, name, classId, totalAmount, breakdown)
+17. `student_fees` (id, studentId, totalAmount, paidAmount, pendingAmount, status)
+18. `payments` (id, studentFeeId, studentId, amount, paymentMethod, transactionRef, receiptNumber)
+19. `notifications` (id, recipientRole, recipientUserId, title, message, module, read)
+20. `audit_logs` (id, user, action, module, recordId, details, timestamp)
