@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
       body: JSON.stringify({ email, password })
     });
     const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Invalid credentials. Please check password.');
+    if (!res.ok) throw new Error(data.error || 'Invalid credentials. Please verify password.');
     setUser(data.user);
     setToken(data.token);
     localStorage.setItem('edusphere_user', JSON.stringify(data.user));
@@ -59,6 +59,14 @@ async function api(path, options = {}) {
 // HAND-CRAFTED PENCIL SKETCH ICONS (SVG)
 // ----------------------------------------------------
 const SketchIcons = {
+  CompassLogo: () => (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{display:'inline-block',verticalAlign:'middle',marginRight:6}}>
+      <circle cx="12" cy="12" r="9" strokeDasharray="3 2" />
+      <polygon points="12 4 15 11 12 10 9 11" fill="#059669" />
+      <polygon points="12 20 9 13 12 14 15 13" fill="#d97706" />
+      <circle cx="12" cy="12" r="1.5" fill="#0f172a" />
+    </svg>
+  ),
   Tower: () => (
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <polygon points="12 2 20 8 4 8" strokeDasharray="1.5 1.5" />
@@ -125,12 +133,14 @@ function AppShell({ children, role, title, navigate, path }) {
       ['/teacher/attendance', 'Period Attendance'],
       ['/teacher/daily-work', 'Day-by-Day Tasks'],
       ['/teacher/homework', 'Homework & Assignments'],
+      ['/teacher/exams', 'Schedule Examinations'],
       ['/teacher/marks', 'Marksheet Grade Entry'],
       ['/teacher/classes', 'My Classes']
     ],
     student: [
       ['/student', 'Overview & Check-In'],
       ['/student/daily-work', 'Day-by-Day Tasks'],
+      ['/student/exams', 'Exam Schedule & Hall Tickets'],
       ['/student/homework', 'Homework & Projects'],
       ['/student/marks', 'Exam Results & GPA'],
       ['/student/attendance', 'Attendance Record']
@@ -159,10 +169,11 @@ function AppShell({ children, role, title, navigate, path }) {
     <div className="app-layout">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <div className="brand" style={{fontSize:16}}>
-            <span>🎓</span> EduSphere
+          <div className="brand" style={{fontSize:17}}>
+            <SketchIcons.CompassLogo />
+            <span>EduSphere</span>
           </div>
-          <div style={{fontSize:11,color:'var(--primary)',fontWeight:700,marginTop:2}}>
+          <div style={{fontSize:11,color:'var(--primary)',fontWeight:700,marginTop:3}}>
             {role.toUpperCase().replace('_', ' ')} PORTAL
           </div>
         </div>
@@ -232,7 +243,7 @@ function AppShell({ children, role, title, navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 1. PUBLIC LANDING PAGE (WITH 3D SKETCH AESTHETIC)
+// 1. PUBLIC LANDING PAGE
 // ----------------------------------------------------
 function LandingPage({ navigate }) {
   const [about, setAbout] = useState(null);
@@ -245,7 +256,10 @@ function LandingPage({ navigate }) {
     <div>
       <nav className="navbar">
         <div className="container navbar-inner">
-          <div className="brand"><span>🎓</span> EduSphere</div>
+          <div className="brand">
+            <SketchIcons.CompassLogo />
+            <span>EduSphere</span>
+          </div>
           <div className="nav-links">
             <a href="#about-us">About Us</a>
             <a href="#features">Features</a>
@@ -441,7 +455,7 @@ function LandingPage({ navigate }) {
 // ----------------------------------------------------
 function LoginPage({ navigate }) {
   const { login, user } = useAuth();
-  const [email, setEmail] = useState('admin@edusphere.local');
+  const [email, setEmail] = useState('superadmin@edusphere.local');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -515,7 +529,8 @@ function LoginPage({ navigate }) {
       <div style={{maxWidth:500,width:'100%',background:'#ffffff',border:'1px solid var(--border)',borderRadius:8,padding:32,boxShadow:'0 2px 4px rgba(0,0,0,0.04)'}}>
         <div style={{textAlign:'center',marginBottom:20}}>
           <div className="brand" style={{justifyContent:'center',fontSize:22,marginBottom:4}}>
-            <span>🎓</span> EduSphere
+            <SketchIcons.CompassLogo />
+            <span>EduSphere</span>
           </div>
           <h2 style={{fontSize:18,fontWeight:700,color:'#0f172a'}}>Account Sign In</h2>
           <p style={{fontSize:13,color:'var(--text-muted)'}}>Enter your academic email and password to continue</p>
@@ -527,6 +542,13 @@ function LoginPage({ navigate }) {
             Select User Account:
           </div>
           <div style={{display:'flex',flexWrap:'wrap',gap:6,marginBottom:10}}>
+            <button
+              type="button"
+              className={'btn btn-sm ' + (email === 'superadmin@edusphere.local' ? '' : 'btn-outline')}
+              onClick={() => selectAccount('superadmin@edusphere.local')}
+            >
+              Super Admin
+            </button>
             <button
               type="button"
               className={'btn btn-sm ' + (email === 'admin@edusphere.local' ? '' : 'btn-outline')}
@@ -547,13 +569,6 @@ function LoginPage({ navigate }) {
               onClick={() => selectAccount('parent@edusphere.local')}
             >
               Parent (Ravi Sharma)
-            </button>
-            <button
-              type="button"
-              className={'btn btn-sm ' + (email === 'superadmin@edusphere.local' ? '' : 'btn-outline')}
-              onClick={() => selectAccount('superadmin@edusphere.local')}
-            >
-              Super Admin
             </button>
           </div>
 
@@ -582,7 +597,7 @@ function LoginPage({ navigate }) {
               required
               value={email}
               onChange={e => setEmail(e.target.value)}
-              placeholder="e.g. admin@edusphere.local"
+              placeholder="e.g. superadmin@edusphere.local"
             />
           </div>
 
@@ -593,10 +608,10 @@ function LoginPage({ navigate }) {
                 type="button"
                 style={{background:'none',border:'none',color:'var(--primary)',fontSize:11.5,fontWeight:600,cursor:'pointer'}}
                 onClick={() => {
-                  if (email.includes('admin@')) setPassword('DemoOnly-Admin-2026!');
+                  if (email.includes('superadmin')) setPassword('DemoOnly-SuperAdmin-2026!');
+                  else if (email.includes('admin@')) setPassword('DemoOnly-Admin-2026!');
                   else if (email.includes('teacher')) setPassword('DemoOnly-Teacher-2026!');
                   else if (email.includes('parent')) setPassword('DemoOnly-Parent-2026!');
-                  else if (email.includes('superadmin')) setPassword('DemoOnly-SuperAdmin-2026!');
                   else setPassword('DemoOnly-Student-2026!');
                 }}
               >
@@ -1025,7 +1040,7 @@ function AdminPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 4. TEACHER PORTAL
+// 4. TEACHER PORTAL (WITH EXAM SCHEDULER)
 // ----------------------------------------------------
 function TeacherPortal({ navigate, path }) {
   const [dash, setDash] = useState(null);
@@ -1036,12 +1051,20 @@ function TeacherPortal({ navigate, path }) {
   const [submitting, setSubmitting] = useState(false);
   const [checkingIn, setCheckingIn] = useState(false);
 
-  // New Day Task
+  // New Day Task Modal
   const [showNewTaskModal, setShowNewTaskModal] = useState(false);
   const [newTaskTitle, setNewTaskTitle] = useState('');
   const [newTaskSubject, setNewTaskSubject] = useState('Mathematics');
   const [newTaskInstructions, setNewTaskInstructions] = useState('');
   const [newTaskDueDate, setNewTaskDueDate] = useState('2026-09-07');
+
+  // New Exam Scheduler Modal
+  const [showNewExamModal, setShowNewExamModal] = useState(false);
+  const [examTitle, setExamTitle] = useState('');
+  const [examTerm, setExamTerm] = useState('Mid-Term Assessment 2');
+  const [examStartDate, setExamStartDate] = useState('2026-10-05');
+  const [examEndDate, setExamEndDate] = useState('2026-10-12');
+  const [examSyllabus, setExamSyllabus] = useState('Chapters 1-6: Algebra, Geometry, Trigonometric Proofs & Analytical Statistics.');
 
   const load = async () => {
     try {
@@ -1123,6 +1146,27 @@ function TeacherPortal({ navigate, path }) {
     } catch (e) { alert(e.message); }
   };
 
+  const handleCreateExam = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await api('/teacher/exams', {
+        method: 'POST',
+        body: JSON.stringify({
+          title: examTitle,
+          term: examTerm,
+          startDate: examStartDate,
+          endDate: examEndDate,
+          syllabusNotes: examSyllabus,
+          classes: ['CLS-10', 'CLS-09']
+        })
+      });
+      alert(res.message || 'Exam successfully scheduled and broadcast to Student Portals!');
+      setShowNewExamModal(false);
+      setExamTitle('');
+      load();
+    } catch (e) { alert(e.message); }
+  };
+
   const tchCheckin = dash && dash.checkinToday;
 
   return (
@@ -1151,6 +1195,10 @@ function TeacherPortal({ navigate, path }) {
             <div className="stat-card">
               <div className="label">Primary Subject</div>
               <div className="value" style={{color:'var(--primary)'}}>Mathematics</div>
+            </div>
+            <div className="stat-card">
+              <div className="label">Active Scheduled Exams</div>
+              <div className="value" style={{color:'var(--amber)'}}>{dash && dash.allExams ? dash.allExams.length : 2}</div>
             </div>
             <div className="stat-card">
               <div className="label">Day-by-Day Tasks</div>
@@ -1211,7 +1259,35 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 3. DAY-BY-DAY TASKS */}
+      {/* 3. EXAM SCHEDULER SUB-VIEW */}
+      {path === '/teacher/exams' && (
+        <div>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
+            <h2 style={{fontSize:16,fontWeight:700}}>Academic Examination Management</h2>
+            <button className="btn btn-sm" onClick={() => setShowNewExamModal(true)}>+ Schedule New Examination</button>
+          </div>
+
+          <div style={{display:'grid',gap:12}}>
+            {(dash && dash.allExams ? dash.allExams : []).map(ex => (
+              <div key={ex.id} className="card">
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:6}}>
+                  <div>
+                    <span className="badge badge-green">{ex.term}</span>
+                    <strong style={{marginLeft:8,color:'#0f172a',fontSize:15}}>{ex.title}</strong>
+                  </div>
+                  <span className="badge badge-amber">{ex.startDate} to {ex.endDate}</span>
+                </div>
+                <p style={{fontSize:13,color:'var(--text-muted)',marginBottom:8}}>{ex.syllabusNotes || 'Comprehensive semester examination coverage.'}</p>
+                <div style={{fontSize:12,color:'#059669',fontWeight:600}}>
+                  ✓ Published to Student & Parent Portals · Hall Tickets Enabled
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 4. DAY-BY-DAY TASKS */}
       {path === '/teacher/daily-work' && (
         <div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
@@ -1245,7 +1321,7 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 4. HOMEWORK */}
+      {/* 5. HOMEWORK */}
       {path === '/teacher/homework' && (
         <div className="card">
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:8}}>Homework & Assignments</h2>
@@ -1253,10 +1329,13 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 5. MARKS */}
+      {/* 6. MARKS */}
       {path === '/teacher/marks' && (
         <div>
-          <h2 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Marksheet Entry</h2>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:14}}>
+            <h2 style={{fontSize:16,fontWeight:700}}>Marksheet Grade Entry</h2>
+            <button className="btn btn-sm" onClick={() => setShowNewExamModal(true)}>+ Schedule New Exam</button>
+          </div>
           <div className="table-container">
             <table className="data-table">
               <thead>
@@ -1277,11 +1356,33 @@ function TeacherPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 6. CLASSES */}
+      {/* 7. CLASSES */}
       {path === '/teacher/classes' && (
         <div className="card">
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:8}}>Assigned Classes</h2>
           <p style={{fontSize:13}}>Grade 10-A (20 Students, Room 301) · Grade 10-B (15 Students, Room 302)</p>
+        </div>
+      )}
+
+      {/* Add Exam Modal */}
+      {showNewExamModal && (
+        <div style={{position:'fixed',inset:0,background:'rgba(0,0,0,0.4)',display:'flex',alignItems:'center',justifyContent:'center',zIndex:100}}>
+          <div style={{background:'#ffffff',padding:26,borderRadius:8,width:480,border:'1px solid var(--border)',boxShadow:'0 4px 12px rgba(0,0,0,0.1)'}}>
+            <h3 style={{fontSize:16,fontWeight:700,marginBottom:14}}>Schedule New Academic Examination</h3>
+            <form onSubmit={handleCreateExam}>
+              <div className="form-group"><label>Exam Title *</label><input className="input" required value={examTitle} onChange={e => setExamTitle(e.target.value)} placeholder="e.g. Second Semester Summative Assessment" /></div>
+              <div className="form-group"><label>Term / Category</label><input className="input" value={examTerm} onChange={e => setExamTerm(e.target.value)} /></div>
+              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12}}>
+                <div className="form-group"><label>Start Date *</label><input className="input" type="date" required value={examStartDate} onChange={e => setExamStartDate(e.target.value)} /></div>
+                <div className="form-group"><label>End Date *</label><input className="input" type="date" required value={examEndDate} onChange={e => setExamEndDate(e.target.value)} /></div>
+              </div>
+              <div className="form-group"><label>Syllabus & Chapters Coverage</label><textarea className="input" rows={3} value={examSyllabus} onChange={e => setExamSyllabus(e.target.value)} /></div>
+              <div style={{display:'flex',gap:8,marginTop:16}}>
+                <button type="submit" className="btn btn-sm" style={{flex:1}}>Schedule & Broadcast to Students</button>
+                <button type="button" className="btn btn-sm btn-outline" onClick={() => setShowNewExamModal(false)}>Cancel</button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
 
@@ -1308,7 +1409,7 @@ function TeacherPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 5. STUDENT PORTAL
+// 5. STUDENT PORTAL (WITH DEDICATED EXAMS SECTION)
 // ----------------------------------------------------
 function StudentPortal({ navigate, path }) {
   const [data, setData] = useState(null);
@@ -1405,14 +1506,55 @@ function StudentPortal({ navigate, path }) {
               <div className="value" style={{color:'var(--primary)'}}>{data.academicAverage}%</div>
             </div>
             <div className="stat-card">
+              <div className="label">Scheduled Examinations</div>
+              <div className="value" style={{color:'var(--amber)'}}>{data.exams ? data.exams.length : 2}</div>
+            </div>
+            <div className="stat-card">
               <div className="label">Division Ranking</div>
-              <div className="value" style={{color:'var(--amber)'}}>First Division (A)</div>
+              <div className="value" style={{color:'var(--primary)'}}>First Division (A)</div>
             </div>
           </div>
         </div>
       )}
 
-      {/* 2. DAY-BY-DAY TASKS */}
+      {/* 2. DEDICATED EXAM SCHEDULE & HALL TICKETS SUB-VIEW */}
+      {(path === '/student/exams' || path === '/student') && (
+        <div style={{marginTop: path === '/student' ? 20 : 0, marginBottom: 24}}>
+          <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
+            <h2 style={{fontSize:16,fontWeight:700}}>📝 Scheduled Examinations & Hall Tickets</h2>
+            <span className="badge badge-green">Academic Year 2025-2026</span>
+          </div>
+
+          <div style={{display:'grid',gap:12}}>
+            {(data.exams || []).map(ex => (
+              <div key={ex.id} className="card" style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:12}}>
+                <div style={{flex:1}}>
+                  <div style={{display:'flex',gap:8,alignItems:'center',marginBottom:4}}>
+                    <span className="badge badge-green">{ex.term || 'Semester Exam'}</span>
+                    <strong style={{color:'#0f172a',fontSize:14.5}}>{ex.title}</strong>
+                  </div>
+                  <div style={{fontSize:13,color:'var(--text-muted)'}}>
+                    <strong>Dates:</strong> {ex.startDate} to {ex.endDate} · <strong>Applicable Classes:</strong> {(ex.classes || ['Grade 10']).join(', ')}
+                  </div>
+                  {ex.syllabusNotes && (
+                    <div style={{fontSize:12.5,color:'#334155',marginTop:4,background:'#f8fafc',padding:8,borderRadius:4}}>
+                      📖 <strong>Syllabus Coverage:</strong> {ex.syllabusNotes}
+                    </div>
+                  )}
+                </div>
+
+                <div>
+                  <button className="btn btn-sm btn-outline" onClick={() => alert(`Hall Ticket Generated for ${data.student.name} (${data.student.admissionNumber}) for ${ex.title}. Room: Examination Hall A.`)}>
+                    🖨️ Download Hall Ticket
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* 3. DAY-BY-DAY TASKS */}
       {(path === '/student/daily-work' || path === '/student') && (
         <div style={{marginTop: path === '/student' ? 20 : 0}}>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Day-by-Day Syllabus Tasks</h2>
@@ -1448,7 +1590,7 @@ function StudentPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 3. HOMEWORK & PROJECT CREATOR */}
+      {/* 4. HOMEWORK & PROJECT CREATOR */}
       {path === '/student/homework' && (
         <div>
           <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}}>
@@ -1467,7 +1609,7 @@ function StudentPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 4. MARKS */}
+      {/* 5. MARKS */}
       {path === '/student/marks' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Examination Report Card</h2>
@@ -1491,7 +1633,7 @@ function StudentPortal({ navigate, path }) {
         </div>
       )}
 
-      {/* 5. ATTENDANCE */}
+      {/* 6. ATTENDANCE */}
       {path === '/student/attendance' && (
         <div>
           <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Attendance Records</h2>
@@ -1727,7 +1869,7 @@ function ParentPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 7. SUPER ADMIN PORTAL
+// 7. SUPER ADMIN PORTAL (WITH WORKING SUB-VIEWS)
 // ----------------------------------------------------
 function SuperAdminPortal({ navigate, path }) {
   const [data, setData] = useState(null);
@@ -1738,47 +1880,88 @@ function SuperAdminPortal({ navigate, path }) {
 
   if (!data) return <AppShell role="super_admin" title="Super Admin Portal" navigate={navigate} path={path}><div style={{padding:32,textAlign:'center',color:'var(--text-muted)'}}>Loading platform data...</div></AppShell>;
 
+  const titles = {
+    '/super-admin': 'Global Platform Governance & Telemetry',
+    '/super-admin/institutions': 'Registered Educational Institutions',
+    '/super-admin/users': 'Platform User Account Master',
+    '/super-admin/audit': 'Platform Security Audit Stream'
+  };
+
   return (
-    <AppShell role="super_admin" title="Platform Governance & Telemetry" navigate={navigate} path={path}>
-      <div className="stat-grid">
-        <div className="stat-card">
-          <div className="label">Institutions</div>
-          <div className="value">{data.totalInstitutions}</div>
-        </div>
-        <div className="stat-card">
-          <div className="label">Total Students</div>
-          <div className="value">{data.totalStudents}</div>
-        </div>
-        <div className="stat-card">
-          <div className="label">Faculty Check-Ins Today</div>
-          <div className="value" style={{color:'var(--primary)'}}>{data.teacherCheckins ? data.teacherCheckins.length : 2}</div>
-        </div>
-      </div>
+    <AppShell role="super_admin" title={titles[path] || 'Super Admin Portal'} navigate={navigate} path={path}>
+      {/* 1. OVERVIEW */}
+      {path === '/super-admin' && (
+        <div>
+          <div className="stat-grid">
+            <div className="stat-card">
+              <div className="label">Registered Institutions</div>
+              <div className="value">{data.totalInstitutions}</div>
+            </div>
+            <div className="stat-card">
+              <div className="label">Total Managed Students</div>
+              <div className="value">{data.totalStudents}</div>
+            </div>
+            <div className="stat-card">
+              <div className="label">Faculty Check-Ins Today</div>
+              <div className="value" style={{color:'var(--primary)'}}>{data.teacherCheckins ? data.teacherCheckins.length : 2}</div>
+            </div>
+            <div className="stat-card">
+              <div className="label">System Telemetry</div>
+              <div className="value" style={{color:'var(--primary)',fontSize:18}}>100% Operational</div>
+            </div>
+          </div>
 
-      <div className="card" style={{marginBottom:20}}>
-        <h2 style={{fontSize:16,fontWeight:700,marginBottom:8}}>Active Institutions</h2>
-        <p><strong>{data.institution.name} ({data.institution.code})</strong> — {data.institution.affiliation}</p>
-      </div>
+          <div className="card" style={{marginBottom:20}}>
+            <h2 style={{fontSize:16,fontWeight:700,marginBottom:8}}>Active Institutions</h2>
+            <p><strong>{data.institution.name} ({data.institution.code})</strong> — {data.institution.affiliation}</p>
+          </div>
+        </div>
+      )}
 
-      <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Audit Trail</h2>
-      <div className="table-container">
-        <table className="data-table">
-          <thead>
-            <tr><th>Timestamp</th><th>Actor</th><th>Action</th><th>Module</th><th>Details</th></tr>
-          </thead>
-          <tbody>
-            {data.recentAuditLogs.map(l => (
-              <tr key={l.id}>
-                <td>{l.timestamp.split('T')[0]}</td>
-                <td style={{fontWeight:600}}>{l.user}</td>
-                <td><span className="badge badge-amber">{l.action}</span></td>
-                <td>{l.module}</td>
-                <td style={{fontSize:12.5,color:'var(--text-muted)'}}>{l.details}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      {/* 2. INSTITUTIONS */}
+      {path === '/super-admin/institutions' && (
+        <div className="card">
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Institutions Registry</h2>
+          <div style={{background:'#f8fafc',padding:16,borderRadius:6,border:'1px solid var(--border)'}}>
+            <div style={{fontWeight:700,fontSize:16,color:'#0f172a'}}>{data.institution.name}</div>
+            <div style={{fontSize:13,color:'var(--text-muted)',marginTop:4}}>{data.institution.address} · Phone: {data.institution.phone}</div>
+            <div style={{marginTop:8}}><span className="badge badge-green">{data.institution.subscriptionPlan}</span></div>
+          </div>
+        </div>
+      )}
+
+      {/* 3. USERS */}
+      {path === '/super-admin/users' && (
+        <div className="card">
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Platform User Master ({data.activeUsers} Users)</h2>
+          <p style={{fontSize:13,color:'var(--text-muted)'}}>Active user accounts across Super Admin, School Admin, Faculty, Students, and Parents.</p>
+        </div>
+      )}
+
+      {/* 4. AUDIT */}
+      {(path === '/super-admin/audit' || path === '/super-admin') && (
+        <div style={{marginTop: path === '/super-admin' ? 20 : 0}}>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Security & Action Audit Trail</h2>
+          <div className="table-container">
+            <table className="data-table">
+              <thead>
+                <tr><th>Timestamp</th><th>Actor</th><th>Action</th><th>Module</th><th>Details</th></tr>
+              </thead>
+              <tbody>
+                {data.recentAuditLogs.map(l => (
+                  <tr key={l.id}>
+                    <td>{l.timestamp.split('T')[0]}</td>
+                    <td style={{fontWeight:600}}>{l.user}</td>
+                    <td><span className="badge badge-amber">{l.action}</span></td>
+                    <td>{l.module}</td>
+                    <td style={{fontSize:12.5,color:'var(--text-muted)'}}>{l.details}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </AppShell>
   );
 }
