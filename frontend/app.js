@@ -534,7 +534,7 @@ function LandingPage({ navigate }) {
 }
 
 // ----------------------------------------------------
-// 2. SECURE LOGIN PAGE
+// 2. SECURE LOGIN PAGE (DYNAMIC LINKED STUDENT & PARENT DISPLAY)
 // ----------------------------------------------------
 function LoginPage({ navigate }) {
   const { login, user } = useAuth();
@@ -565,10 +565,11 @@ function LoginPage({ navigate }) {
     }
   }, [user]);
 
-  const selectAccount = (accEmail) => {
+  const selectAccount = (accEmail, defaultPwd) => {
     setError('');
     setEmail(accEmail);
-    setPassword('');
+    if (defaultPwd) setPassword(defaultPwd);
+    else setPassword('');
     const pInput = document.getElementById('password-input');
     if (pInput) pInput.focus();
   };
@@ -579,7 +580,7 @@ function LoginPage({ navigate }) {
     const found = publicStudents.find(s => s.id === sId);
     if (found) {
       setEmail(found.email);
-      setPassword('');
+      setPassword('DemoOnly-Student-2026!');
       const pInput = document.getElementById('password-input');
       if (pInput) pInput.focus();
     }
@@ -611,7 +612,7 @@ function LoginPage({ navigate }) {
 
   return (
     <div style={{minHeight:'100vh',display:'flex',alignItems:'center',justifyContent:'center',padding:20}}>
-      <div style={{maxWidth:520,width:'100%',background:'#ffffff',border:'1px solid var(--border)',borderRadius:8,padding:32,boxShadow:'0 2px 4px rgba(0,0,0,0.04)'}}>
+      <div style={{maxWidth:540,width:'100%',background:'#ffffff',border:'1px solid var(--border)',borderRadius:8,padding:32,boxShadow:'0 2px 4px rgba(0,0,0,0.04)'}}>
         <div style={{textAlign:'center',marginBottom:20}}>
           <div className="brand" style={{justifyContent:'center',fontSize:22,marginBottom:4}}>
             <SketchIcons.CompassLogo />
@@ -630,36 +631,29 @@ function LoginPage({ navigate }) {
             <button
               type="button"
               className={'btn btn-sm ' + (email === 'superadmin@edusphere.local' ? '' : 'btn-outline')}
-              onClick={() => selectAccount('superadmin@edusphere.local')}
+              onClick={() => selectAccount('superadmin@edusphere.local', 'DemoOnly-SuperAdmin-2026!')}
             >
               Super Admin
             </button>
             <button
               type="button"
               className={'btn btn-sm ' + (email === 'admin@edusphere.local' ? '' : 'btn-outline')}
-              onClick={() => selectAccount('admin@edusphere.local')}
+              onClick={() => selectAccount('admin@edusphere.local', 'DemoOnly-Admin-2026!')}
             >
               School Admin
             </button>
             <button
               type="button"
               className={'btn btn-sm ' + (email === 'teacher@edusphere.local' ? '' : 'btn-outline')}
-              onClick={() => selectAccount('teacher@edusphere.local')}
+              onClick={() => selectAccount('teacher@edusphere.local', 'DemoOnly-Teacher-2026!')}
             >
               Teacher (Prof. Sen)
-            </button>
-            <button
-              type="button"
-              className={'btn btn-sm ' + (email === 'parent@edusphere.local' ? '' : 'btn-outline')}
-              onClick={() => selectAccount('parent@edusphere.local')}
-            >
-              Parent (Ravi Sharma)
             </button>
           </div>
 
           <div style={{borderTop:'1px solid var(--border)',paddingTop:10}}>
             <label style={{fontSize:12,fontWeight:700,color:'#334155',display:'block',marginBottom:4}}>
-              Or Pick Student to Login or Switch to Linked Parent:
+              Pick Student to Switch Linked Student & Parent Profile:
             </label>
             <select className="input" style={{fontSize:12.5,padding:'6px 8px'}} value={selectedStudentId} onChange={handleStudentSelect}>
               {publicStudents.map(s => (
@@ -669,27 +663,36 @@ function LoginPage({ navigate }) {
               ))}
             </select>
 
-            {/* Linked Student & Father/Parent Profile Display */}
+            {/* Dynamic Linked Student & Specific Parent Card */}
             {currentSelectedStudent && (
-              <div style={{marginTop:10,background:'#ffffff',border:'1px solid var(--border)',borderRadius:6,padding:10,fontSize:12.5}}>
-                <div style={{display:'flex',justifyContent:'space-between',marginBottom:4}}>
-                  <span>🎓 <strong>Student:</strong> {currentSelectedStudent.name}</span>
+              <div style={{marginTop:10,background:'#ffffff',border:'1px solid var(--border)',borderRadius:6,padding:12,fontSize:12.5}}>
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:8,flexWrap:'wrap',gap:6}}>
+                  <div>
+                    <span style={{color:'var(--primary)',fontWeight:700}}>🎓 Student:</span> <strong>{currentSelectedStudent.name}</strong>
+                    <div style={{fontSize:11.5,color:'var(--text-muted)'}}>{currentSelectedStudent.email}</div>
+                  </div>
                   <button
                     type="button"
-                    style={{background:'none',border:'none',color:'var(--primary)',fontWeight:700,cursor:'pointer',fontSize:11.5}}
-                    onClick={() => selectAccount(currentSelectedStudent.email)}
+                    className="btn btn-sm"
+                    style={{padding:'4px 10px',fontSize:11.5}}
+                    onClick={() => selectAccount(currentSelectedStudent.email, 'DemoOnly-Student-2026!')}
                   >
-                    Select Student Login →
+                    Sign In as Student →
                   </button>
                 </div>
-                <div style={{display:'flex',justifyContent:'space-between',borderTop:'1px dashed var(--border)',paddingTop:4,marginTop:4}}>
-                  <span>👨‍👩‍👧 <strong>Father / Parent:</strong> {currentSelectedStudent.parentName} ({currentSelectedStudent.parentRelationship})</span>
+
+                <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',borderTop:'1px dashed var(--border)',paddingTop:8,flexWrap:'wrap',gap:6}}>
+                  <div>
+                    <span style={{color:'var(--amber)',fontWeight:700}}>👨‍👩‍👧 {currentSelectedStudent.parentRelationship || 'Father'}:</span> <strong>{currentSelectedStudent.parentName}</strong>
+                    <div style={{fontSize:11.5,color:'var(--text-muted)'}}>{currentSelectedStudent.parentEmail}</div>
+                  </div>
                   <button
                     type="button"
-                    style={{background:'none',border:'none',color:'var(--amber)',fontWeight:700,cursor:'pointer',fontSize:11.5}}
-                    onClick={() => selectAccount(currentSelectedStudent.parentEmail)}
+                    className="btn btn-sm btn-amber"
+                    style={{padding:'4px 10px',fontSize:11.5}}
+                    onClick={() => selectAccount(currentSelectedStudent.parentEmail, 'DemoOnly-Parent-2026!')}
                   >
-                    Select Parent Login →
+                    Sign In as Parent ({currentSelectedStudent.parentName.split(' ')[0]}) →
                   </button>
                 </div>
               </div>
@@ -741,7 +744,7 @@ function LoginPage({ navigate }) {
           </div>
 
           <button className="btn" type="submit" style={{width:'100%',padding:10,marginTop:6}} disabled={loading}>
-            {loading ? 'Verifying Credentials...' : 'Sign In'}
+            {loading ? 'Verifying Credentials...' : `Sign In to Portal`}
           </button>
         </form>
 
@@ -2121,7 +2124,7 @@ function StudentPortal({ navigate, path }) {
 }
 
 // ----------------------------------------------------
-// 6. PARENT PORTAL (REAL-TIME ARRIVAL & PERFORMANCE)
+// 6. PARENT PORTAL (DYNAMIC PARENT & WARD MONITORING)
 // ----------------------------------------------------
 function ParentPortal({ navigate, path }) {
   const [data, setData] = useState(null);
@@ -2143,7 +2146,7 @@ function ParentPortal({ navigate, path }) {
         method: 'POST',
         body: JSON.stringify({ amount: data.fees.pendingAmount })
       });
-      alert('Tuition fee payment processed. Receipt generated.');
+      alert('Tuition fee payment processed. Official receipt generated.');
       load();
     } catch (e) { alert(e.message); }
     finally { setPaying(false); }
@@ -2152,13 +2155,15 @@ function ParentPortal({ navigate, path }) {
   if (!data) return <AppShell role="parent" title="Parent Dashboard" navigate={navigate} path={path}><div style={{padding:32,textAlign:'center',color:'var(--text-muted)'}}>Loading parent portal...</div></AppShell>;
 
   const checkin = data.childCheckin;
+  const parentName = data.parent ? data.parent.name : 'Parent';
+  const wardName = data.activeChild ? data.activeChild.name : 'Student';
 
   return (
-    <AppShell role="parent" title={`Parent Portal — Ward: ${data.activeChild.name}`} navigate={navigate} path={path}>
+    <AppShell role="parent" title={`Parent Portal — ${parentName} (Ward: ${wardName})`} navigate={navigate} path={path}>
       {/* Real-time Arrival Alert Banner */}
       <div className={'alert ' + (checkin ? 'alert-green' : 'alert-amber')} style={{display:'flex',justifyContent:'space-between',alignItems:'center',flexWrap:'wrap',gap:10}}>
         <div>
-          <strong>{checkin ? `Gate Kiosk Arrival: ${data.activeChild.name}` : `Arrival Status for ${data.activeChild.name}`}</strong>
+          <strong>{checkin ? `Gate Kiosk Arrival: ${wardName}` : `Arrival Status for ${wardName}`}</strong>
           <div style={{fontSize:12.5,marginTop:2}}>
             {checkin ? (
               <>Ward checked in <strong>{checkin.status === 'on_time' ? 'ON-TIME' : 'LATE'}</strong> at {checkin.checkinTime} via {checkin.gateLocation}.</>
@@ -2177,8 +2182,8 @@ function ParentPortal({ navigate, path }) {
         <div>
           <div className="stat-grid">
             <div className="stat-card">
-              <div className="label">Ward Name</div>
-              <div className="value" style={{fontSize:20}}>{data.activeChild.name}</div>
+              <div className="label">Ward Name (Student)</div>
+              <div className="value" style={{fontSize:19}}>{wardName}</div>
             </div>
             <div className="stat-card">
               <div className="label">Attendance Rate</div>
@@ -2201,7 +2206,7 @@ function ParentPortal({ navigate, path }) {
       {/* 2. DAY-BY-DAY WORK */}
       {(path === '/parent/daily-work' || path === '/parent') && (
         <div style={{marginTop: path === '/parent' ? 20 : 0}}>
-          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Ward's Day-by-Day Work Reports</h2>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>{wardName}'s Day-by-Day Work Reports</h2>
           <div style={{display:'grid',gap:10}}>
             {(data.dailyWorkTasks || []).map(task => {
               const subm = (task.submissions || []).find(s => s.studentId === data.activeChild.id);
@@ -2228,7 +2233,7 @@ function ParentPortal({ navigate, path }) {
       {/* 3. ATTENDANCE */}
       {path === '/parent/attendance' && (
         <div>
-          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Ward's Attendance History</h2>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>{wardName}'s Attendance History</h2>
           <div className="table-container">
             <table className="data-table">
               <thead>
@@ -2251,7 +2256,7 @@ function ParentPortal({ navigate, path }) {
       {/* 4. RESULTS */}
       {path === '/parent/results' && (
         <div>
-          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>Ward's Academic Performance & Marksheet</h2>
+          <h2 style={{fontSize:16,fontWeight:700,marginBottom:12}}>{wardName}'s Academic Performance & Marksheet</h2>
           <div className="table-container">
             <table className="data-table">
               <thead>
@@ -2381,7 +2386,7 @@ function SuperAdminPortal({ navigate, path }) {
               <h3 style={{fontSize:14,fontWeight:700,marginBottom:8}}>System Telemetry & Health</h3>
               <div style={{display:'flex',alignItems:'center',gap:8}}>
                 <span className="badge badge-green">100% Operational</span>
-                <span style={{fontSize:13,color:'var(--text-muted)'}}>Active Users: {data.activeUsers} (93 Logins)</span>
+                <span style={{fontSize:13,color:'var(--text-muted)'}}>Active Users: {data.activeUsers}</span>
               </div>
             </div>
           </div>

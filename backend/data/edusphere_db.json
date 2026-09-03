@@ -86,15 +86,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-01",
-      "name": "Ravi Sharma (Parent)",
-      "email": "parent@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-TCH-02",
       "name": "Dr. Meera Nambiar",
       "email": "teacher2@edusphere.local",
@@ -212,15 +203,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-02",
-      "name": "Mr. Reddy",
-      "email": "parent2@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-004",
       "name": "Anjali Rao",
       "email": "student4@edusphere.local",
@@ -235,15 +217,6 @@
       "email": "student5@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-03",
-      "name": "Mr. Verma",
-      "email": "parent3@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -266,15 +239,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-04",
-      "name": "Mr. Nair",
-      "email": "parent4@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-008",
       "name": "Pooja Iyer",
       "email": "student8@edusphere.local",
@@ -289,15 +253,6 @@
       "email": "student9@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-05",
-      "name": "Mr. Menon",
-      "email": "parent5@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -320,15 +275,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-06",
-      "name": "Mr. Singh",
-      "email": "parent6@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-012",
       "name": "Neha Deshmukh",
       "email": "student12@edusphere.local",
@@ -343,15 +289,6 @@
       "email": "student13@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-07",
-      "name": "Mr. Chopra",
-      "email": "parent7@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -374,15 +311,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-08",
-      "name": "Mr. Bhat",
-      "email": "parent8@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-016",
       "name": "Tanvi Kulkarni",
       "email": "student16@edusphere.local",
@@ -397,15 +325,6 @@
       "email": "student17@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-09",
-      "name": "Mr. Mehta",
-      "email": "parent9@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -428,15 +347,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-10",
-      "name": "Mr. Pillai",
-      "email": "parent10@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-020",
       "name": "Nisha Saxena",
       "email": "student20@edusphere.local",
@@ -451,15 +361,6 @@
       "email": "student21@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-11",
-      "name": "Mr. Kapoor",
-      "email": "parent11@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -482,15 +383,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-12",
-      "name": "Mr. Sen",
-      "email": "parent12@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-024",
       "name": "Simran Dutta",
       "email": "student24@edusphere.local",
@@ -505,15 +397,6 @@
       "email": "student25@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-13",
-      "name": "Mr. Sharma",
-      "email": "parent13@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -536,15 +419,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-14",
-      "name": "Mr. Reddy",
-      "email": "parent14@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-028",
       "name": "Megha Rao",
       "email": "student28@edusphere.local",
@@ -559,15 +433,6 @@
       "email": "student29@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-15",
-      "name": "Mr. Verma",
-      "email": "parent15@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -590,15 +455,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-16",
-      "name": "Mr. Nair",
-      "email": "parent16@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-032",
       "name": "Isha Iyer",
       "email": "student32@edusphere.local",
@@ -613,15 +469,6 @@
       "email": "student33@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-17",
-      "name": "Mr. Menon",
-      "email": "parent17@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -644,15 +491,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-18",
-      "name": "Mr. Singh",
-      "email": "parent18@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-036",
       "name": "Pallavi Deshmukh",
       "email": "student36@edusphere.local",
@@ -667,15 +505,6 @@
       "email": "student37@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-19",
-      "name": "Mr. Chopra",
-      "email": "parent19@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -698,15 +527,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-20",
-      "name": "Mr. Bhat",
-      "email": "parent20@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-040",
       "name": "Shweta Kulkarni",
       "email": "student40@edusphere.local",
@@ -721,15 +541,6 @@
       "email": "student41@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-21",
-      "name": "Mr. Mehta",
-      "email": "parent21@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -752,15 +563,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-22",
-      "name": "Mr. Pillai",
-      "email": "parent22@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-044",
       "name": "Radhika Saxena",
       "email": "student44@edusphere.local",
@@ -775,15 +577,6 @@
       "email": "student45@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-23",
-      "name": "Mr. Kapoor",
-      "email": "parent23@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -806,15 +599,6 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-24",
-      "name": "Mr. Sen",
-      "email": "parent24@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
       "id": "USR-STD-048",
       "name": "Sonal Dutta",
       "email": "student48@edusphere.local",
@@ -829,15 +613,6 @@
       "email": "student49@edusphere.local",
       "password": "DemoOnly-Student-2026!",
       "role": "student",
-      "institutionId": "INST-001",
-      "status": "active"
-    },
-    {
-      "id": "USR-PAR-25",
-      "name": "Mr. Sharma",
-      "email": "parent25@edusphere.local",
-      "password": "DemoOnly-Parent-2026!",
-      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
@@ -860,20 +635,479 @@
       "status": "active"
     },
     {
-      "id": "USR-PAR-26",
-      "name": "Mr. Reddy",
-      "email": "parent26@edusphere.local",
+      "id": "USR-STD-052",
+      "name": "Bhavna Rao",
+      "email": "student52@edusphere.local",
+      "password": "DemoOnly-Student-2026!",
+      "role": "student",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-001",
+      "name": "Ravi Sharma",
+      "email": "parent@edusphere.local",
       "password": "DemoOnly-Parent-2026!",
       "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     },
     {
-      "id": "USR-STD-052",
-      "name": "Bhavna Rao",
-      "email": "student52@edusphere.local",
-      "password": "DemoOnly-Student-2026!",
-      "role": "student",
+      "id": "USR-PAR-002",
+      "name": "Manoj Kumar",
+      "email": "parent.arjunkumar@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-003",
+      "name": "Suresh Reddy",
+      "email": "parent.priyareddy@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-004",
+      "name": "Venkat Rao",
+      "email": "parent.anjalirao@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-005",
+      "name": "Rajesh Verma",
+      "email": "parent.rohanverma@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-006",
+      "name": "Anil Patel",
+      "email": "parent.snehapatel@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-007",
+      "name": "Dinesh Nair",
+      "email": "parent.adityanair@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-008",
+      "name": "Prakash Iyer",
+      "email": "parent.poojaiyer@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-009",
+      "name": "Mahesh Menon",
+      "email": "parent.karthikmenon@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-010",
+      "name": "Sanjay Gupta",
+      "email": "parent.divyagupta@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-011",
+      "name": "Vikram Singh",
+      "email": "parent.manishsingh@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-012",
+      "name": "Ramesh Deshmukh",
+      "email": "parent.nehadeshmukh@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-013",
+      "name": "Satish Chopra",
+      "email": "parent.varunchopra@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-014",
+      "name": "Gopal Joshi",
+      "email": "parent.shreyajoshi@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-015",
+      "name": "Naresh Bhat",
+      "email": "parent.gauravbhat@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-016",
+      "name": "Sunil Kulkarni",
+      "email": "parent.tanvikulkarni@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-017",
+      "name": "Ajay Mehta",
+      "email": "parent.abhishekmehta@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-018",
+      "name": "Deepak Shetty",
+      "email": "parent.kavyashetty@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-019",
+      "name": "Vijay Pillai",
+      "email": "parent.siddharthpillai@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-020",
+      "name": "Ashok Saxena",
+      "email": "parent.nishasaxena@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-021",
+      "name": "Harish Kapoor",
+      "email": "parent.aakashkapoor@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-022",
+      "name": "Kishore Das",
+      "email": "parent.rheadas@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-023",
+      "name": "Naveen Sen",
+      "email": "parent.naveensen@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-024",
+      "name": "Pradeep Dutta",
+      "email": "parent.simrandutta@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-025",
+      "name": "Srinivas Sharma",
+      "email": "parent.kiransharma@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-026",
+      "name": "Devendra Kumar",
+      "email": "parent.deepikakumar@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-027",
+      "name": "Ravi Reddy",
+      "email": "parent.akshayreddy@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-028",
+      "name": "Manoj Rao",
+      "email": "parent.megharao@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-029",
+      "name": "Suresh Verma",
+      "email": "parent.vivekverma@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-030",
+      "name": "Venkat Patel",
+      "email": "parent.shrutipatel@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-031",
+      "name": "Rajesh Nair",
+      "email": "parent.harshnair@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-032",
+      "name": "Anil Iyer",
+      "email": "parent.ishaiyer@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-033",
+      "name": "Dinesh Menon",
+      "email": "parent.tusharmenon@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-034",
+      "name": "Prakash Gupta",
+      "email": "parent.rupalgupta@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-035",
+      "name": "Mahesh Singh",
+      "email": "parent.mohitsingh@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-036",
+      "name": "Sanjay Deshmukh",
+      "email": "parent.pallavideshmukh@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-037",
+      "name": "Vikram Chopra",
+      "email": "parent.saurabhchopra@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-038",
+      "name": "Ramesh Joshi",
+      "email": "parent.vidyajoshi@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-039",
+      "name": "Satish Bhat",
+      "email": "parent.prateekbhat@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-040",
+      "name": "Gopal Kulkarni",
+      "email": "parent.shwetakulkarni@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-041",
+      "name": "Naresh Mehta",
+      "email": "parent.nikhilmehta@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-042",
+      "name": "Sunil Shetty",
+      "email": "parent.monikashetty@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-043",
+      "name": "Ajay Pillai",
+      "email": "parent.devpillai@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-044",
+      "name": "Deepak Saxena",
+      "email": "parent.radhikasaxena@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-045",
+      "name": "Vijay Kapoor",
+      "email": "parent.aryankapoor@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-046",
+      "name": "Ashok Das",
+      "email": "parent.payaldas@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-047",
+      "name": "Harish Sen",
+      "email": "parent.yashsen@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-048",
+      "name": "Kishore Dutta",
+      "email": "parent.sonaldutta@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-049",
+      "name": "Naveen Sharma",
+      "email": "parent.kunalsharma@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-050",
+      "name": "Pradeep Kumar",
+      "email": "parent.rashmikumar@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-051",
+      "name": "Srinivas Reddy",
+      "email": "parent.mayankreddy@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
+      "institutionId": "INST-001",
+      "status": "active"
+    },
+    {
+      "id": "USR-PAR-052",
+      "name": "Devendra Rao",
+      "email": "parent.bhavnarao@edusphere.local",
+      "password": "DemoOnly-Parent-2026!",
+      "role": "parent",
       "institutionId": "INST-001",
       "status": "active"
     }
@@ -2133,602 +2367,888 @@
   ],
   "parents": [
     {
-      "id": "PAR-01",
-      "userId": "USR-PAR-01",
+      "id": "PAR-001",
+      "userId": "USR-PAR-001",
       "name": "Ravi Sharma",
       "relationship": "Father",
-      "phone": "+91-98800-44110",
+      "phone": "+91-9840000000",
       "email": "parent@edusphere.local",
-      "address": "88 Heritage Enclave, Bangalore",
-      "occupation": "Senior Software Architect",
-      "emergencyContact": "+91-98800-44111"
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840000000"
     },
     {
-      "id": "PAR-02",
-      "userId": "USR-PAR-02",
-      "name": "Mr. Reddy",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50003",
-      "email": "parent2@edusphere.local",
-      "address": "House 9, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60003"
+      "id": "PAR-002",
+      "userId": "USR-PAR-002",
+      "name": "Manoj Kumar",
+      "relationship": "Father",
+      "phone": "+91-9840000371",
+      "email": "parent.arjunkumar@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840000371"
     },
     {
-      "id": "PAR-03",
-      "userId": "USR-PAR-03",
-      "name": "Mr. Verma",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50005",
-      "email": "parent3@edusphere.local",
-      "address": "House 15, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60005"
+      "id": "PAR-003",
+      "userId": "USR-PAR-003",
+      "name": "Suresh Reddy",
+      "relationship": "Father",
+      "phone": "+91-9840000742",
+      "email": "parent.priyareddy@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840000742"
     },
     {
-      "id": "PAR-04",
-      "userId": "USR-PAR-04",
-      "name": "Mr. Nair",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50007",
-      "email": "parent4@edusphere.local",
-      "address": "House 21, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60007"
+      "id": "PAR-004",
+      "userId": "USR-PAR-004",
+      "name": "Venkat Rao",
+      "relationship": "Father",
+      "phone": "+91-9840001113",
+      "email": "parent.anjalirao@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840001113"
     },
     {
-      "id": "PAR-05",
-      "userId": "USR-PAR-05",
-      "name": "Mr. Menon",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50009",
-      "email": "parent5@edusphere.local",
-      "address": "House 27, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60009"
+      "id": "PAR-005",
+      "userId": "USR-PAR-005",
+      "name": "Rajesh Verma",
+      "relationship": "Father",
+      "phone": "+91-9840001484",
+      "email": "parent.rohanverma@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840001484"
     },
     {
-      "id": "PAR-06",
-      "userId": "USR-PAR-06",
-      "name": "Mr. Singh",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50011",
-      "email": "parent6@edusphere.local",
-      "address": "House 33, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60011"
+      "id": "PAR-006",
+      "userId": "USR-PAR-006",
+      "name": "Anil Patel",
+      "relationship": "Father",
+      "phone": "+91-9840001855",
+      "email": "parent.snehapatel@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840001855"
     },
     {
-      "id": "PAR-07",
-      "userId": "USR-PAR-07",
-      "name": "Mr. Chopra",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50013",
-      "email": "parent7@edusphere.local",
-      "address": "House 39, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60013"
+      "id": "PAR-007",
+      "userId": "USR-PAR-007",
+      "name": "Dinesh Nair",
+      "relationship": "Father",
+      "phone": "+91-9840002226",
+      "email": "parent.adityanair@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840002226"
     },
     {
-      "id": "PAR-08",
-      "userId": "USR-PAR-08",
-      "name": "Mr. Bhat",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50015",
-      "email": "parent8@edusphere.local",
-      "address": "House 45, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60015"
+      "id": "PAR-008",
+      "userId": "USR-PAR-008",
+      "name": "Prakash Iyer",
+      "relationship": "Father",
+      "phone": "+91-9840002597",
+      "email": "parent.poojaiyer@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840002597"
     },
     {
-      "id": "PAR-09",
-      "userId": "USR-PAR-09",
-      "name": "Mr. Mehta",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50017",
-      "email": "parent9@edusphere.local",
-      "address": "House 51, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60017"
+      "id": "PAR-009",
+      "userId": "USR-PAR-009",
+      "name": "Mahesh Menon",
+      "relationship": "Father",
+      "phone": "+91-9840002968",
+      "email": "parent.karthikmenon@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840002968"
     },
     {
-      "id": "PAR-10",
-      "userId": "USR-PAR-10",
-      "name": "Mr. Pillai",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50019",
-      "email": "parent10@edusphere.local",
-      "address": "House 57, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60019"
+      "id": "PAR-010",
+      "userId": "USR-PAR-010",
+      "name": "Sanjay Gupta",
+      "relationship": "Father",
+      "phone": "+91-9840003339",
+      "email": "parent.divyagupta@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840003339"
     },
     {
-      "id": "PAR-11",
-      "userId": "USR-PAR-11",
-      "name": "Mr. Kapoor",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50021",
-      "email": "parent11@edusphere.local",
-      "address": "House 63, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60021"
+      "id": "PAR-011",
+      "userId": "USR-PAR-011",
+      "name": "Vikram Singh",
+      "relationship": "Father",
+      "phone": "+91-9840003710",
+      "email": "parent.manishsingh@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840003710"
     },
     {
-      "id": "PAR-12",
-      "userId": "USR-PAR-12",
-      "name": "Mr. Sen",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50023",
-      "email": "parent12@edusphere.local",
-      "address": "House 69, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60023"
+      "id": "PAR-012",
+      "userId": "USR-PAR-012",
+      "name": "Ramesh Deshmukh",
+      "relationship": "Father",
+      "phone": "+91-9840004081",
+      "email": "parent.nehadeshmukh@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840004081"
     },
     {
-      "id": "PAR-13",
-      "userId": "USR-PAR-13",
-      "name": "Mr. Sharma",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50025",
-      "email": "parent13@edusphere.local",
-      "address": "House 75, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60025"
+      "id": "PAR-013",
+      "userId": "USR-PAR-013",
+      "name": "Satish Chopra",
+      "relationship": "Father",
+      "phone": "+91-9840004452",
+      "email": "parent.varunchopra@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840004452"
     },
     {
-      "id": "PAR-14",
-      "userId": "USR-PAR-14",
-      "name": "Mr. Reddy",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50027",
-      "email": "parent14@edusphere.local",
-      "address": "House 81, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60027"
+      "id": "PAR-014",
+      "userId": "USR-PAR-014",
+      "name": "Gopal Joshi",
+      "relationship": "Father",
+      "phone": "+91-9840004823",
+      "email": "parent.shreyajoshi@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840004823"
     },
     {
-      "id": "PAR-15",
-      "userId": "USR-PAR-15",
-      "name": "Mr. Verma",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50029",
-      "email": "parent15@edusphere.local",
-      "address": "House 87, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60029"
+      "id": "PAR-015",
+      "userId": "USR-PAR-015",
+      "name": "Naresh Bhat",
+      "relationship": "Father",
+      "phone": "+91-9840005194",
+      "email": "parent.gauravbhat@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840005194"
     },
     {
-      "id": "PAR-16",
-      "userId": "USR-PAR-16",
-      "name": "Mr. Nair",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50031",
-      "email": "parent16@edusphere.local",
-      "address": "House 93, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60031"
+      "id": "PAR-016",
+      "userId": "USR-PAR-016",
+      "name": "Sunil Kulkarni",
+      "relationship": "Father",
+      "phone": "+91-9840005565",
+      "email": "parent.tanvikulkarni@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840005565"
     },
     {
-      "id": "PAR-17",
-      "userId": "USR-PAR-17",
-      "name": "Mr. Menon",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50033",
-      "email": "parent17@edusphere.local",
-      "address": "House 99, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60033"
+      "id": "PAR-017",
+      "userId": "USR-PAR-017",
+      "name": "Ajay Mehta",
+      "relationship": "Father",
+      "phone": "+91-9840005936",
+      "email": "parent.abhishekmehta@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840005936"
     },
     {
-      "id": "PAR-18",
-      "userId": "USR-PAR-18",
-      "name": "Mr. Singh",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50035",
-      "email": "parent18@edusphere.local",
-      "address": "House 105, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60035"
+      "id": "PAR-018",
+      "userId": "USR-PAR-018",
+      "name": "Deepak Shetty",
+      "relationship": "Father",
+      "phone": "+91-9840006307",
+      "email": "parent.kavyashetty@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840006307"
     },
     {
-      "id": "PAR-19",
-      "userId": "USR-PAR-19",
-      "name": "Mr. Chopra",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50037",
-      "email": "parent19@edusphere.local",
-      "address": "House 111, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60037"
+      "id": "PAR-019",
+      "userId": "USR-PAR-019",
+      "name": "Vijay Pillai",
+      "relationship": "Father",
+      "phone": "+91-9840006678",
+      "email": "parent.siddharthpillai@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840006678"
     },
     {
-      "id": "PAR-20",
-      "userId": "USR-PAR-20",
-      "name": "Mr. Bhat",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50039",
-      "email": "parent20@edusphere.local",
-      "address": "House 117, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60039"
+      "id": "PAR-020",
+      "userId": "USR-PAR-020",
+      "name": "Ashok Saxena",
+      "relationship": "Father",
+      "phone": "+91-9840007049",
+      "email": "parent.nishasaxena@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840007049"
     },
     {
-      "id": "PAR-21",
-      "userId": "USR-PAR-21",
-      "name": "Mr. Mehta",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50041",
-      "email": "parent21@edusphere.local",
-      "address": "House 123, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60041"
+      "id": "PAR-021",
+      "userId": "USR-PAR-021",
+      "name": "Harish Kapoor",
+      "relationship": "Father",
+      "phone": "+91-9840007420",
+      "email": "parent.aakashkapoor@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840007420"
     },
     {
-      "id": "PAR-22",
-      "userId": "USR-PAR-22",
-      "name": "Mr. Pillai",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50043",
-      "email": "parent22@edusphere.local",
-      "address": "House 129, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60043"
+      "id": "PAR-022",
+      "userId": "USR-PAR-022",
+      "name": "Kishore Das",
+      "relationship": "Father",
+      "phone": "+91-9840007791",
+      "email": "parent.rheadas@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840007791"
     },
     {
-      "id": "PAR-23",
-      "userId": "USR-PAR-23",
-      "name": "Mr. Kapoor",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50045",
-      "email": "parent23@edusphere.local",
-      "address": "House 135, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60045"
+      "id": "PAR-023",
+      "userId": "USR-PAR-023",
+      "name": "Naveen Sen",
+      "relationship": "Father",
+      "phone": "+91-9840008162",
+      "email": "parent.naveensen@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840008162"
     },
     {
-      "id": "PAR-24",
-      "userId": "USR-PAR-24",
-      "name": "Mr. Sen",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50047",
-      "email": "parent24@edusphere.local",
-      "address": "House 141, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60047"
+      "id": "PAR-024",
+      "userId": "USR-PAR-024",
+      "name": "Pradeep Dutta",
+      "relationship": "Father",
+      "phone": "+91-9840008533",
+      "email": "parent.simrandutta@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840008533"
     },
     {
-      "id": "PAR-25",
-      "userId": "USR-PAR-25",
-      "name": "Mr. Sharma",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50049",
-      "email": "parent25@edusphere.local",
-      "address": "House 147, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60049"
+      "id": "PAR-025",
+      "userId": "USR-PAR-025",
+      "name": "Srinivas Sharma",
+      "relationship": "Father",
+      "phone": "+91-9840008904",
+      "email": "parent.kiransharma@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840008904"
     },
     {
-      "id": "PAR-26",
-      "userId": "USR-PAR-26",
-      "name": "Mr. Reddy",
-      "relationship": "Parent / Guardian",
-      "phone": "+91-98800-50051",
-      "email": "parent26@edusphere.local",
-      "address": "House 153, Pine Valley, Bangalore",
-      "occupation": "Professional / Business",
-      "emergencyContact": "+91-98800-60051"
+      "id": "PAR-026",
+      "userId": "USR-PAR-026",
+      "name": "Devendra Kumar",
+      "relationship": "Father",
+      "phone": "+91-9840009275",
+      "email": "parent.deepikakumar@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840009275"
+    },
+    {
+      "id": "PAR-027",
+      "userId": "USR-PAR-027",
+      "name": "Ravi Reddy",
+      "relationship": "Father",
+      "phone": "+91-9840009646",
+      "email": "parent.akshayreddy@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840009646"
+    },
+    {
+      "id": "PAR-028",
+      "userId": "USR-PAR-028",
+      "name": "Manoj Rao",
+      "relationship": "Father",
+      "phone": "+91-9840010017",
+      "email": "parent.megharao@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840010017"
+    },
+    {
+      "id": "PAR-029",
+      "userId": "USR-PAR-029",
+      "name": "Suresh Verma",
+      "relationship": "Father",
+      "phone": "+91-9840010388",
+      "email": "parent.vivekverma@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840010388"
+    },
+    {
+      "id": "PAR-030",
+      "userId": "USR-PAR-030",
+      "name": "Venkat Patel",
+      "relationship": "Father",
+      "phone": "+91-9840010759",
+      "email": "parent.shrutipatel@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840010759"
+    },
+    {
+      "id": "PAR-031",
+      "userId": "USR-PAR-031",
+      "name": "Rajesh Nair",
+      "relationship": "Father",
+      "phone": "+91-9840011130",
+      "email": "parent.harshnair@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840011130"
+    },
+    {
+      "id": "PAR-032",
+      "userId": "USR-PAR-032",
+      "name": "Anil Iyer",
+      "relationship": "Father",
+      "phone": "+91-9840011501",
+      "email": "parent.ishaiyer@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840011501"
+    },
+    {
+      "id": "PAR-033",
+      "userId": "USR-PAR-033",
+      "name": "Dinesh Menon",
+      "relationship": "Father",
+      "phone": "+91-9840011872",
+      "email": "parent.tusharmenon@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840011872"
+    },
+    {
+      "id": "PAR-034",
+      "userId": "USR-PAR-034",
+      "name": "Prakash Gupta",
+      "relationship": "Father",
+      "phone": "+91-9840012243",
+      "email": "parent.rupalgupta@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840012243"
+    },
+    {
+      "id": "PAR-035",
+      "userId": "USR-PAR-035",
+      "name": "Mahesh Singh",
+      "relationship": "Father",
+      "phone": "+91-9840012614",
+      "email": "parent.mohitsingh@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840012614"
+    },
+    {
+      "id": "PAR-036",
+      "userId": "USR-PAR-036",
+      "name": "Sanjay Deshmukh",
+      "relationship": "Father",
+      "phone": "+91-9840012985",
+      "email": "parent.pallavideshmukh@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840012985"
+    },
+    {
+      "id": "PAR-037",
+      "userId": "USR-PAR-037",
+      "name": "Vikram Chopra",
+      "relationship": "Father",
+      "phone": "+91-9840013356",
+      "email": "parent.saurabhchopra@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840013356"
+    },
+    {
+      "id": "PAR-038",
+      "userId": "USR-PAR-038",
+      "name": "Ramesh Joshi",
+      "relationship": "Father",
+      "phone": "+91-9840013727",
+      "email": "parent.vidyajoshi@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840013727"
+    },
+    {
+      "id": "PAR-039",
+      "userId": "USR-PAR-039",
+      "name": "Satish Bhat",
+      "relationship": "Father",
+      "phone": "+91-9840014098",
+      "email": "parent.prateekbhat@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840014098"
+    },
+    {
+      "id": "PAR-040",
+      "userId": "USR-PAR-040",
+      "name": "Gopal Kulkarni",
+      "relationship": "Father",
+      "phone": "+91-9840014469",
+      "email": "parent.shwetakulkarni@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840014469"
+    },
+    {
+      "id": "PAR-041",
+      "userId": "USR-PAR-041",
+      "name": "Naresh Mehta",
+      "relationship": "Father",
+      "phone": "+91-9840014840",
+      "email": "parent.nikhilmehta@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840014840"
+    },
+    {
+      "id": "PAR-042",
+      "userId": "USR-PAR-042",
+      "name": "Sunil Shetty",
+      "relationship": "Father",
+      "phone": "+91-9840015211",
+      "email": "parent.monikashetty@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840015211"
+    },
+    {
+      "id": "PAR-043",
+      "userId": "USR-PAR-043",
+      "name": "Ajay Pillai",
+      "relationship": "Father",
+      "phone": "+91-9840015582",
+      "email": "parent.devpillai@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840015582"
+    },
+    {
+      "id": "PAR-044",
+      "userId": "USR-PAR-044",
+      "name": "Deepak Saxena",
+      "relationship": "Father",
+      "phone": "+91-9840015953",
+      "email": "parent.radhikasaxena@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840015953"
+    },
+    {
+      "id": "PAR-045",
+      "userId": "USR-PAR-045",
+      "name": "Vijay Kapoor",
+      "relationship": "Father",
+      "phone": "+91-9840016324",
+      "email": "parent.aryankapoor@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840016324"
+    },
+    {
+      "id": "PAR-046",
+      "userId": "USR-PAR-046",
+      "name": "Ashok Das",
+      "relationship": "Father",
+      "phone": "+91-9840016695",
+      "email": "parent.payaldas@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840016695"
+    },
+    {
+      "id": "PAR-047",
+      "userId": "USR-PAR-047",
+      "name": "Harish Sen",
+      "relationship": "Father",
+      "phone": "+91-9840017066",
+      "email": "parent.yashsen@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840017066"
+    },
+    {
+      "id": "PAR-048",
+      "userId": "USR-PAR-048",
+      "name": "Kishore Dutta",
+      "relationship": "Father",
+      "phone": "+91-9840017437",
+      "email": "parent.sonaldutta@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840017437"
+    },
+    {
+      "id": "PAR-049",
+      "userId": "USR-PAR-049",
+      "name": "Naveen Sharma",
+      "relationship": "Father",
+      "phone": "+91-9840017808",
+      "email": "parent.kunalsharma@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840017808"
+    },
+    {
+      "id": "PAR-050",
+      "userId": "USR-PAR-050",
+      "name": "Pradeep Kumar",
+      "relationship": "Father",
+      "phone": "+91-9840018179",
+      "email": "parent.rashmikumar@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840018179"
+    },
+    {
+      "id": "PAR-051",
+      "userId": "USR-PAR-051",
+      "name": "Srinivas Reddy",
+      "relationship": "Father",
+      "phone": "+91-9840018550",
+      "email": "parent.mayankreddy@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840018550"
+    },
+    {
+      "id": "PAR-052",
+      "userId": "USR-PAR-052",
+      "name": "Devendra Rao",
+      "relationship": "Father",
+      "phone": "+91-9840018921",
+      "email": "parent.bhavnarao@edusphere.local",
+      "address": "88 Academic Heights, Bangalore",
+      "occupation": "Senior Professional / Corporate Executive",
+      "emergencyContact": "+91-9840018921"
     }
   ],
   "parentStudents": [
     {
       "id": "PS-1",
-      "parentId": "PAR-01",
+      "parentId": "PAR-001",
       "studentId": "STD-001",
       "relationship": "Child"
     },
     {
       "id": "PS-2",
-      "parentId": "PAR-01",
+      "parentId": "PAR-002",
       "studentId": "STD-002",
       "relationship": "Child"
     },
     {
       "id": "PS-3",
-      "parentId": "PAR-02",
+      "parentId": "PAR-003",
       "studentId": "STD-003",
       "relationship": "Child"
     },
     {
       "id": "PS-4",
-      "parentId": "PAR-02",
+      "parentId": "PAR-004",
       "studentId": "STD-004",
       "relationship": "Child"
     },
     {
       "id": "PS-5",
-      "parentId": "PAR-03",
+      "parentId": "PAR-005",
       "studentId": "STD-005",
       "relationship": "Child"
     },
     {
       "id": "PS-6",
-      "parentId": "PAR-03",
+      "parentId": "PAR-006",
       "studentId": "STD-006",
       "relationship": "Child"
     },
     {
       "id": "PS-7",
-      "parentId": "PAR-04",
+      "parentId": "PAR-007",
       "studentId": "STD-007",
       "relationship": "Child"
     },
     {
       "id": "PS-8",
-      "parentId": "PAR-04",
+      "parentId": "PAR-008",
       "studentId": "STD-008",
       "relationship": "Child"
     },
     {
       "id": "PS-9",
-      "parentId": "PAR-05",
+      "parentId": "PAR-009",
       "studentId": "STD-009",
       "relationship": "Child"
     },
     {
       "id": "PS-10",
-      "parentId": "PAR-05",
+      "parentId": "PAR-010",
       "studentId": "STD-010",
       "relationship": "Child"
     },
     {
       "id": "PS-11",
-      "parentId": "PAR-06",
+      "parentId": "PAR-011",
       "studentId": "STD-011",
       "relationship": "Child"
     },
     {
       "id": "PS-12",
-      "parentId": "PAR-06",
+      "parentId": "PAR-012",
       "studentId": "STD-012",
       "relationship": "Child"
     },
     {
       "id": "PS-13",
-      "parentId": "PAR-07",
+      "parentId": "PAR-013",
       "studentId": "STD-013",
       "relationship": "Child"
     },
     {
       "id": "PS-14",
-      "parentId": "PAR-07",
+      "parentId": "PAR-014",
       "studentId": "STD-014",
       "relationship": "Child"
     },
     {
       "id": "PS-15",
-      "parentId": "PAR-08",
+      "parentId": "PAR-015",
       "studentId": "STD-015",
       "relationship": "Child"
     },
     {
       "id": "PS-16",
-      "parentId": "PAR-08",
+      "parentId": "PAR-016",
       "studentId": "STD-016",
       "relationship": "Child"
     },
     {
       "id": "PS-17",
-      "parentId": "PAR-09",
+      "parentId": "PAR-017",
       "studentId": "STD-017",
       "relationship": "Child"
     },
     {
       "id": "PS-18",
-      "parentId": "PAR-09",
+      "parentId": "PAR-018",
       "studentId": "STD-018",
       "relationship": "Child"
     },
     {
       "id": "PS-19",
-      "parentId": "PAR-10",
+      "parentId": "PAR-019",
       "studentId": "STD-019",
       "relationship": "Child"
     },
     {
       "id": "PS-20",
-      "parentId": "PAR-10",
+      "parentId": "PAR-020",
       "studentId": "STD-020",
       "relationship": "Child"
     },
     {
       "id": "PS-21",
-      "parentId": "PAR-11",
+      "parentId": "PAR-021",
       "studentId": "STD-021",
       "relationship": "Child"
     },
     {
       "id": "PS-22",
-      "parentId": "PAR-11",
+      "parentId": "PAR-022",
       "studentId": "STD-022",
       "relationship": "Child"
     },
     {
       "id": "PS-23",
-      "parentId": "PAR-12",
+      "parentId": "PAR-023",
       "studentId": "STD-023",
       "relationship": "Child"
     },
     {
       "id": "PS-24",
-      "parentId": "PAR-12",
+      "parentId": "PAR-024",
       "studentId": "STD-024",
       "relationship": "Child"
     },
     {
       "id": "PS-25",
-      "parentId": "PAR-13",
+      "parentId": "PAR-025",
       "studentId": "STD-025",
       "relationship": "Child"
     },
     {
       "id": "PS-26",
-      "parentId": "PAR-13",
+      "parentId": "PAR-026",
       "studentId": "STD-026",
       "relationship": "Child"
     },
     {
       "id": "PS-27",
-      "parentId": "PAR-14",
+      "parentId": "PAR-027",
       "studentId": "STD-027",
       "relationship": "Child"
     },
     {
       "id": "PS-28",
-      "parentId": "PAR-14",
+      "parentId": "PAR-028",
       "studentId": "STD-028",
       "relationship": "Child"
     },
     {
       "id": "PS-29",
-      "parentId": "PAR-15",
+      "parentId": "PAR-029",
       "studentId": "STD-029",
       "relationship": "Child"
     },
     {
       "id": "PS-30",
-      "parentId": "PAR-15",
+      "parentId": "PAR-030",
       "studentId": "STD-030",
       "relationship": "Child"
     },
     {
       "id": "PS-31",
-      "parentId": "PAR-16",
+      "parentId": "PAR-031",
       "studentId": "STD-031",
       "relationship": "Child"
     },
     {
       "id": "PS-32",
-      "parentId": "PAR-16",
+      "parentId": "PAR-032",
       "studentId": "STD-032",
       "relationship": "Child"
     },
     {
       "id": "PS-33",
-      "parentId": "PAR-17",
+      "parentId": "PAR-033",
       "studentId": "STD-033",
       "relationship": "Child"
     },
     {
       "id": "PS-34",
-      "parentId": "PAR-17",
+      "parentId": "PAR-034",
       "studentId": "STD-034",
       "relationship": "Child"
     },
     {
       "id": "PS-35",
-      "parentId": "PAR-18",
+      "parentId": "PAR-035",
       "studentId": "STD-035",
       "relationship": "Child"
     },
     {
       "id": "PS-36",
-      "parentId": "PAR-18",
+      "parentId": "PAR-036",
       "studentId": "STD-036",
       "relationship": "Child"
     },
     {
       "id": "PS-37",
-      "parentId": "PAR-19",
+      "parentId": "PAR-037",
       "studentId": "STD-037",
       "relationship": "Child"
     },
     {
       "id": "PS-38",
-      "parentId": "PAR-19",
+      "parentId": "PAR-038",
       "studentId": "STD-038",
       "relationship": "Child"
     },
     {
       "id": "PS-39",
-      "parentId": "PAR-20",
+      "parentId": "PAR-039",
       "studentId": "STD-039",
       "relationship": "Child"
     },
     {
       "id": "PS-40",
-      "parentId": "PAR-20",
+      "parentId": "PAR-040",
       "studentId": "STD-040",
       "relationship": "Child"
     },
     {
       "id": "PS-41",
-      "parentId": "PAR-21",
+      "parentId": "PAR-041",
       "studentId": "STD-041",
       "relationship": "Child"
     },
     {
       "id": "PS-42",
-      "parentId": "PAR-21",
+      "parentId": "PAR-042",
       "studentId": "STD-042",
       "relationship": "Child"
     },
     {
       "id": "PS-43",
-      "parentId": "PAR-22",
+      "parentId": "PAR-043",
       "studentId": "STD-043",
       "relationship": "Child"
     },
     {
       "id": "PS-44",
-      "parentId": "PAR-22",
+      "parentId": "PAR-044",
       "studentId": "STD-044",
       "relationship": "Child"
     },
     {
       "id": "PS-45",
-      "parentId": "PAR-23",
+      "parentId": "PAR-045",
       "studentId": "STD-045",
       "relationship": "Child"
     },
     {
       "id": "PS-46",
-      "parentId": "PAR-23",
+      "parentId": "PAR-046",
       "studentId": "STD-046",
       "relationship": "Child"
     },
     {
       "id": "PS-47",
-      "parentId": "PAR-24",
+      "parentId": "PAR-047",
       "studentId": "STD-047",
       "relationship": "Child"
     },
     {
       "id": "PS-48",
-      "parentId": "PAR-24",
+      "parentId": "PAR-048",
       "studentId": "STD-048",
       "relationship": "Child"
     },
     {
       "id": "PS-49",
-      "parentId": "PAR-25",
+      "parentId": "PAR-049",
       "studentId": "STD-049",
       "relationship": "Child"
     },
     {
       "id": "PS-50",
-      "parentId": "PAR-25",
+      "parentId": "PAR-050",
       "studentId": "STD-050",
       "relationship": "Child"
     },
     {
       "id": "PS-51",
-      "parentId": "PAR-26",
+      "parentId": "PAR-051",
       "studentId": "STD-051",
       "relationship": "Child"
     },
     {
       "id": "PS-52",
-      "parentId": "PAR-26",
+      "parentId": "PAR-052",
       "studentId": "STD-052",
       "relationship": "Child"
     }
@@ -2831,6 +3351,20 @@
       "managerNotified": true,
       "parentNotified": true,
       "notifiedAt": "2026-09-03T07:02:29.668Z"
+    },
+    {
+      "id": "CHK-1788420247552-STD-003",
+      "studentId": "STD-003",
+      "studentName": "Priya Reddy",
+      "classId": "CLS-10",
+      "sectionId": "SEC-10A",
+      "date": "2026-09-03",
+      "checkinTime": "12:54 PM",
+      "status": "late",
+      "gateLocation": "Academic Main Entrance Kiosk 1",
+      "managerNotified": true,
+      "parentNotified": true,
+      "notifiedAt": "2026-09-03T07:24:07.552Z"
     }
   ],
   "dailyWorkTasks": [
@@ -2881,6 +3415,15 @@
           "status": "submitted",
           "submittedAt": "2026-09-03T06:46:21.057Z",
           "content": "bvhbjb n ",
+          "score": 24,
+          "feedback": "Submitted on time. Excellent analytical work."
+        },
+        {
+          "studentId": "STD-003",
+          "studentName": "Priya Reddy",
+          "status": "submitted",
+          "submittedAt": "2026-09-03T07:24:38.154Z",
+          "content": "hvhjvbjhvhuvj",
           "score": 24,
           "feedback": "Submitted on time. Excellent analytical work."
         }
@@ -3842,6 +4385,326 @@
       "rollNumber": "20",
       "status": "present",
       "remarks": ""
+    },
+    {
+      "id": "ATT-REC-01-STD-021",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-021",
+      "studentName": "Aakash Kapoor",
+      "rollNumber": "01",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-022",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-022",
+      "studentName": "Rhea Das",
+      "rollNumber": "02",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-023",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-023",
+      "studentName": "Naveen Sen",
+      "rollNumber": "03",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-024",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-024",
+      "studentName": "Simran Dutta",
+      "rollNumber": "04",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-025",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-025",
+      "studentName": "Kiran Sharma",
+      "rollNumber": "05",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-026",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-026",
+      "studentName": "Deepika Kumar",
+      "rollNumber": "06",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-027",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-027",
+      "studentName": "Akshay Reddy",
+      "rollNumber": "07",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-028",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-028",
+      "studentName": "Megha Rao",
+      "rollNumber": "08",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-029",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-029",
+      "studentName": "Vivek Verma",
+      "rollNumber": "09",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-030",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-030",
+      "studentName": "Shruti Patel",
+      "rollNumber": "10",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-031",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-031",
+      "studentName": "Harsh Nair",
+      "rollNumber": "11",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-032",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-032",
+      "studentName": "Isha Iyer",
+      "rollNumber": "12",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-033",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-033",
+      "studentName": "Tushar Menon",
+      "rollNumber": "13",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-034",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-034",
+      "studentName": "Rupal Gupta",
+      "rollNumber": "14",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-035",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-035",
+      "studentName": "Mohit Singh",
+      "rollNumber": "15",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-036",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-036",
+      "studentName": "Pallavi Deshmukh",
+      "rollNumber": "01",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-037",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-037",
+      "studentName": "Saurabh Chopra",
+      "rollNumber": "02",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-038",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-038",
+      "studentName": "Vidya Joshi",
+      "rollNumber": "03",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-039",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-039",
+      "studentName": "Prateek Bhat",
+      "rollNumber": "04",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-040",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-040",
+      "studentName": "Shweta Kulkarni",
+      "rollNumber": "05",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-041",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-041",
+      "studentName": "Nikhil Mehta",
+      "rollNumber": "06",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-042",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-042",
+      "studentName": "Monika Shetty",
+      "rollNumber": "07",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-043",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-043",
+      "studentName": "Dev Pillai",
+      "rollNumber": "08",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-044",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-044",
+      "studentName": "Radhika Saxena",
+      "rollNumber": "09",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-045",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-045",
+      "studentName": "Aryan Kapoor",
+      "rollNumber": "10",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-046",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-046",
+      "studentName": "Payal Das",
+      "rollNumber": "11",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-047",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-047",
+      "studentName": "Yash Sen",
+      "rollNumber": "12",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-048",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-048",
+      "studentName": "Sonal Dutta",
+      "rollNumber": "13",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-049",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-049",
+      "studentName": "Kunal Sharma",
+      "rollNumber": "14",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-050",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-050",
+      "studentName": "Rashmi Kumar",
+      "rollNumber": "15",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-051",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-051",
+      "studentName": "Mayank Reddy",
+      "rollNumber": "16",
+      "status": "present",
+      "remarks": "Attentive and active in class"
+    },
+    {
+      "id": "ATT-REC-01-STD-052",
+      "sessionId": "ATT-SESS-001",
+      "date": "2026-09-03",
+      "studentId": "STD-052",
+      "studentName": "Bhavna Rao",
+      "rollNumber": "17",
+      "status": "present",
+      "remarks": "Attentive and active in class"
     }
   ],
   "assignments": [
@@ -6313,6 +7176,1662 @@
       "status": "Passed First Division",
       "enteredBy": "TCH-01",
       "enteredAt": "2026-08-16T10:00:00.000Z"
+    },
+    {
+      "id": "MRK-STD-001-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-001",
+      "studentName": "Rahul Sharma",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 82,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-001-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-001",
+      "studentName": "Rahul Sharma",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 96,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-002-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-002",
+      "studentName": "Arjun Kumar",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 85,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-002-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-002",
+      "studentName": "Arjun Kumar",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 76,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-003-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-003",
+      "studentName": "Priya Reddy",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-003-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-003",
+      "studentName": "Priya Reddy",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 79,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-004-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-004",
+      "studentName": "Anjali Rao",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 91,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-004-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-004",
+      "studentName": "Anjali Rao",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 82,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-005-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-005",
+      "studentName": "Rohan Verma",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 94,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-005-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-005",
+      "studentName": "Rohan Verma",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 85,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-006-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-006",
+      "studentName": "Sneha Patel",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 97,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-006-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-006",
+      "studentName": "Sneha Patel",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-007-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-007",
+      "studentName": "Aditya Nair",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 77,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-007-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-007",
+      "studentName": "Aditya Nair",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 91,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-008-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-008",
+      "studentName": "Pooja Iyer",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 80,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-008-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-008",
+      "studentName": "Pooja Iyer",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 94,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-009-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-009",
+      "studentName": "Karthik Menon",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 83,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-009-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-009",
+      "studentName": "Karthik Menon",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 97,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-010-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-010",
+      "studentName": "Divya Gupta",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 86,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-010-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-010",
+      "studentName": "Divya Gupta",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 77,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-011-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-011",
+      "studentName": "Manish Singh",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 89,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-011-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-011",
+      "studentName": "Manish Singh",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 80,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-012-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-012",
+      "studentName": "Neha Deshmukh",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 92,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-012-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-012",
+      "studentName": "Neha Deshmukh",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 83,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-013-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-013",
+      "studentName": "Varun Chopra",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 95,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-013-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-013",
+      "studentName": "Varun Chopra",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 86,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-014-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-014",
+      "studentName": "Shreya Joshi",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 75,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-014-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-014",
+      "studentName": "Shreya Joshi",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 89,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-015-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-015",
+      "studentName": "Gaurav Bhat",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 78,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-015-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-015",
+      "studentName": "Gaurav Bhat",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 92,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-016-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-016",
+      "studentName": "Tanvi Kulkarni",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 81,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-016-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-016",
+      "studentName": "Tanvi Kulkarni",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 95,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-017-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-017",
+      "studentName": "Abhishek Mehta",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 84,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-017-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-017",
+      "studentName": "Abhishek Mehta",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 75,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-018-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-018",
+      "studentName": "Kavya Shetty",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 87,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-018-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-018",
+      "studentName": "Kavya Shetty",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 78,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-019-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-019",
+      "studentName": "Siddharth Pillai",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 90,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-019-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-019",
+      "studentName": "Siddharth Pillai",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 81,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-020-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-020",
+      "studentName": "Nisha Saxena",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 93,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-020-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-020",
+      "studentName": "Nisha Saxena",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 84,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-021-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-021",
+      "studentName": "Aakash Kapoor",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 96,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-021-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-021",
+      "studentName": "Aakash Kapoor",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 87,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-022-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-022",
+      "studentName": "Rhea Das",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 76,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-022-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-022",
+      "studentName": "Rhea Das",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 90,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-023-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-023",
+      "studentName": "Naveen Sen",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 79,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-023-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-023",
+      "studentName": "Naveen Sen",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 93,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-024-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-024",
+      "studentName": "Simran Dutta",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 82,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-024-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-024",
+      "studentName": "Simran Dutta",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 96,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-025-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-025",
+      "studentName": "Kiran Sharma",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 85,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-025-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-025",
+      "studentName": "Kiran Sharma",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 76,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-026-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-026",
+      "studentName": "Deepika Kumar",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-026-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-026",
+      "studentName": "Deepika Kumar",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 79,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-027-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-027",
+      "studentName": "Akshay Reddy",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 91,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-027-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-027",
+      "studentName": "Akshay Reddy",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 82,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-028-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-028",
+      "studentName": "Megha Rao",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 94,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-028-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-028",
+      "studentName": "Megha Rao",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 85,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-029-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-029",
+      "studentName": "Vivek Verma",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 97,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-029-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-029",
+      "studentName": "Vivek Verma",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-030-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-030",
+      "studentName": "Shruti Patel",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 77,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-030-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-030",
+      "studentName": "Shruti Patel",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 91,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-031-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-031",
+      "studentName": "Harsh Nair",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 80,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-031-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-031",
+      "studentName": "Harsh Nair",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 94,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-032-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-032",
+      "studentName": "Isha Iyer",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 83,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-032-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-032",
+      "studentName": "Isha Iyer",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 97,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-033-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-033",
+      "studentName": "Tushar Menon",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 86,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-033-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-033",
+      "studentName": "Tushar Menon",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 77,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-034-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-034",
+      "studentName": "Rupal Gupta",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 89,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-034-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-034",
+      "studentName": "Rupal Gupta",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 80,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-035-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-035",
+      "studentName": "Mohit Singh",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 92,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-035-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-035",
+      "studentName": "Mohit Singh",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 83,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-036-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-036",
+      "studentName": "Pallavi Deshmukh",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-036-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-036",
+      "studentName": "Pallavi Deshmukh",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 95,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-036-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-036",
+      "studentName": "Pallavi Deshmukh",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 79,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-036-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-036",
+      "studentName": "Pallavi Deshmukh",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 86,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-037-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-037",
+      "studentName": "Saurabh Chopra",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 91,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-037-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-037",
+      "studentName": "Saurabh Chopra",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 75,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-037-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-037",
+      "studentName": "Saurabh Chopra",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 82,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-037-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-037",
+      "studentName": "Saurabh Chopra",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 89,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-038-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-038",
+      "studentName": "Vidya Joshi",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 94,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-038-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-038",
+      "studentName": "Vidya Joshi",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 78,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-038-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-038",
+      "studentName": "Vidya Joshi",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 85,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-038-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-038",
+      "studentName": "Vidya Joshi",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 92,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-039-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-039",
+      "studentName": "Prateek Bhat",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 97,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-039-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-039",
+      "studentName": "Prateek Bhat",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 81,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-039-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-039",
+      "studentName": "Prateek Bhat",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-039-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-039",
+      "studentName": "Prateek Bhat",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 95,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-040-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-040",
+      "studentName": "Shweta Kulkarni",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 77,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-040-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-040",
+      "studentName": "Shweta Kulkarni",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 84,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-040-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-040",
+      "studentName": "Shweta Kulkarni",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 91,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-040-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-040",
+      "studentName": "Shweta Kulkarni",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 75,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-041-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-041",
+      "studentName": "Nikhil Mehta",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 80,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-041-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-041",
+      "studentName": "Nikhil Mehta",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 87,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-041-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-041",
+      "studentName": "Nikhil Mehta",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 94,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-041-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-041",
+      "studentName": "Nikhil Mehta",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 78,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-042-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-042",
+      "studentName": "Monika Shetty",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 83,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-042-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-042",
+      "studentName": "Monika Shetty",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 90,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-042-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-042",
+      "studentName": "Monika Shetty",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 97,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-042-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-042",
+      "studentName": "Monika Shetty",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 81,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-043-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-043",
+      "studentName": "Dev Pillai",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 86,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-043-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-043",
+      "studentName": "Dev Pillai",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 93,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-043-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-043",
+      "studentName": "Dev Pillai",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 77,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-043-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-043",
+      "studentName": "Dev Pillai",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 84,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-044-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-044",
+      "studentName": "Radhika Saxena",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 89,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-044-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-044",
+      "studentName": "Radhika Saxena",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 96,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-044-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-044",
+      "studentName": "Radhika Saxena",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 80,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-044-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-044",
+      "studentName": "Radhika Saxena",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 87,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-045-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-045",
+      "studentName": "Aryan Kapoor",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 92,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-045-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-045",
+      "studentName": "Aryan Kapoor",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 76,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-045-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-045",
+      "studentName": "Aryan Kapoor",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 83,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-045-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-045",
+      "studentName": "Aryan Kapoor",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 90,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-046-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-046",
+      "studentName": "Payal Das",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 95,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-046-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-046",
+      "studentName": "Payal Das",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 79,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-046-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-046",
+      "studentName": "Payal Das",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 86,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-046-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-046",
+      "studentName": "Payal Das",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 93,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-047-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-047",
+      "studentName": "Yash Sen",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 75,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-047-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-047",
+      "studentName": "Yash Sen",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 82,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-047-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-047",
+      "studentName": "Yash Sen",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 89,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-047-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-047",
+      "studentName": "Yash Sen",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 96,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-048-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-048",
+      "studentName": "Sonal Dutta",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 78,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-048-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-048",
+      "studentName": "Sonal Dutta",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 85,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-048-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-048",
+      "studentName": "Sonal Dutta",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 92,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-048-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-048",
+      "studentName": "Sonal Dutta",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 76,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-049-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-049",
+      "studentName": "Kunal Sharma",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 81,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-049-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-049",
+      "studentName": "Kunal Sharma",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-049-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-049",
+      "studentName": "Kunal Sharma",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 95,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-049-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-049",
+      "studentName": "Kunal Sharma",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 79,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-050-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-050",
+      "studentName": "Rashmi Kumar",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 84,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-050-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-050",
+      "studentName": "Rashmi Kumar",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 91,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-050-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-050",
+      "studentName": "Rashmi Kumar",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 75,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-050-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-050",
+      "studentName": "Rashmi Kumar",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 82,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-051-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-051",
+      "studentName": "Mayank Reddy",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 87,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-051-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-051",
+      "studentName": "Mayank Reddy",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 94,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-051-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-051",
+      "studentName": "Mayank Reddy",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 78,
+      "maxScore": 100,
+      "grade": "B",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-051-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-051",
+      "studentName": "Mayank Reddy",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 85,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-052-SUB-MTH",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-052",
+      "studentName": "Bhavna Rao",
+      "subjectId": "SUB-MTH",
+      "subjectName": "Mathematics",
+      "obtainedScore": 90,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-052-SUB-SCI",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-052",
+      "studentName": "Bhavna Rao",
+      "subjectId": "SUB-SCI",
+      "subjectName": "Physics & Science",
+      "obtainedScore": 97,
+      "maxScore": 100,
+      "grade": "A+",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-052-SUB-ENG",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-052",
+      "studentName": "Bhavna Rao",
+      "subjectId": "SUB-ENG",
+      "subjectName": "English Literature",
+      "obtainedScore": 81,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
+    },
+    {
+      "id": "MRK-STD-052-SUB-CSC",
+      "examId": "EXAM-MID-01",
+      "studentId": "STD-052",
+      "studentName": "Bhavna Rao",
+      "subjectId": "SUB-CSC",
+      "subjectName": "Computer Science",
+      "obtainedScore": 88,
+      "maxScore": 100,
+      "grade": "A",
+      "status": "Pass"
     }
   ],
   "feeStructures": [
@@ -6750,6 +9269,210 @@
       "pendingAmount": 30000,
       "status": "partial",
       "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-036",
+      "studentId": "STD-036",
+      "studentName": "Pallavi Deshmukh",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-037",
+      "studentId": "STD-037",
+      "studentName": "Saurabh Chopra",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-038",
+      "studentId": "STD-038",
+      "studentName": "Vidya Joshi",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-039",
+      "studentId": "STD-039",
+      "studentName": "Prateek Bhat",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-040",
+      "studentId": "STD-040",
+      "studentName": "Shweta Kulkarni",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-041",
+      "studentId": "STD-041",
+      "studentName": "Nikhil Mehta",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-042",
+      "studentId": "STD-042",
+      "studentName": "Monika Shetty",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-043",
+      "studentId": "STD-043",
+      "studentName": "Dev Pillai",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-044",
+      "studentId": "STD-044",
+      "studentName": "Radhika Saxena",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-045",
+      "studentId": "STD-045",
+      "studentName": "Aryan Kapoor",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-046",
+      "studentId": "STD-046",
+      "studentName": "Payal Das",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-047",
+      "studentId": "STD-047",
+      "studentName": "Yash Sen",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-048",
+      "studentId": "STD-048",
+      "studentName": "Sonal Dutta",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-049",
+      "studentId": "STD-049",
+      "studentName": "Kunal Sharma",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-050",
+      "studentId": "STD-050",
+      "studentName": "Rashmi Kumar",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-051",
+      "studentId": "STD-051",
+      "studentName": "Mayank Reddy",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
+    },
+    {
+      "id": "SFEE-STD-052",
+      "studentId": "STD-052",
+      "studentName": "Bhavna Rao",
+      "classId": "CLS-09",
+      "feeStructureId": "FEE-G10-ANNUAL",
+      "totalAmount": 65000,
+      "paidAmount": 57000,
+      "pendingAmount": 8000,
+      "status": "partial",
+      "dueDate": "2026-09-30"
     }
   ],
   "payments": [
@@ -7175,6 +9898,46 @@
     }
   ],
   "notifications": [
+    {
+      "id": "NOTIF-SUBM-PAR-1788420278154",
+      "recipientRole": "parent",
+      "recipientUserId": null,
+      "title": "Work Completed: Day 1: Quadratic Equations & Parabolic Roots Analysis",
+      "message": "Your ward Priya Reddy completed and submitted Day 1 — Foundation & Analytical Problem Set (Mathematics).",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T07:24:38.154Z"
+    },
+    {
+      "id": "NOTIF-SUBM-TCH-1788420278154",
+      "recipientRole": "teacher",
+      "recipientUserId": null,
+      "title": "Task Submitted: Priya Reddy",
+      "message": "Priya Reddy submitted solution for \"Day 1: Quadratic Equations & Parabolic Roots Analysis\".",
+      "module": "homework",
+      "read": false,
+      "createdAt": "2026-09-03T07:24:38.154Z"
+    },
+    {
+      "id": "NOTIF-CHK-ADM-1788420247552",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Student Arrival: Priya Reddy",
+      "message": "Priya Reddy (CLS-10-SEC-10A) checked in (LATE) at 12:54 PM.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:24:07.552Z"
+    },
+    {
+      "id": "NOTIF-CHK-PAR-1788420247552",
+      "recipientRole": "parent",
+      "recipientUserId": null,
+      "title": "Campus Arrival: Priya Reddy",
+      "message": "Priya Reddy arrived at campus and checked in (LATE) at 12:54 PM via Gate Kiosk 1.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T07:24:07.552Z"
+    },
     {
       "id": "NOTIF-LV-DEC-PAR-1788420188538",
       "recipientRole": "parent",
