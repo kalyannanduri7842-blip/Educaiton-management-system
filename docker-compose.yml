@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  edusphere-backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: edusphere-core
+    restart: unless-stopped
+    ports:
+      - "4001:4001"
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=4001
+      - DB_PATH=/app/backend/data/edusphere_db.json
+    volumes:
+      - ./backend/data:/app/backend/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://127.0.0.1:4001/api/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1));"]
+      interval: 15s
+      timeout: 5s
+      retries: 3

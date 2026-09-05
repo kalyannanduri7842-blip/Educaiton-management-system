@@ -8857,9 +8857,9 @@
       "classId": "CLS-10",
       "feeStructureId": "FEE-G10-ANNUAL",
       "totalAmount": 65000,
-      "paidAmount": 57000,
-      "pendingAmount": 8000,
-      "status": "partial",
+      "paidAmount": 65000,
+      "pendingAmount": 0,
+      "status": "paid",
       "dueDate": "2026-09-30"
     },
     {
@@ -9477,6 +9477,18 @@
   ],
   "payments": [
     {
+      "id": "PAY-ONLINE-1788428340273",
+      "studentFeeId": "SFEE-STD-001",
+      "studentId": "STD-001",
+      "studentName": "Rahul Sharma",
+      "amount": 8000,
+      "paymentMethod": "EduSphere Instant Simulated NetBanking / UPI",
+      "transactionRef": "TXN-EDU-ONLINE-1788428340273",
+      "paidAt": "2026-09-03T09:39:00.273Z",
+      "receiptNumber": "RCP-ONLINE-9636",
+      "status": "completed"
+    },
+    {
       "id": "PAY-REC-STD-001-01",
       "studentFeeId": "SFEE-STD-001",
       "studentId": "STD-001",
@@ -9899,6 +9911,36 @@
   ],
   "notifications": [
     {
+      "id": "NOTIF-LEAVE-PAR-1788428171972",
+      "recipientRole": "parent",
+      "recipientUserId": null,
+      "title": "Leave Application Recorded for Arjun Kumar",
+      "message": "Leave application submitted for 2026-09-08 to 2026-09-09 (Pending Faculty Approval).",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T09:36:11.972Z"
+    },
+    {
+      "id": "NOTIF-LEAVE-ADM-1788428171972",
+      "recipientRole": "admin",
+      "recipientUserId": null,
+      "title": "Leave Application Submitted: Arjun Kumar",
+      "message": "Arjun Kumar applied for leave (2026-09-08 to 2026-09-09).",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T09:36:11.972Z"
+    },
+    {
+      "id": "NOTIF-LEAVE-TCH-1788428171972",
+      "recipientRole": "teacher",
+      "recipientUserId": null,
+      "title": "Student Leave Request: Arjun Kumar",
+      "message": "Arjun Kumar (CLS-10-SEC-10A) requested Medical Leave from 2026-09-08 to 2026-09-09. Reason: hhfhj. Action required: Approve or Reject.",
+      "module": "attendance",
+      "read": false,
+      "createdAt": "2026-09-03T09:36:11.972Z"
+    },
+    {
       "id": "NOTIF-SUBM-PAR-1788420278154",
       "recipientRole": "parent",
       "recipientUserId": null,
@@ -10254,6 +10296,19 @@
     }
   ],
   "leaveApplications": [
+    {
+      "id": "LEAVE-1788428171972-STD-002",
+      "studentId": "STD-002",
+      "studentName": "Arjun Kumar",
+      "classId": "CLS-10",
+      "sectionId": "SEC-10A",
+      "startDate": "2026-09-08",
+      "endDate": "2026-09-09",
+      "leaveType": "Medical Leave",
+      "reason": "hhfhj",
+      "status": "pending_approval",
+      "appliedAt": "2026-09-03T09:36:11.972Z"
+    },
     {
       "id": "LEAVE-1788419811116-STD-001",
       "studentId": "STD-001",

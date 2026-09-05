@@ -1148,6 +1148,10 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`EduSphere Core Backend API running on port ${PORT} (http://127.0.0.1:${PORT})`);
-});
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`EduSphere Core Backend API running on port ${PORT} (http://127.0.0.1:${PORT})`);
+  });
+}
+
+module.exports = server;
